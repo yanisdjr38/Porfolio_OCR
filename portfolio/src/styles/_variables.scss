@@ -1,0 +1,39 @@
+// -------------------------------------------------------------------
+// DESIGN SYSTEM : WILDCARD (DARK MODE + NEON ACCENTS)
+// -------------------------------------------------------------------
+
+// 1. PALETTE DE COULEURS (Règle 60-30-10)
+// -------------------------------------------------------------------
+$color-bg-main: #050505; // Fond principal (60%)
+$color-bg-card: #1a1a1a; // Surfaces et cartes (30%)
+$color-text-main: #e0e0e0; // Texte clair haute lisibilité
+$color-text-muted: #a0a0a0; // Texte secondaire / placeholders
+
+// Accents Néons (10%)
+$color-accent-cyan: #00ffff; // Cyber Cyan (Action, liens)
+$color-accent-pink: #ff00ff; // Hot Pink (Titres, focus)
+
+// 2. TYPOGRAPHIE
+// -------------------------------------------------------------------
+$font-main: "Montserrat", "Poppins", sans-serif; // Headers et UI [cite: 121]
+$font-code:
+  "JetBrains Mono", "Fira Code", monospace; // Tech-oriented [cite: 125]
+
+// Tailles (Scalable)
+$font-size-base: 16px;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-body: 1rem;
+
+// 3. EFFETS VISUELS (LE "GLOW")
+// -------------------------------------------------------------------
+$shadow-glow-cyan: 0 0 10px rgba(0, 255, 255, 0.5);
+$shadow-glow-pink: 0 0 10px rgba(255, 0, 255, 0.5);
+$shadow-glow-blue: 0 0 15px rgba(0, 255, 255, 0.8);
+
+$transition-smooth: all 0.3s ease-in-out;
+
+// 4. LAYOUT & BREAKPOINTS
+// -------------------------------------------------------------------
+$container-width: 1200px;
+$breakpoint-mobile: 768px;

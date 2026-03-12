@@ -1,0 +1,6 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+
+body {
+  background-color: $color-bg-main;
+}

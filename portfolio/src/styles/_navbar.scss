@@ -1,0 +1,31 @@
+@import "./variables";
+@import "./mixins";
+
+.navbar {
+  background-color: $color-bg-card;
+  h1 {
+    font-family: $font-main;
+    color: $color-text-main;
+    font-size: $font-size-h1;
+    text-shadow: $shadow-glow-pink;
+  }
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    li {
+      display: none;
+      font-family: $font-main;
+      color: $color-text-main;
+      font-size: $font-size-base;
+      text-shadow: $shadow-glow-cyan;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: $color-accent-cyan;
+        text-shadow: $shadow-glow-blue;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
