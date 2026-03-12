@@ -1,6 +1,49 @@
 @use "./styles/variables" as *;
 @use "./styles/mixins" as *;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-main;
+  font-size: $font-size-base;
+  color: $color-text-main;
+}
+
 body {
   background-color: $color-bg-main;
+  padding: 0;
+  margin: 0;
+  font-family: $font-main;
+  color: $color-text-main;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-main;
+  color: $color-text-main;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+code,
+pre {
+  font-family: $font-code;
+}
+
+.logo {
+  font-family: $font-logo;
 }

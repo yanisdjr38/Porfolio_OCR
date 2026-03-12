@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Banner from "./components/Banner";
 import NavBar from "./components/Navbar";
 import Home from "./pages/Home";
 
@@ -7,6 +8,7 @@ function App() {
     <Router>
       <header>
         <NavBar />
+        <Banner />
       </header>
       <main>
         <Routes>

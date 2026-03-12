@@ -3,7 +3,7 @@ import "../styles/_navbar.scss";
 function Navbar() {
   return (
     <nav className="navbar">
-      <h1>YD</h1>
+      <h1 alt="Yanis Djouahra">YD </h1>
       <ul>
         <li>
           <a href="#home">Acceuil</a>
