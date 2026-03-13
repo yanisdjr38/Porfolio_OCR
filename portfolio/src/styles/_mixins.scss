@@ -50,3 +50,11 @@
     }
   }
 }
+
+// Neon glow effect for interactive elements
+@mixin neon-glow($color) {
+  text-shadow:
+    0 0 5px rgba($color, 0.7),
+    0 0 10px rgba($color, 0.5),
+    0 0 20px rgba($color, 0.3);
+}

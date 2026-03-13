@@ -15,12 +15,16 @@
     font-family: $font-logo;
     color: $color-text-main;
     font-size: $font-size-h1;
-    text-shadow: $shadow-glow-pink;
+    text-shadow: $shadow-glow-cyan;
   }
   ul {
     display: flex;
     gap: 2rem;
     list-style: none;
+    @include respond-to(mobile) {
+      gap: 1rem;
+      margin-top: 1rem;
+    }
     li {
       @include flex-center;
       font-family: $font-main;
@@ -29,6 +33,10 @@
       text-shadow: $shadow-glow-cyan;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+      @include respond-to(mobile) {
+        padding: 0.5rem 0;
+        font-size: $font-size-link-mobile;
+      }
       a {
         text-decoration: none;
         color: inherit;
