@@ -21,6 +21,13 @@ body {
   color: $color-text-main;
 }
 
+main {
+  padding: 50px;
+  @include respond-to(mobile) {
+    padding: 20px;
+  }
+}
+
 h1,
 h2,
 h3,

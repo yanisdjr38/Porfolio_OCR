@@ -3,7 +3,6 @@
 
 .apropos {
   color: $color-text-main;
-  padding: 50px 100px;
   text-align: start;
   font-family: $font-main;
   @include respond-to(mobile) {
