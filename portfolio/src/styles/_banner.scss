@@ -18,8 +18,18 @@
     font-family: $font-main;
     color: $color-text-main;
     font-size: $font-size-base;
-    @include neon-glow($color-accent-gray);
+    @include neon-glow($color-accent-pink);
     max-width: 600px;
     margin-bottom: 2rem;
+  }
+  .banner-description {
+    max-width: 800px;
+    margin: 0 auto;
+    p {
+      font-family: $font-main;
+      color: $color-text-main;
+      font-size: $font-size-body;
+      @include neon-glow($color-accent-gray);
+    }
   }
 }

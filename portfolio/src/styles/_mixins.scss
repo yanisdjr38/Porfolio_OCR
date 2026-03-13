@@ -51,9 +51,32 @@
   }
 }
 
+//grid mixins
+@mixin grid-columns($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: 1rem;
+}
+
 // Neon glow effect for interactive elements
 @mixin neon-glow($color) {
   text-shadow:
+    0 0 5px rgba($color, 0.7),
+    0 0 10px rgba($color, 0.5),
+    0 0 20px rgba($color, 0.3);
+}
+
+//neon box shadow
+@mixin neon-box-shadow($color) {
+  box-shadow:
+    0 0 5px rgba($color, 0.7),
+    0 0 10px rgba($color, 0.5),
+    0 0 20px rgba($color, 0.3);
+}
+
+//webkit box shadow
+@mixin neon-webkit-box-shadow($color) {
+  -webkit-box-shadow:
     0 0 5px rgba($color, 0.7),
     0 0 10px rgba($color, 0.5),
     0 0 20px rgba($color, 0.3);

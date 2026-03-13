@@ -1,4 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom";
+import Apropos from "./components/Apropos";
 import Banner from "./components/Banner";
 import NavBar from "./components/Navbar";
 
@@ -9,7 +10,10 @@ function App() {
         <NavBar />
         <Banner />
       </header>
-      <main></main>
+      <main>
+        {/* Sections for About, Skills, Projects, Experience, Contact */}
+        <Apropos />
+      </main>
       <footer></footer>
     </Router>
   );
