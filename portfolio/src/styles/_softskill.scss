@@ -59,6 +59,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    @include respond-to(mobile) {
+      gap: 10px;
+    }
+    @include respond-to(desktop) {
+      justify-content: space-between;
+      @include grid-template-columns(2);
+    }
 
     .softskill-item {
       list-style: none;
