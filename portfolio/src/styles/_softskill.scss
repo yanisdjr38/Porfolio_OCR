@@ -1,0 +1,83 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.softskill-section {
+  color: $color-text-main;
+  background-color: $color-bg-card;
+  @include neon-box-shadow($color-accent-pink);
+  border-radius: 5px;
+  margin: 50px auto;
+  text-align: start;
+  font-family: $font-main;
+  padding: 30px 20px;
+  h2 {
+    font-size: $font-size-h2;
+    margin-bottom: 20px;
+    color: $color-text-main;
+    @include neon-glow($color-accent-cyan);
+  }
+  h3 {
+    font-size: $font-size-h3;
+    margin-bottom: 20px;
+    color: $color-text-main;
+    @include neon-glow($color-accent-pink);
+  }
+  @include respond-to(mobile) {
+    padding: 30px 20px;
+  }
+  .softskill-description {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: $color-bg-card;
+    @include neon-box-shadow($color-accent-cyan);
+    border-radius: 5px;
+    padding: 2.5rem;
+    transition: 0.4s ease;
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: $font-size-h3;
+      color: $color-text-main;
+      @include neon-glow($color-accent-cyan);
+    }
+
+    p {
+      font-family: $font-main;
+      color: $color-text-main;
+      font-size: $font-size-body;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      @include neon-glow($color-accent-gray);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .softskill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .softskill-item {
+      list-style: none;
+      background-color: $color-bg-main;
+      @include neon-box-shadow($color-accent-gray);
+      width: 100%;
+      max-width: 350px;
+      height: 80px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-size: $font-size-body;
+      color: $color-text-main;
+      font-family: $font-main;
+      @include neon-glow($color-accent-gray);
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-glow-pink;
+      }
+    }
+  }
+}
