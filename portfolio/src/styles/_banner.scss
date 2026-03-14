@@ -23,6 +23,41 @@
     max-width: 600px;
     margin-bottom: 2rem;
   }
+
+  .social-icons {
+    @include flex-row;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+    list-style: none;
+    padding: 0;
+
+    .icon-items {
+      font-size: $font-size-h2;
+      list-style: none;
+      transition: all 0.3s ease-in-out;
+      @include neon-glow($color-accent-cyan);
+      @include neon-filter-glow($color-accent-gray);
+
+      a {
+        color: $color-text-main;
+        text-decoration: none;
+        @include flex-center;
+        display: inline-flex;
+        padding: 0.5rem;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+        @include neon-filter-glow($color-accent-cyan);
+
+        a {
+          color: $color-text-main;
+        }
+      }
+    }
+  }
+
   .banner-description {
     max-width: 800px;
     margin: 0 auto;
