@@ -16,10 +16,11 @@ $color-accent-gray: #888888; // Gray Glow (Texte secondaire, hover)
 
 // 2. TYPOGRAPHIE
 // -------------------------------------------------------------------
-$font-main: "Montserrat", "Poppins", sans-serif; // Headers et UI [cite: 121]
-$font-code:
-  "JetBrains Mono", "Fira Code", monospace; // Tech-oriented [cite: 125]
-$font-logo: "Michroma", sans-serif; // Logo et titres spéciaux [cite: 128]
+$font-main:
+  "Space Mono", "Audiowide", monospace; // Futuriste et rétro [Synthwave vibes]
+$font-code: "IBM Plex Mono", "JetBrains Mono", monospace; // Tech-oriented
+$font-secondary: "Jost", "Poppins", sans-serif; // Moderne et lisible
+$font-logo: "Orbitron", "Michroma", sans-serif; // Logo 80s futuriste
 
 // Tailles (Scalable)
 $font-size-base: 16px;

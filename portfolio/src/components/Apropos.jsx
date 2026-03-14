@@ -34,22 +34,16 @@ function Apropos() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h2 variants={itemVariants}>À propos de moi</motion.h2>
+          <motion.h3 variants={itemVariants}>
+            Un profil hybride au service de la performance web{" "}
+          </motion.h3>
           <div className="apropos-description">
-            <motion.h3 variants={itemVariants}>
-              Un profil hybride au service de la performance web{" "}
-            </motion.h3>
             <motion.p variants={itemVariants}>
-              Mon parcours n’est pas linéaire, et c’est là ma plus grande force.
-              Issu de la communication et du développement commercial, j'ai
-              passé plusieurs années à analyser les besoins des clients et à
-              élaborer des stratégies pour y répondre. Cette expérience m'a
-              appris qu'une solution n'a de valeur que si elle est utile,
-              accessible et parfaitement alignée sur les objectifs de
-              l'utilisateur. Aujourd'hui, j'ai choisi de mettre cette vision
-              stratégique au service du développement web. Formé par
-              OpenClassrooms, je me suis spécialisé dans l'écosystème React pour
-              transformer des concepts complexes en interfaces fluides et
-              robustes.
+              Issu d'une formation en communication et en développement
+              commercial, j'ai acquis une compréhension profonde des besoins
+              utilisateur. J'applique cette vision stratégique au développement
+              React, en créant des interfaces intuitives et performantes
+              centrées sur l'expérience utilisateur.
             </motion.p>
           </div>
 

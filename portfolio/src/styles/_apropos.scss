@@ -8,7 +8,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
 
   @include respond-to(mobile) {
     padding: 30px 20px;
@@ -32,7 +32,17 @@
       width: 100%;
     }
   }
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: $font-size-h3;
+    color: $color-text-main;
+    @include neon-glow($color-accent-cyan);
 
+    &:first-child {
+      margin-top: 0;
+    }
+  }
   .apropos-description {
     flex: 1;
     background-color: $color-bg-card;
@@ -40,18 +50,6 @@
     border-radius: 5px;
     padding: 2.5rem;
     transition: 0.4s ease;
-
-    h3 {
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      font-size: $font-size-h3;
-      color: $color-text-main;
-      @include neon-glow($color-accent-cyan);
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
 
     p {
       font-family: $font-main;
