@@ -1,0 +1,86 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.stack {
+  color: $color-text-main;
+  margin: 50px auto;
+  text-align: center;
+  font-family: $font-main;
+  padding: 30px 20px;
+
+  h2 {
+    font-size: $font-size-h2;
+    margin-bottom: 30px;
+    color: $color-text-main;
+    @include neon-glow($color-accent-cyan);
+  }
+
+  @include respond-to(mobile) {
+    padding: 20px 10px;
+  }
+
+  .stack-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include respond-to(mobile) {
+      gap: 15px;
+    }
+
+    @include respond-to(desktop) {
+      justify-content: center;
+    }
+
+    .stack-item {
+      @include neon-card($color-accent-cyan);
+      width: 120px;
+      height: 120px;
+      padding: 15px;
+      font-size: $font-size-body;
+      color: $color-text-main;
+      font-family: $font-main;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+
+      svg {
+        font-size: 2.5rem;
+        transition: all 0.3s ease-in-out;
+      }
+
+      span {
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      &:hover svg {
+        transform: scale(1.2);
+      }
+
+      .icon-fallback {
+        width: 50px;
+        height: 50px;
+        @include flex-center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border: 2px solid currentColor;
+        border-radius: 50%;
+      }
+
+      @include respond-to(mobile) {
+        width: 100px;
+        height: 100px;
+
+        svg {
+          font-size: 2rem;
+        }
+
+        span {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "softskills": [
+    "Curiosité et apprentissage continu",
+    "Communication et écoute active",
+    "Esprit d'équipe et collaboration",
+    "Résolution de problèmes et créativité",
+    "Adaptabilité et flexibilité"
+  ],
+  "stack": {
+    "item": [
+      {
+        "name": "HTML5",
+        "icon": "html5",
+        "category": "Frontend"
+      },
+      {
+        "name": "CSS3",
+        "icon": "css3",
+        "category": "Frontend"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "js",
+        "category": "Frontend"
+      },
+      {
+        "name": "React",
+        "icon": "react",
+        "category": "Frontend"
+      },
+      {
+        "name": "Node.js",
+        "icon": "node-js",
+        "category": "Backend"
+      },
+      {
+        "name": "Express",
+        "icon": "express",
+        "category": "Backend"
+      },
+      {
+        "name": "Mangodb",
+        "icon": "mongodb",
+        "category": "Database"
+      },
+      {
+        "name": "Supabase",
+        "icon": "supabase",
+        "category": "Database"
+      },
+      {
+        "name": "Git",
+        "icon": "git",
+        "category": "Tools"
+      },
+      {
+        "name": "VS Code",
+        "icon": "visual-studio-code",
+        "category": "Tools"
+      },
+      {
+        "name": "Linux",
+        "icon": "linux",
+        "category": "Tools"
+      },
+      {
+        "name": "Figma",
+        "icon": "figma",
+        "category": "Design"
+      },
+      {
+        "name": "Notion",
+        "icon": "notion",
+        "category": "Productivity"
+      }
+    ]
+  }
+}

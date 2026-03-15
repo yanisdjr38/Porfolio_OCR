@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import Apropos from "./components/Apropos";
 import Banner from "./components/Banner";
+import Compétence from "./components/Compétence";
 import NavBar from "./components/Navbar";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <main>
         {/* Sections for About, Skills, Projects, Experience, Contact */}
         <Apropos />
+        <Compétence />
       </main>
       <footer></footer>
     </Router>

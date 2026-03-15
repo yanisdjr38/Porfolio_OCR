@@ -21,17 +21,6 @@
     padding: 50px;
   }
 
-  h2 {
-    font-size: $font-size-h2;
-    margin-bottom: 20px;
-    color: $color-text-main;
-    @include neon-glow($color-accent-pink);
-    width: 100%;
-
-    @include respond-to(desktop) {
-      width: 100%;
-    }
-  }
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
