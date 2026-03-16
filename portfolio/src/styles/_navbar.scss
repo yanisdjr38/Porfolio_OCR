@@ -80,6 +80,7 @@
       &.open {
         max-height: 500px;
         padding: 1rem 2rem;
+        z-index: 10;
       }
     }
     li {

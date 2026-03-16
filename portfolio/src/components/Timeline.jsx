@@ -1,4 +1,4 @@
-import "styles/_timeline.scss";
+import "../styles/_timeline.scss";
 
 function Timeline() {
   return (

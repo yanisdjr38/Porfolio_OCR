@@ -1,0 +1,19 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.card {
+  background-color: $color-bg-card;
+  color: $color-text-main;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: $shadow-glow-gray;
+  transition: $transition-smooth;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &:hover {
+    box-shadow: $shadow-glow-cyan, $shadow-glow-pink, $shadow-glow-blue;
+    transform: translateY(-5px);
+  }
+}

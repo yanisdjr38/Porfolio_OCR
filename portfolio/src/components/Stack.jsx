@@ -22,7 +22,7 @@ function Stack() {
     "visual-studio-code": FabrIcons.faVs,
     linux: FabrIcons.faLinux,
     figma: FabrIcons.faFigma,
-    notion: FabrIcons.abjsSquare,
+    notion: FabrIcons.faNotion,
   };
 
   // Récupérer les catégories uniques

@@ -78,24 +78,28 @@
       {
         "name": "Kasa",
         "description": "Application de location d'appartements.",
+        "image": "/src/assets/kasa.jpg",
         "stack": ["React", "Sass", "React Router"],
         "link": ""
       },
       {
         "name": "Mon VieuxGrimoire",
         "description": "Application de gestion de livres.",
-        "stack": ["React", "Sass", "React Router"],
+        "image": "/src/assets/vieuxgrimoire.jpg",
+        "stack": ["React", "Mangodb", "Express"],
         "link": ""
       },
       {
         "name": "Effetmer",
         "description": "Application de suivi de progression pour le JJB",
+        "image": "/src/assets/effetmer.jpg",
         "stack": ["React", "Sass", "React Router"],
         "link": ""
       },
       {
         "name": "CardTrackr",
         "description": "Application de suivi de collection de cartes à jouer",
+        "image": "/src/assets/cardtrackr.jpg",
         "stack": ["React", "Sass", "React Router"],
         "link": ""
       }

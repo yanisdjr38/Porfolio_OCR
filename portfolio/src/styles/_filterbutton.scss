@@ -1,0 +1,62 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.filter-dropdown-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+
+  @include respond-to(mobile) {
+    margin-bottom: 20px;
+  }
+}
+
+.filter-dropdown {
+  --glow-color: #00ffff;
+  --glow-spread-color: rgba(0, 255, 255, 0.3);
+  --dropdown-color: rgba(26, 26, 26, 0.95);
+
+  padding: 12px 20px;
+  color: $color-text-main;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: $font-main;
+  background-color: var(--dropdown-color);
+  border: 2px solid $color-text-main;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  min-width: 180px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231affff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+
+  &:hover {
+    border-color: var(--glow-color);
+    box-shadow:
+      0 0 0.6em var(--glow-color),
+      inset 0 0 0.3em rgba(0, 255, 255, 0.1);
+  }
+
+  &:focus {
+    border-color: var(--glow-color);
+    box-shadow: 0 0 1em var(--glow-color);
+  }
+
+  option {
+    background-color: rgba(26, 26, 26, 0.95);
+    color: $color-text-main;
+    padding: 10px;
+  }
+
+  @include respond-to(mobile) {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    min-width: 160px;
+    padding-right: 35px;
+  }
+}
