@@ -73,6 +73,32 @@
         "icon": "notion",
         "category": "Productivity"
       }
+    ],
+    "Projets": [
+      {
+        "name": "Kasa",
+        "description": "Application de location d'appartements.",
+        "stack": ["React", "Sass", "React Router"],
+        "link": ""
+      },
+      {
+        "name": "Mon VieuxGrimoire",
+        "description": "Application de gestion de livres.",
+        "stack": ["React", "Sass", "React Router"],
+        "link": ""
+      },
+      {
+        "name": "Effetmer",
+        "description": "Application de suivi de progression pour le JJB",
+        "stack": ["React", "Sass", "React Router"],
+        "link": ""
+      },
+      {
+        "name": "CardTrackr",
+        "description": "Application de suivi de collection de cartes à jouer",
+        "stack": ["React", "Sass", "React Router"],
+        "link": ""
+      }
     ]
   }
 }

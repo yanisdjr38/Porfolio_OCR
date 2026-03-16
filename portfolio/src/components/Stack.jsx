@@ -4,7 +4,6 @@ import { useState } from "react";
 import data from "../backend/data.json";
 import "../styles/_filterbutton.scss";
 import "../styles/_stack.scss";
-import FilterButton from "./FilterButto,.jsx";
 
 function Stack() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -42,16 +41,19 @@ function Stack() {
     <div className="stack">
       <h2>Stack</h2>
 
-      {/* Filter Buttons */}
-      <div className="filter-buttons">
-        {categories.map((category) => (
-          <FilterButton
-            key={category}
-            category={category}
-            activeCategory={activeCategory}
-            onClick={setActiveCategory}
-          />
-        ))}
+      {/* Filter Dropdown */}
+      <div className="filter-dropdown-container">
+        <select
+          className="filter-dropdown"
+          value={activeCategory}
+          onChange={(e) => setActiveCategory(e.target.value)}
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
       </div>
 
       {/* Stack Items */}

@@ -1,4 +1,3 @@
-import FilterButton from "./FilterButto,";
 import Stack from "./Stack";
 
 function Compétence() {

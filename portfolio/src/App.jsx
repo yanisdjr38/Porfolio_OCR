@@ -3,6 +3,7 @@ import Apropos from "./components/Apropos";
 import Banner from "./components/Banner";
 import Compétence from "./components/Compétence";
 import NavBar from "./components/Navbar";
+import Projet from "./components/Projet";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         {/* Sections for About, Skills, Projects, Experience, Contact */}
         <Apropos />
         <Compétence />
+        <Projet />
       </main>
       <footer></footer>
     </Router>
