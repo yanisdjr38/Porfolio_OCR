@@ -80,28 +80,28 @@
         "description": "Application de location d'appartements.",
         "image": "/src/assets/kasa.jpg",
         "stack": ["React", "Sass", "React Router"],
-        "link": ""
+        "link": "https://github.com/yanisdjr38/kasa"
       },
       {
         "name": "Mon VieuxGrimoire",
         "description": "Application de gestion de livres.",
         "image": "/src/assets/vieuxgrimoire.jpg",
         "stack": ["React", "Mangodb", "Express"],
-        "link": ""
+        "link": "https://github.com/yanisdjr38/MonVieuxGrimoire"
       },
       {
         "name": "Effetmer",
         "description": "Application de suivi de progression pour le JJB",
         "image": "/src/assets/effetmer.jpg",
         "stack": ["React", "Sass", "React Router"],
-        "link": ""
+        "link": "https://yanisdjr38.github.io/effetmer-bjj/"
       },
       {
         "name": "CardTrackr",
         "description": "Application de suivi de collection de cartes à jouer",
         "image": "/src/assets/cardtrackr.jpg",
         "stack": ["React", "Sass", "React Router"],
-        "link": ""
+        "link": "https://github.com/yanisdjr38/pokecard_app"
       }
     ]
   }

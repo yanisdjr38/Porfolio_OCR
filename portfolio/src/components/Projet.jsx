@@ -14,6 +14,7 @@ function Projet() {
             description={project.description}
             image={project.image}
             link={project.link}
+            className="projet-card"
           />
         ))}
       </div>
