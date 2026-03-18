@@ -103,6 +103,52 @@
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/pokecard_app"
       }
+    ],
+    "Parcours": [
+      {
+        "name": "BTS Communication",
+        "description": "Diplôme axé sur les stratégies de communication et les médias.",
+        "Niveau": "Bac +2",
+        "Lieu": "Lyçée Ella Fitzgerald , Vienne",
+        "image": "",
+        "stack": [
+          "Stratégies de communication",
+          "Médias et publicité",
+          "Gestion de projet"
+        ],
+        "link": "https://ella-fitzgerald.ent.auvergnerhonealpes.fr/formations-et-dispositifs/superieures/"
+      },
+      {
+        "name": "Titre de Responsable de Développement Commerciale France et Internationale ",
+        "description": "Diplome axé sur les stratégies de développement commercial et les techniques de vente.",
+        "Niveau": "Bac +3",
+        "Lieu": "ECEMA , Lyon 7",
+        "image": "",
+        "stack": [
+          "Gestion de projet",
+          "Techniques de vente",
+          "Stratégies de développement commercial",
+          "Management"
+        ],
+        "link": "https://www.ecema.fr/formations/bachelor-3/bachelor-3-responsable-developpement-affaires/"
+      },
+      {
+        "name": "Developpeur Web et Web Mobile",
+        "description": "Formation intensive axée sur les compétences de développement web et mobile.",
+        "Niveau": "Bac +2",
+        "Lieu": "OpenClassrooms , En ligne",
+        "image": "",
+        "stack": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
+          "Node.js",
+          "Express",
+          "MongoDB"
+        ],
+        "link": "https://openclassrooms.com/fr/paths/899-developpeur-web"
+      }
     ]
   }
 }

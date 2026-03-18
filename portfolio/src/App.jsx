@@ -3,6 +3,7 @@ import Apropos from "./components/Apropos";
 import Banner from "./components/Banner";
 import Compétence from "./components/Compétence";
 import NavBar from "./components/Navbar";
+import Parcour from "./components/Parcour";
 import Projet from "./components/Projet";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Apropos />
         <Compétence />
         <Projet />
+        <Parcour />
       </main>
       <footer></footer>
     </Router>
