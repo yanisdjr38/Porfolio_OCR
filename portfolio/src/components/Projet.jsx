@@ -13,6 +13,7 @@ function Projet() {
             title={project.name}
             description={project.description}
             image={project.image}
+            stack={project.stack}
             link={project.link}
             className="projet-card"
           />
