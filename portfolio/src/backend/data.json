@@ -106,10 +106,10 @@
     ],
     "Parcours": [
       {
-        "name": "BTS Communication",
+        "name": "BTS Communication - 2023",
         "description": "Diplôme axé sur les stratégies de communication et les médias.",
-        "Niveau": "Bac +2",
-        "Lieu": "Lyçée Ella Fitzgerald , Vienne",
+        "niveau": "Bac +2",
+        "lieu": "Lyçée Ella Fitzgerald , Vienne",
         "image": "",
         "stack": [
           "Stratégies de communication",
@@ -119,10 +119,10 @@
         "link": "https://ella-fitzgerald.ent.auvergnerhonealpes.fr/formations-et-dispositifs/superieures/"
       },
       {
-        "name": "Titre de Responsable de Développement Commerciale France et Internationale ",
+        "name": "Titre de Responsable de Développement Commerciale France et Internationale - 2024",
         "description": "Diplome axé sur les stratégies de développement commercial et les techniques de vente.",
-        "Niveau": "Bac +3",
-        "Lieu": "ECEMA , Lyon 7",
+        "niveau": "Bac +3",
+        "lieu": "ECEMA , Lyon 7",
         "image": "",
         "stack": [
           "Gestion de projet",
@@ -133,10 +133,10 @@
         "link": "https://www.ecema.fr/formations/bachelor-3/bachelor-3-responsable-developpement-affaires/"
       },
       {
-        "name": "Developpeur Web et Web Mobile",
+        "name": "Developpeur Web et Web Mobile - 2026",
         "description": "Formation intensive axée sur les compétences de développement web et mobile.",
-        "Niveau": "Bac +2",
-        "Lieu": "OpenClassrooms , En ligne",
+        "niveau": "Bac +2",
+        "lieu": "OpenClassrooms , En ligne",
         "image": "",
         "stack": [
           "HTML",

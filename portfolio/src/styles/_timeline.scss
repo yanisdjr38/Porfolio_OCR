@@ -2,22 +2,24 @@
 @use "./mixins" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
-.design-section {
+
+.parcour {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 10vh;
-  padding: 100px 0;
-  font-family: Jost;
-}
-.design {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 80px 20px;
 }
 
-.timeline {
+.parcour-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.timeline-item {
   width: 80%;
   height: auto;
   max-width: 800px;
@@ -27,28 +29,98 @@
 }
 
 .timeline-content {
-  padding: 20px;
-  background: $color-bg-card;
-  @include neon-box-shadow($color-accent-cyan);
-  border-radius: 5px;
-  color: $color-text-main;
   padding: 1.75rem;
+  background: $color-bg-main;
+  @include neon-box-shadow($color-accent-cyan);
+  border-radius: 6px;
+  color: $color-text-main;
   transition: 0.4s ease;
   overflow-wrap: break-word !important;
-  margin: 1rem;
+  margin: 1rem auto;
   margin-bottom: 20px;
-  border-radius: 6px;
 }
 
 .timeline-component {
-  margin: 0px 20px 20px 20px;
+  margin: 0;
 }
 
-@media screen and (min-width: 768px) {
-  .timeline {
+.timeline-information {
+  @include flex-column;
+  gap: 8px;
+  align-items: start;
+
+  .timeline-title {
+    font-size: $font-size-h3;
+    color: $color-text-main;
+    text-shadow: $shadow-glow-blue;
+    margin: 0;
+  }
+
+  .timeline-description,
+  .timeline-niveau,
+  .timeline-lieu {
+    font-family: $font-main;
+    color: $color-text-main;
+    margin: 0;
+  }
+
+  .timeline-niveau {
+    text-shadow: $shadow-glow-pink;
+  }
+
+  .timeline-lieu {
+    text-shadow: $shadow-glow-cyan;
+  }
+  .timeline-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+
+    .timeline-items {
+      font-family: $font-code;
+      font-size: 12px;
+      color: $color-text-main;
+      text-shadow: $shadow-glow-cyan;
+      border: 2px solid $color-accent-cyan;
+      background-color: $color-bg-main;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      }
+    }
+  }
+
+  .timeline-link {
+    margin-top: 12px;
+
+    a {
+      color: $color-text-main;
+      font-family: $font-secondary;
+      text-shadow: $shadow-glow-gray;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        text-shadow: $shadow-glow-cyan;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media screen and ($breakpoint-mobile) {
+  .timeline-item {
     display: grid;
     grid-template-columns: 1fr 3px 1fr;
   }
+
   .timeline-middle {
     position: relative;
     background-image: $gradient-neon;
@@ -56,9 +128,7 @@
     height: 100%;
     @include neon-box-shadow($color-accent-pink);
   }
-  .main-middle {
-    opacity: 0;
-  }
+
   .timeline-circle {
     position: absolute;
     top: 0;
@@ -67,7 +137,6 @@
     height: 15px;
     border-radius: 50%;
     background-image: $gradient-neon;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     @include neon-box-shadow($color-accent-pink);
   }

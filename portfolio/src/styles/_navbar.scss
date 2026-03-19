@@ -2,7 +2,7 @@
 @use "./mixins" as *;
 
 .navbar {
-  background-color: $color-bg-card;
+  background-color: $color-bg-secondary;
   display: flex;
   @include flex-space-between;
   width: 100%;
@@ -63,13 +63,14 @@
     display: flex;
     gap: 2rem;
     list-style: none;
+    background-color: $color-bg-secondary;
     @include respond-to(mobile) {
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
       flex-direction: column;
-      background-color: $color-bg-card;
+      background-color: $color-bg-secondary;
       max-height: 0;
       overflow: hidden;
       gap: 0;

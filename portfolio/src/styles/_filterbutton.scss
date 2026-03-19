@@ -34,6 +34,7 @@
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 40px;
+  background-color: $color-bg-main;
 
   &:hover {
     border-color: var(--glow-color);

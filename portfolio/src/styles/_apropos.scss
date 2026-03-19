@@ -34,7 +34,7 @@
   }
   .apropos-description {
     flex: 1;
-    background-color: $color-bg-card;
+    background-color: $color-bg-main;
     @include neon-box-shadow($color-accent-cyan);
     border-radius: 5px;
     padding: 2.5rem;

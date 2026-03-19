@@ -1,41 +1,32 @@
 import "../styles/_timeline.scss";
 
-function Timeline() {
+function Timeline({ name, description, niveau, lieu, stack, link }) {
   return (
-    <section class="design-section">
-      <div class="timeline">
-        <div class="timeline-empty"></div>
-
-        <div class="timeline-middle">
-          <div class="timeline-circle"></div>
-        </div>
-        <div class="timeline-component timeline-content">
-          <h3>Communication</h3>
-          <p>BTS Communication </p>
-          <p>Lycée Ella Fitzgerald - Vienne </p>
-        </div>
-        <div class="timeline-component timeline-content">
-          <h3>Développement Commerciale</h3>
-          <p>Bachelor </p>
-          <p>ECEMA - Lyon</p>
-        </div>
-        <div class="timeline-middle">
-          <div class="timeline-circle"></div>
-        </div>
-        <div class="timeline-empty"></div>
-
-        <div class="timeline-empty"></div>
-
-        <div class="timeline-middle">
-          <div class="timeline-circle"></div>
-        </div>
-        <div class=" timeline-component timeline-content">
-          <h3>Développement Web</h3>
-          <p>Titre professionnel</p>
-          <p>OpenClassrooms</p>
+    <div className="timeline-item">
+      <div className="timeline-middle">
+        <div className="timeline-circle"></div>
+      </div>
+      <div className="timeline-component timeline-content">
+        <div className="timeline-information">
+          <h3 className="timeline-title">{name}</h3>
+          <p className="timeline-description">{description}</p>
+          <p className="timeline-niveau">{niveau}</p>
+          <p className="timeline-lieu">{lieu}</p>
+          <ul className="timeline-stack">
+            {stack.map((skill, index) => (
+              <li className="timeline-items" key={index}>
+                {skill}
+              </li>
+            ))}
+          </ul>
+          <div className="timeline-link">
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              Voir le diplome
+            </a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
