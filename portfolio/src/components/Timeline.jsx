@@ -10,7 +10,7 @@ function Timeline({ name, description, niveau, lieu, stack, link }) {
         <div className="timeline-information">
           <h3 className="timeline-title">{name}</h3>
           <p className="timeline-description">{description}</p>
-          <p className="timeline-niveau">{niveau}</p>
+          <h3 className="timeline-niveau">{niveau}</h3>
           <p className="timeline-lieu">{lieu}</p>
           <ul className="timeline-stack">
             {stack.map((skill, index) => (
