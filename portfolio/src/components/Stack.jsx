@@ -1,7 +1,7 @@
 import * as FabrIcons from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import data from "../backend/data.json";
+import data from "../../backend/data.json";
 import "../styles/_filterbutton.scss";
 import "../styles/_stack.scss";
 

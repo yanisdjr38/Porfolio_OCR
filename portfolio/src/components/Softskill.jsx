@@ -1,4 +1,4 @@
-import data from "../backend/data.json";
+import data from "../../backend/data.json";
 import "../styles/_softskill.scss";
 function Softskill() {
   return (

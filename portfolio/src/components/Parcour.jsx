@@ -1,4 +1,4 @@
-import data from "../backend/data.json";
+import data from "../../backend/data.json";
 import Timeline from "./Timeline";
 
 function Parcour() {

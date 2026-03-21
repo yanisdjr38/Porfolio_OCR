@@ -11,6 +11,7 @@ $color-text-muted: #a0a0a0; // Texte secondaire / placeholders
 
 // Accents Néons (10%)
 $color-accent-cyan: #00ffff; // Cyber Cyan (Action, liens)
+$color-accent-blue: #00bfff; // Bleu électrique (Hover, titres secondaires)
 $color-accent-pink: #ff00ff; // Hot Pink (Titres, focus)
 $color-accent-gray: #888888; // Gray Glow (Texte secondaire, hover)
 
@@ -35,7 +36,7 @@ $font-size-body: 1rem;
 // -------------------------------------------------------------------
 $shadow-glow-cyan: 0 0 10px rgba(0, 255, 255, 0.5);
 $shadow-glow-pink: 0 0 10px rgba(255, 0, 255, 0.5);
-$shadow-glow-blue: 0 0 15px rgba(0, 255, 255, 0.8);
+$shadow-glow-blue: 0 0 15px rgba(0, 191, 255, 0.8);
 $shadow-glow-gray: 0 0 10px rgba(136, 136, 136, 0.5);
 
 $transition-smooth: all 0.3s ease-in-out;
