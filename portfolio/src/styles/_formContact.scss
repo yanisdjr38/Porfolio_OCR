@@ -1,5 +1,5 @@
-@use "./_variables.scss";
-@use "./_mixins.scss";
+@use "./variables" as *;
+@use "./mixins" as *;
 
 /* --- Root Variables for the component --- */
 .glitch-form-wrapper {

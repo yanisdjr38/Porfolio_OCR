@@ -4,7 +4,6 @@ function FormContact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // À implémenter avec votre mentor
-    console.log("Formulaire prêt à être intégré");
   };
 
   return (

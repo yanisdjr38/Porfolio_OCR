@@ -9,6 +9,8 @@
   gap: 40px;
   min-height: 100vh;
   padding: 80px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .parcour-container {
@@ -20,12 +22,14 @@
 }
 
 .timeline-item {
-  width: 80%;
+  width: 100%;
   height: auto;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .timeline-content {
@@ -35,9 +39,12 @@
   border-radius: 6px;
   color: $color-text-main;
   transition: 0.4s ease;
-  overflow-wrap: break-word !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   margin: 1rem auto;
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .timeline-component {
@@ -115,29 +122,37 @@
   }
 }
 
-@media screen and ($breakpoint-mobile) {
+.timeline-middle {
+  position: relative;
+  background-image: $gradient-neon;
+  width: 3px;
+  height: 100%;
+  @include neon-box-shadow($color-accent-pink);
+}
+
+.timeline-circle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-image: $gradient-neon;
+  transform: translateX(-50%);
+  @include neon-box-shadow($color-accent-pink);
+}
+
+@include respond-to(mobile) {
   .timeline-item {
-    display: grid;
-    grid-template-columns: 1fr 3px 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .timeline-middle {
-    position: relative;
-    background-image: $gradient-neon;
-    width: 3px;
-    height: 100%;
-    @include neon-box-shadow($color-accent-pink);
+    display: none;
   }
 
   .timeline-circle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-image: $gradient-neon;
-    transform: translateX(-50%);
-    @include neon-box-shadow($color-accent-pink);
+    display: none;
   }
 }

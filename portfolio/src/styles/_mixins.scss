@@ -1,6 +1,6 @@
 @use "./variables" as *;
 
-//flexbox mixinis
+//flexbox mixins
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -60,12 +60,6 @@
 
 //grid mixins
 @mixin grid-columns($columns) {
-  display: grid;
-  grid-template-columns: repeat($columns, 1fr);
-  gap: 1rem;
-}
-
-@mixin grid-template-columns($columns) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   gap: 1rem;
@@ -146,4 +140,9 @@
       left: 100%;
     }
   }
+}
+
+//Transition mixin
+@mixin transition($property, $duration: 0.3s) {
+  transition: $property $duration ease-in-out;
 }

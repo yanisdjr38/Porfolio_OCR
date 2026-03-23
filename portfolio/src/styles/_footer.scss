@@ -1,0 +1,28 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.footer {
+  background-color: $color-bg-secondary;
+  color: $color-text-muted;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: $font-main;
+  font-size: $font-size-small;
+
+  .footer-links {
+    @include flex-center;
+    margin-top: 10px;
+    list-style: none;
+    a {
+      color: $color-text-muted;
+      margin: 0 10px;
+      text-decoration: none;
+      @include transition(color, 0.3s);
+      &:hover {
+        color: $color-accent-cyan;
+      }
+    }
+  }
+}
