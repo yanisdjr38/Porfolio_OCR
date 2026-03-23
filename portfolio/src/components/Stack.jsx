@@ -1,5 +1,6 @@
 import * as FabrIcons from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import data from "../../backend/data.json";
 import "../styles/_filterbutton.scss";
@@ -37,6 +38,25 @@ function Stack() {
       ? data.stack.item
       : data.stack.item.filter((item) => item.category === activeCategory);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4 },
+    },
+  };
+
   return (
     <div className="stack">
       <h3>Stack</h3>
@@ -57,18 +77,28 @@ function Stack() {
       </div>
 
       {/* Stack Items */}
-      <div className="stack-items">
+      <motion.div
+        className="stack-items"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        key={activeCategory}
+      >
         {filteredSkills.map((skill, index) => (
-          <div key={index} className="stack-item">
+          <motion.div
+            key={index}
+            className="stack-item"
+            variants={itemVariants}
+          >
             {iconMap[skill.icon] ? (
               <FontAwesomeIcon icon={iconMap[skill.icon]} />
             ) : (
               <span className="icon-fallback">{skill.name[0]}</span>
             )}
             <span>{skill.name}</span>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

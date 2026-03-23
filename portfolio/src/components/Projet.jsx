@@ -1,24 +1,59 @@
+import { motion } from "framer-motion";
 import data from "../../backend/data.json";
 import "../styles/_projet.scss";
 import Card from "./Card";
 
 function Projet() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
     <div className="projet">
-      <h2>Mes projets</h2>
-      <div className="projet-container">
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Mes projets
+      </motion.h2>
+      <motion.div
+        className="projet-container"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {data.stack.Projets.map((project, index) => (
-          <Card
-            key={index}
-            title={project.name}
-            description={project.description}
-            image={project.image}
-            stack={project.stack}
-            link={project.link}
-            className="projet-card"
-          />
+          <motion.div key={index} variants={itemVariants}>
+            <Card
+              title={project.name}
+              description={project.description}
+              image={project.image}
+              stack={project.stack}
+              link={project.link}
+              className="projet-card"
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

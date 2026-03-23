@@ -1,11 +1,42 @@
+import { motion } from "framer-motion";
 import FormContact from "./FormContact";
 
 function Contact() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
-    <div className="contact">
-      <h2 className="contact-title">Contact</h2>
-      <FormContact />
-    </div>
+    <motion.div
+      className="contact"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <motion.h2 className="contact-title" variants={itemVariants}>
+        Contact
+      </motion.h2>
+      <motion.div variants={itemVariants}>
+        <FormContact />
+      </motion.div>
+    </motion.div>
   );
 }
 
