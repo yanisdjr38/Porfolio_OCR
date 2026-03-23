@@ -39,7 +39,7 @@ function Stack() {
 
   return (
     <div className="stack">
-      <h2>Stack</h2>
+      <h3>Stack</h3>
 
       {/* Filter Dropdown */}
       <div className="filter-dropdown-container">

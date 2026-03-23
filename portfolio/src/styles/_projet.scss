@@ -1,28 +1,16 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-.projet {
-  @include flex-center;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  width: 100%;
-  h2 {
-    font-size: $font-size-h2;
-    color: $color-text-main;
-    font-family: $font-main;
-    @include neon-glow($color-accent-pink);
-  }
+.projet-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 30px;
+  justify-items: center;
 
-  .projet-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-top: 30px;
-
-    @include respond-to(mobile) {
-      grid-template-columns: 1fr;
-      gap: 25px;
-      margin-top: 20px;
-    }
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
   }
 }

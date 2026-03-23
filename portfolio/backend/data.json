@@ -64,6 +64,11 @@
         "category": "Tools"
       },
       {
+        "name": "IA",
+        "icon": "ChatGPT",
+        "category": "Tools"
+      },
+      {
         "name": "Figma",
         "icon": "figma",
         "category": "Design"

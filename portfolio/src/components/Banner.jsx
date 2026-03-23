@@ -15,13 +15,13 @@ function Banner() {
       >
         Yanis Djouahra
       </motion.h2>
-      <motion.p
+      <motion.h3
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         Développeur Web Full Stack
-      </motion.p>
+      </motion.h3>
       <ul className="social-icons">
         <motion.li
           initial={{ opacity: 0, y: -20 }}

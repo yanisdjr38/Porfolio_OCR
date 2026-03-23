@@ -15,13 +15,12 @@
     @include neon-glow($color-accent-cyan);
     margin-bottom: 1rem;
   }
-  p {
+  h3 {
     font-family: $font-main;
-    color: $color-text-main;
-    font-size: $font-size-base;
-    @include neon-glow($color-accent-pink);
-    max-width: 600px;
-    margin-bottom: 2rem;
+    color: $color-text-cyan;
+    font-size: $font-size-h2;
+    @include neon-glow($color-accent-cyan);
+    margin-bottom: 1rem;
   }
 
   .social-icons {

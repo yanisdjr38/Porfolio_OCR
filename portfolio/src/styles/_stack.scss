@@ -8,11 +8,8 @@
   font-family: $font-main;
   padding: 30px 20px;
 
-  h2 {
-    font-size: $font-size-h2;
+  h3 {
     margin-bottom: 30px;
-    color: $color-text-main;
-    @include neon-glow($color-accent-cyan);
   }
 
   @include respond-to(mobile) {

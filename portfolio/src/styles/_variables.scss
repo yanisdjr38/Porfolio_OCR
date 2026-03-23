@@ -8,10 +8,13 @@ $color-bg-main: #050505; // Fond principal (60%)
 $color-bg-secondary: #1a1a1a; // Surfaces et cartes (30%)
 $color-text-main: #e0e0e0; // Texte clair haute lisibilité
 $color-text-muted: #a0a0a0; // Texte secondaire / placeholders
+$color-text-cyan: #00ffff; // Bordures et séparateurs
+$color-text-pink: #ff00ff; // Accentuation et éléments interactifs
+$color-text-blue: #005e5e; // Titres et éléments importants
 
 // Accents Néons (10%)
 $color-accent-cyan: #00ffff; // Cyber Cyan (Action, liens)
-$color-accent-blue: #00bfff; // Bleu électrique (Hover, titres secondaires)
+$color-accent-blue: #005e5e; // Bleu électrique (Hover, titres secondaires)
 $color-accent-pink: #ff00ff; // Hot Pink (Titres, focus)
 $color-accent-gray: #888888; // Gray Glow (Texte secondaire, hover)
 
@@ -36,7 +39,7 @@ $font-size-body: 1rem;
 // -------------------------------------------------------------------
 $shadow-glow-cyan: 0 0 10px rgba(0, 255, 255, 0.5);
 $shadow-glow-pink: 0 0 10px rgba(255, 0, 255, 0.5);
-$shadow-glow-blue: 0 0 15px rgba(0, 191, 255, 0.8);
+$shadow-glow-blue: 0 0 10px rgba(0, 94, 94, 0.5);
 $shadow-glow-gray: 0 0 10px rgba(136, 136, 136, 0.5);
 
 $transition-smooth: all 0.3s ease-in-out;
