@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import data from "../../backend/data.json";
 import "../styles/_projet.scss";
-import Card from "./Card";
+import ProjetCard from "./ProjetCard";
 
 function Projet() {
   const containerVariants = {
@@ -32,7 +32,7 @@ function Projet() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Mes projets
+        Mes projets <span className="span-title"></span>
       </motion.h2>
       <motion.div
         className="projet-container"
@@ -42,8 +42,12 @@ function Projet() {
         viewport={{ once: true, amount: 0.1 }}
       >
         {data.stack.Projets.map((project, index) => (
-          <motion.div key={index} variants={itemVariants}>
-            <Card
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            className="projet-item"
+          >
+            <ProjetCard
               title={project.name}
               description={project.description}
               image={project.image}

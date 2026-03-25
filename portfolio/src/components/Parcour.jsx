@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../backend/data.json";
 import Timeline from "./Timeline";
@@ -37,7 +38,7 @@ function Parcour() {
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        Parcours
+        Parcours <span className="span-title"></span>
       </motion.h2>
       <motion.div
         className="parcour-container"

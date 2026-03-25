@@ -1,6 +1,12 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+.span-title {
+  width: 60%;
+}
+.projet-item {
+  width: 100%;
+}
 .projet-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

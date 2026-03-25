@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import FormContact from "./FormContact";
 
@@ -31,7 +32,7 @@ function Contact() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.h2 className="contact-title" variants={itemVariants}>
-        Contact
+        Contact <span className="span-title"></span>
       </motion.h2>
       <motion.div variants={itemVariants}>
         <FormContact />
