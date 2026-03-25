@@ -33,7 +33,9 @@ function Apropos() {
           animate="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.h2 variants={itemVariants}>À propos de moi</motion.h2>
+          <motion.h2 variants={itemVariants}>
+            À propos de moi <span className="span-title"></span>
+          </motion.h2>
           <motion.h3 variants={itemVariants}>
             Un profil hybride au service de la performance web{" "}
           </motion.h3>

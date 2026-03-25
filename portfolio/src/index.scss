@@ -46,10 +46,19 @@ h1 {
 }
 
 h2 {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 15px;
   font-size: $font-size-h2;
-  color: $color-text-main;
-  font-family: $font-main;
-  @include neon-glow($color-accent-gray);
+  font-weight: 600;
+  font-style: italic;
+  .span-title {
+    border-color: $color-text-cyan;
+    border-width: 1px;
+    border-style: solid;
+    display: inline-block;
+  }
 }
 
 h3 {
@@ -65,5 +74,5 @@ pre {
 }
 
 .logo {
-  font-family: $font-logo;
+  font-family: $font-main;
 }

@@ -1,4 +1,6 @@
+//eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import "../styles/_competence.scss";
 import Stack from "./Stack";
 
 function Compétence() {
@@ -30,7 +32,9 @@ function Compétence() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <motion.h2 variants={itemVariants}>Compétences Techniques</motion.h2>
+      <motion.h2 variants={itemVariants}>
+        Compétences Techniques <span className="span-title"></span>
+      </motion.h2>
 
       <motion.div className="competence-list" variants={itemVariants}>
         <Stack />
