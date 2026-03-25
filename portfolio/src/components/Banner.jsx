@@ -9,16 +9,18 @@ function Banner() {
   return (
     <div className="banner">
       <motion.h2
+        className="banner-title"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Yanis Djouahra
+        Yanis <span className="banner-title-span">Djouahra</span>
       </motion.h2>
       <motion.h3
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
+        className="banner-subtitle"
       >
         Développeur Web Full Stack
       </motion.h3>

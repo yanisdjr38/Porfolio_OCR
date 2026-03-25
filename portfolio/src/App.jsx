@@ -13,10 +13,10 @@ function App() {
     <Router>
       <header>
         <NavBar />
-        <Banner />
       </header>
       <main>
         {/* Sections for About, Skills, Projects, Experience, Contact */}
+        <Banner />
         <Apropos />
         <Compétence />
         <Projet />

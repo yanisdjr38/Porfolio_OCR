@@ -2,25 +2,28 @@
 @use "./mixins" as *;
 
 .banner {
-  display: flex;
-  @include flex-column;
+  @include flex-column-start;
   width: 100%;
   box-sizing: border-box;
-  height: 400px;
-  text-align: center;
-
-  h2 {
+  margin-bottom: 4rem;
+  .banner-title {
     font-family: $font-logo;
+    font-style: italic;
     color: $color-text-main;
     font-size: $font-size-h1;
-    @include neon-glow($color-accent-cyan);
+    text-shadow: $shadow-glow-gray;
     margin-bottom: 1rem;
+    .banner-title-span {
+      color: $color-text-main;
+      text-shadow: $shadow-glow-gray;
+    }
   }
-  h3 {
-    font-family: $font-main;
+  .banner-subtitle {
+    font-family: $font-secondary;
     color: $color-text-cyan;
-    font-size: $font-size-h2;
-    @include neon-glow($color-accent-cyan);
+    font-size: $font-size-small;
+    text-shadow: none;
+    font-weight: 500;
     margin-bottom: 1rem;
   }
 
@@ -56,14 +59,15 @@
       }
     }
   }
-
   .banner-description {
     max-width: 800px;
     margin: 0 auto;
     p {
-      font-family: $font-main;
+      font-family: $font-secondary;
       color: $color-text-main;
+
       font-size: $font-size-body;
+
       @include neon-glow($color-accent-gray);
     }
   }

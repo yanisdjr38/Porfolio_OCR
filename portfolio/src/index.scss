@@ -47,9 +47,9 @@ h1 {
 
 h2 {
   font-size: $font-size-h2;
-  color: $color-text-cyan;
+  color: $color-text-main;
   font-family: $font-main;
-  @include neon-glow($color-accent-cyan);
+  @include neon-glow($color-accent-gray);
 }
 
 h3 {
