@@ -1,9 +1,27 @@
+import { useState } from "react";
 import "../styles/_formContact.scss";
 
 function FormContact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // À implémenter avec votre mentor
+    console.log("Form data:", formData);
+    // À implémenter avec votre mentor pour envoyer les données au serveur
+    // Vous pouvez utiliser fetch ou axios ici
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -42,6 +60,8 @@ function FormContact() {
               type="text"
               id="name"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
               required
               placeholder="Entrer votre nom"
             />
@@ -55,6 +75,8 @@ function FormContact() {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               required
               placeholder="Entrer votre email"
             />
@@ -67,6 +89,8 @@ function FormContact() {
             <textarea
               id="message"
               name="message"
+              value={formData.message}
+              onChange={handleChange}
               required
               placeholder="Ecrire votre message"
               rows="4"

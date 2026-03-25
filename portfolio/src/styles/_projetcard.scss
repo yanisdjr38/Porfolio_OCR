@@ -31,15 +31,6 @@
     }
   }
 
-  // Contenu de la carte (description + stack)
-  .card-content {
-    .heading {
-      @include respond-to("mobile") {
-        display: none;
-      }
-    }
-  }
-
   // Stack / Technologies
   .card-stack {
     .stack-list {

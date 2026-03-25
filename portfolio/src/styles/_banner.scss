@@ -6,6 +6,11 @@
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 4rem;
+
+  @include respond-to(mobile) {
+    margin-bottom: 2rem;
+  }
+
   .banner-title {
     font-family: $font-main;
     font-style: italic;
@@ -13,11 +18,18 @@
     font-size: $font-size-h1;
     text-shadow: $shadow-glow-gray;
     margin-bottom: 1rem;
+
+    @include respond-to(mobile) {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
     .banner-title-span {
       color: $color-text-main;
       text-shadow: $shadow-glow-gray;
     }
   }
+
   .banner-subtitle {
     font-family: $font-secondary;
     color: $color-text-cyan;
@@ -25,6 +37,11 @@
     text-shadow: none;
     font-weight: 500;
     margin-bottom: 1rem;
+
+    @include respond-to(mobile) {
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
   .social-icons {
@@ -34,12 +51,22 @@
     margin-bottom: 2rem;
     list-style: none;
     padding: 0;
+
+    @include respond-to(mobile) {
+      gap: 15px;
+      margin-bottom: 1.5rem;
+    }
+
     .icon-items {
       font-size: $font-size-h2;
       list-style: none;
       transition: all 0.3s ease-in-out;
       @include neon-glow($color-accent-cyan);
       @include neon-filter-glow($color-accent-gray);
+
+      @include respond-to(mobile) {
+        font-size: 1.25rem;
+      }
 
       a {
         color: $color-text-main;

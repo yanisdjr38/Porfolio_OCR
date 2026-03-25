@@ -1,6 +1,6 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../backend/data.json";
+import "../styles/_timeline.scss";
 import Timeline from "./Timeline";
 
 function Parcour() {

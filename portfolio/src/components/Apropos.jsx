@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import "../styles/_apropos.scss";
 import Softskill from "./Softskill";

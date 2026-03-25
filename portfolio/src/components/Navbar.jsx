@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1 alt="Yanis Djouahra">YD </h1>
+      <h1>YD</h1>
       <button className="hamburger" onClick={toggleMenu}>
         <span className={isOpen ? "open" : ""}></span>
         <span className={isOpen ? "open" : ""}></span>

@@ -39,7 +39,7 @@
         "category": "Backend"
       },
       {
-        "name": "Mangodb",
+        "name": "MongoDB",
         "icon": "mongodb",
         "category": "Database"
       },
@@ -64,8 +64,8 @@
         "category": "Tools"
       },
       {
-        "name": "IA",
-        "icon": "ChatGPT",
+        "name": "ChatGPT",
+        "icon": "comment",
         "category": "Tools"
       },
       {
