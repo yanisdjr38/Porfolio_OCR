@@ -47,11 +47,6 @@ function FormContact() {
             </svg>
             <span>FORMULAIRE_DE_CONTACT</span>
           </div>
-          <div className="card-dots">
-            <span />
-            <span />
-            <span />
-          </div>
         </div>
 
         <div className="card-body">

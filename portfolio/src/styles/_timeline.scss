@@ -22,7 +22,7 @@
 }
 
 .timeline-item {
-  width: 100%;
+  width: 300px;
   height: auto;
   max-width: 800px;
   margin: 0 auto;
@@ -61,6 +61,10 @@
     color: $color-text-main;
     text-shadow: $shadow-glow-blue;
     margin: 0;
+  }
+
+  .timeline-description {
+    display: none;
   }
 
   .timeline-description,

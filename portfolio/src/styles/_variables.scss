@@ -21,24 +21,47 @@ $color-accent-blue: #005e5e; // Bleu électrique (Hover, titres secondaires)
 $color-accent-pink: #ff00ff; // Hot Pink (Titres, focus)
 $color-accent-gray: #888888; // Gray Glow (Texte secondaire, hover)
 
-// 2. TYPOGRAPHIE
+// 2. TYPOGRAPHIE - Mobile First Responsive
 // -------------------------------------------------------------------
 $font-main:
   "Orbitron", "Michroma", sans-serif; // Futuriste et rétro [Synthwave vibes]
 $font-code: "IBM Plex Mono", "JetBrains Mono", monospace; // Tech-oriented
 $font-secondary: "Jost", "Poppins", sans-serif; // Moderne et lisible
 
-// Tailles (Scalable)
-$font-size-base: 16px;
-$font-size-link: 12px;
-$font-size-link-mobile: 9px;
-$font-size-small: 0.875rem;
-$font-size-heading: 1.6rem;
-$font-size-h1: 2.5rem;
-$font-size-h2: 1.25rem;
-$font-size-h3: 1rem;
-$font-size-body: 0.875rem;
-$font-size-mobile: 0.75rem;
+// TAILLES MOBILE (Base)
+// -------------------------------------------
+$font-size-base: 14px;
+
+// Headings - Mobile
+$font-size-h1: 1.8rem; // ~25px
+$font-size-h2: 1.1rem; // ~15px
+$font-size-h3: 0.9rem; // ~13px
+
+// Body & Link - Mobile
+$font-size-body: 0.875rem; // ~12px
+$font-size-small: 0.8rem; // ~11px
+$font-size-link: 0.75rem; // ~10px
+$font-size-heading: 1.4rem; // ~19px
+
+// TAILLES TABLETTE (min-width: 768px)
+// -------------------------------------------
+$font-size-h1-tablet: 2.2rem;
+$font-size-h2-tablet: 1.4rem;
+$font-size-h3-tablet: 1rem;
+$font-size-body-tablet: 1rem;
+$font-size-small-tablet: 0.875rem;
+$font-size-link-tablet: 0.875rem;
+$font-size-heading-tablet: 1.6rem;
+
+// TAILLES DESKTOP (min-width: 1024px)
+// -------------------------------------------
+$font-size-h1-desktop: 2.5rem;
+$font-size-h2-desktop: 1.6rem;
+$font-size-h3-desktop: 1.1rem;
+$font-size-body-desktop: 1.1rem;
+$font-size-small-desktop: 0.95rem;
+$font-size-link-desktop: 1rem;
+$font-size-heading-desktop: 1.8rem;
 
 // 3. EFFETS VISUELS (LE "GLOW")
 // -------------------------------------------------------------------

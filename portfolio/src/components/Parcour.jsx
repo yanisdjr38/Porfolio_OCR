@@ -1,3 +1,4 @@
+//eslint-disable-next-line
 import { motion } from "framer-motion";
 import data from "../../backend/data.json";
 import "../styles/_timeline.scss";

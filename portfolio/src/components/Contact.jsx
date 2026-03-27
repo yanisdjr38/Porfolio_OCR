@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import "../styles/_contact.scss";
 import FormContact from "./FormContact";
 
 function Contact() {

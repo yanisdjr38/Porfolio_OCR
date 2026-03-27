@@ -1,6 +1,10 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+.span-title {
+  width: 100%;
+}
+
 /* --- Root Variables for the component --- */
 .glitch-form-wrapper {
   --bg-color: #050505;
@@ -10,27 +14,35 @@
   --font-family:
     "Space Mono", "Audiowide", monospace, "Jost", "Poppins", sans-serif;
   --glitch-anim-duration: 0.5s;
-}
 
-.glitch-form-wrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--font-family);
   background-color: #050505;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
 /* --- Card Structure --- */
 .glitch-card {
   background-color: var(--bg-color);
   width: 100%;
-  max-width: 380px;
+  max-width: 500px;
   border: 1px solid rgba(0, 242, 234, 0.2);
   box-shadow:
     0 0 20px rgba(0, 242, 234, 0.1),
     inset 0 0 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  margin: 1rem;
+  margin: 0;
+  box-sizing: border-box;
+
+  @include respond-to(tablet) {
+    max-width: 600px;
+  }
 }
 
 .card-header {
@@ -69,7 +81,11 @@
 }
 
 .card-body {
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
+
+  @include respond-to(tablet) {
+    padding: 2rem 1.5rem;
+  }
 }
 
 /* --- Form Elements --- */
@@ -82,13 +98,17 @@
   position: absolute;
   top: -1em;
   left: 0;
-  font-size: 1rem;
+  font-size: $font-size-body;
   color: var(--primary-color);
   opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   pointer-events: none;
   transition: all 0.3s ease;
+
+  @include respond-to(tablet) {
+    font-size: $font-size-body-tablet;
+  }
 }
 
 .form-group input {
