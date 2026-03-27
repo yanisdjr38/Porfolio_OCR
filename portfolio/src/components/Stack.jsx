@@ -1,5 +1,12 @@
-import * as FabrIcons from "@fortawesome/free-brands-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+/* Import all the icons in Free Brands and Free Solid */
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+library.add(fab, fas);
+
 //eslint-disable-next-line
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -9,23 +16,6 @@ import "../styles/_stack.scss";
 
 function Stack() {
   const [activeCategory, setActiveCategory] = useState("All");
-
-  // Mapping des noms d'icônes au composants Font Awesome
-  const iconMap = {
-    html5: FabrIcons.faHtml5,
-    css3: FabrIcons.faCss3,
-    js: FabrIcons.faJs,
-    react: FabrIcons.faReact,
-    "node-js": FabrIcons.faNode,
-    express: FabrIcons.faNodeJs,
-    mongodb: FabrIcons.faMongodb,
-    supabase: FabrIcons.faDatabase,
-    git: FabrIcons.faGit,
-    "visual-studio-code": FabrIcons.faVs,
-    linux: FabrIcons.faLinux,
-    figma: FabrIcons.faFigma,
-    notion: FabrIcons.faNotion,
-  };
 
   // Récupérer les catégories uniques
   const categories = [
@@ -91,8 +81,8 @@ function Stack() {
             className="stack-card"
             variants={itemVariants}
           >
-            {iconMap[skill.icon] ? (
-              <FontAwesomeIcon icon={iconMap[skill.icon]} />
+            {skill.icon ? (
+              <FontAwesomeIcon icon={skill.icon} />
             ) : (
               <span className="icon-fallback">{skill.name[0]}</span>
             )}

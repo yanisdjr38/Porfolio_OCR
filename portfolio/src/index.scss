@@ -25,10 +25,7 @@ body {
 }
 
 main {
-  padding: 50px;
-  @include respond-to(mobile) {
-    padding: 20px;
-  }
+  padding: 20px;
 }
 
 h1,

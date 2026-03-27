@@ -1,7 +1,5 @@
-@use "./variables" as *;
-@use "./mixins" as *;
-
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
+@use "variables" as *;
+@use "mixins" as *;
 
 .parcour {
   display: flex;
@@ -22,7 +20,7 @@
 }
 
 .timeline-item {
-  width: 300px;
+  width: 100%;
   height: auto;
   max-width: 800px;
   margin: 0 auto;
@@ -32,95 +30,100 @@
   box-sizing: border-box;
 }
 
-.timeline-content {
-  padding: 1.75rem;
-  background: $color-bg-main;
-  @include neon-box-shadow($color-accent-cyan);
-  border-radius: 6px;
-  color: $color-text-main;
-  transition: 0.4s ease;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  margin: 1rem auto;
-  margin-bottom: 20px;
+// Timeline Card Style (same as ProjetCard)
+.timeline-card {
   width: 100%;
-  box-sizing: border-box;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+  gap: 10px;
 
-.timeline-component {
-  margin: 0;
-}
-
-.timeline-information {
-  @include flex-column;
-  gap: 8px;
-  align-items: start;
-
-  .timeline-title {
-    font-size: $font-size-h3;
-    color: $color-text-main;
-    text-shadow: $shadow-glow-blue;
-    margin: 0;
-  }
-
-  .timeline-description {
-    display: none;
-  }
-
-  .timeline-description,
-  .timeline-niveau,
-  .timeline-lieu {
-    font-family: $font-main;
-    color: $color-text-main;
-    margin: 0;
-  }
-
-  .timeline-niveau {
-    text-shadow: $shadow-glow-pink;
-  }
-
-  .timeline-lieu {
-    text-shadow: $shadow-glow-cyan;
-  }
-  .timeline-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    list-style: none;
-    margin: 10px 0;
-    padding: 0;
-
-    .timeline-items {
+  // Titre de la carte
+  .card-title {
+    justify-content: center;
+    .heading {
+      font-size: $font-size-heading;
       font-family: $font-code;
-      font-size: 12px;
+      font-weight: 700;
       color: $color-text-main;
       text-shadow: $shadow-glow-cyan;
-      border: 2px solid $color-accent-cyan;
-      background-color: $color-bg-main;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      margin: 0;
+    }
+  }
 
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  // Contenu
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .timeline-niveau {
+      font-weight: 600;
+      color: $color-text-main;
+      text-shadow: $shadow-glow-pink;
+      margin: 0;
+      font-size: $font-size-link;
+    }
+
+    .timeline-lieu {
+      color: $color-text-main;
+      text-shadow: $shadow-glow-cyan;
+      margin: 0;
+      font-size: $font-size-link;
+    }
+
+    p {
+      color: $color-text-main;
+      margin: 0;
+      font-size: $font-size-link;
+    }
+  }
+
+  // Stack / Technologies
+  .card-stack {
+    .stack-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .stack-item {
+        border: 1px solid $color-text-cyan;
+        background-color: $color-bg-main;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: $font-size-link;
       }
     }
   }
 
-  .timeline-link {
-    margin-top: 12px;
-
-    a {
-      color: $color-text-main;
-      font-family: $font-secondary;
-      text-shadow: $shadow-glow-gray;
-      text-decoration: none;
-      transition: all 0.3s ease-in-out;
+  // Lien
+  .card-footer {
+    margin-top: auto;
+    .button-link {
+      width: 100%;
+      border: none;
+      background-color: $color-bg-cyan;
+      padding: 10px 15px;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 
       &:hover {
-        text-shadow: $shadow-glow-cyan;
-        transform: scale(1.1);
+        background-color: $color-bg-main;
+        color: $color-bg-cyan;
+        border: 1px solid $color-bg-cyan;
+      }
+
+      .card-link {
+        font-family: $font-code;
+        font-size: $font-size-link;
+        color: $color-text-blue;
+        text-decoration: none;
+        font-weight: 600;
       }
     }
   }

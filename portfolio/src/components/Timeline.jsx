@@ -2,29 +2,38 @@ import "../styles/_timeline.scss";
 
 function Timeline({ name, description, niveau, lieu, stack, link }) {
   return (
-    <div className="timeline-item">
-      <div className="timeline-middle">
-        <div className="timeline-circle"></div>
+    <div className="timeline-card">
+      <div className="card-title">
+        <p className="heading">{name}</p>
       </div>
-      <div className="timeline-component timeline-content">
-        <div className="timeline-information">
-          <h3 className="timeline-title">{name}</h3>
-          <p className="timeline-description">{description}</p>
-          <h3 className="timeline-niveau">{niveau}</h3>
-          <p className="timeline-lieu">{lieu}</p>
-          <ul className="timeline-stack">
-            {stack.map((skill, index) => (
-              <li className="timeline-items" key={index}>
-                {skill}
-              </li>
-            ))}
-          </ul>
-          <div className="timeline-link">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              Voir le diplome
-            </a>
-          </div>
-        </div>
+
+      <div className="card-content">
+        <p className="timeline-niveau">{niveau}</p>
+        <p className="timeline-lieu">{lieu}</p>
+        <p>{description}</p>
+      </div>
+
+      <div className="card-stack">
+        <ul className="stack-list">
+          {stack.map((tech, index) => (
+            <li key={index} className="stack-item">
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="card-footer">
+        <button className="button-link">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-link"
+          >
+            Voir le diplôme
+          </a>
+        </button>
       </div>
     </div>
   );

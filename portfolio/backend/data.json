@@ -10,77 +10,77 @@
     "item": [
       {
         "name": "HTML5",
-        "icon": "html5",
+        "icon": "fa-brands fa-html5",
         "category": "Frontend"
       },
       {
         "name": "CSS3",
-        "icon": "css3",
+        "icon": "fa-brands fa-css3",
         "category": "Frontend"
       },
       {
-        "name": "JavaScript",
-        "icon": "js",
+        "name": "JS",
+        "icon": "fa-brands fa-js",
         "category": "Frontend"
       },
       {
         "name": "React",
-        "icon": "react",
+        "icon": "fa-brands fa-react",
         "category": "Frontend"
       },
       {
         "name": "Node.js",
-        "icon": "node-js",
+        "icon": "fa-brands fa-node-js",
         "category": "Backend"
       },
       {
         "name": "Express",
-        "icon": "express",
+        "icon": "fa-brands fa-node-js",
         "category": "Backend"
       },
       {
         "name": "MongoDB",
-        "icon": "mongodb",
+        "icon": "fa-brands fa-mdb",
         "category": "Database"
       },
       {
         "name": "Supabase",
-        "icon": "supabase",
+        "icon": "fa-solid fa-database",
         "category": "Database"
       },
       {
         "name": "Git",
-        "icon": "git",
+        "icon": "fa-brands fa-git",
         "category": "Tools"
       },
       {
         "name": "VS Code",
-        "icon": "visual-studio-code",
+        "icon": "fa-solid fa-code",
         "category": "Tools"
       },
       {
         "name": "Linux",
-        "icon": "linux",
+        "icon": "fa-brands fa-linux",
         "category": "Tools"
       },
       {
         "name": "ChatGPT",
-        "icon": "comment",
+        "icon": "fa-brands fa-openai",
         "category": "Tools"
       },
       {
         "name": "Figma",
-        "icon": "figma",
+        "icon": "fa-brands fa-figma",
         "category": "Design"
       },
       {
         "name": "Notion",
-        "icon": "notion",
+        "icon": "fa-brands fa-notion",
         "category": "Productivity"
       },
       {
         "name": "SEO",
-        "icon": "seo",
+        "icon": "fa-solid fa-magnifying-glass",
         "category": "Marketing"
       }
     ],

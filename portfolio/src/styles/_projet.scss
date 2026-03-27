@@ -1,12 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-.span-title {
-  width: 100%;
-}
-.projet-item {
-  width: 100%;
-}
 .projet-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -20,4 +14,10 @@
     gap: 30px;
     margin-top: 30px;
   }
+}
+.span-title {
+  width: 100%;
+}
+.projet-item {
+  width: 100%;
 }
