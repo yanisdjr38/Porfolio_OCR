@@ -123,36 +123,38 @@
 }
 
 .timeline-middle {
-  position: relative;
-  background-image: $gradient-neon;
-  width: 3px;
-  height: 100%;
-  @include neon-box-shadow($color-accent-pink);
+  display: none;
 }
 
 .timeline-circle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-image: $gradient-neon;
-  transform: translateX(-50%);
-  @include neon-box-shadow($color-accent-pink);
+  display: none;
 }
 
-@include respond-to(mobile) {
+@include respond-to(tablet) {
   .timeline-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .timeline-middle {
-    display: none;
+    position: relative;
+    background-image: $gradient-neon;
+    width: 3px;
+    height: 100%;
+    @include neon-box-shadow($color-accent-pink);
+    display: block;
   }
 
   .timeline-circle {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-image: $gradient-neon;
+    transform: translateX(-50%);
+    @include neon-box-shadow($color-accent-pink);
+    display: block;
   }
 }

@@ -64,11 +64,11 @@
 //responsive mixins
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: $breakpoint-mobile) {
+    @media (min-width: $breakpoint-mobile) {
       @content;
     }
   } @else if $breakpoint == tablet {
-    @media (max-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-tablet) {
       @content;
     }
   } @else if $breakpoint == desktop {

@@ -2,21 +2,22 @@
 @use "./mixins" as *;
 
 .span-title {
-  width: 60%;
+  width: 100%;
 }
 .projet-item {
   width: 100%;
 }
 .projet-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-top: 30px;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 25px;
+  margin-top: 20px;
   justify-items: center;
 
-  @include respond-to(mobile) {
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap: 25px;
-    margin-top: 20px;
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
   }
 }

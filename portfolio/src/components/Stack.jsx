@@ -1,5 +1,6 @@
 import * as FabrIcons from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//eslint-disable-next-line
 import { motion } from "framer-motion";
 import { useState } from "react";
 import data from "../../backend/data.json";
@@ -87,7 +88,7 @@ function Stack() {
         {filteredSkills.map((skill, index) => (
           <motion.div
             key={index}
-            className="stack-item"
+            className="stack-card"
             variants={itemVariants}
           >
             {iconMap[skill.icon] ? (
@@ -95,7 +96,7 @@ function Stack() {
             ) : (
               <span className="icon-fallback">{skill.name[0]}</span>
             )}
-            <span>{skill.name}</span>
+            <span className="skill-name">{skill.name}</span>
           </motion.div>
         ))}
       </motion.div>

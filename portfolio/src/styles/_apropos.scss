@@ -10,9 +10,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px 20px;
 
-  @include respond-to(mobile) {
-    padding: 30px 20px;
+  .span-title {
+    width: 100%;
   }
 
   @include respond-to(desktop) {
@@ -20,10 +21,10 @@
     align-items: flex-start;
     gap: 2rem;
     padding: 50px;
-  }
 
-  .span-title {
-    width: 40%;
+    .span-title {
+      width: 40%;
+    }
   }
 
   h3 {
@@ -43,13 +44,13 @@
     box-sizing: border-box;
     border: 1px solid $color-accent-cyan;
     border-radius: 5px;
-    padding: 2.5rem;
+    padding: 1.25rem;
     transition: 0.4s ease;
 
     p {
       font-family: $font-main;
       color: $color-text-main;
-      font-size: $font-size-body;
+      font-size: $font-size-mobile;
       line-height: 1.8;
       margin-bottom: 1.5rem;
       @include neon-glow($color-accent-gray);

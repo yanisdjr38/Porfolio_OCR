@@ -4,16 +4,17 @@
 .navbar {
   background-color: $color-bg-secondary;
   display: flex;
-  @include flex-space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 113px;
+  height: auto;
   padding: 0 2rem;
   position: relative;
-  @include respond-to(mobile) {
-    height: auto;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+
+  @include respond-to(desktop) {
+    height: 113px;
+    flex-wrap: nowrap;
   }
   h1 {
     font-family: $font-main;
@@ -23,7 +24,7 @@
   }
 
   .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     background: none;
     border: none;
@@ -33,8 +34,8 @@
     padding: 0;
     gap: 6px;
 
-    @include respond-to(mobile) {
-      display: flex;
+    @include respond-to(desktop) {
+      display: none;
     }
 
     span {
@@ -60,42 +61,57 @@
   }
 
   ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 0;
     list-style: none;
     background-color: $color-bg-secondary;
-    @include respond-to(mobile) {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      background-color: $color-bg-secondary;
-      max-height: 0;
-      overflow: hidden;
-      gap: 0;
-      transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+
+    &.open {
+      max-height: 500px;
+      padding: 1rem 2rem;
+      z-index: 10;
+    }
+
+    @include respond-to(desktop) {
+      position: static;
+      flex-direction: row;
+      max-height: none;
+      overflow: visible;
+      gap: 2rem;
       padding: 0;
-      margin: 0;
+      background-color: transparent;
 
       &.open {
-        max-height: 500px;
-        padding: 1rem 2rem;
-        z-index: 10;
+        padding: 0;
       }
     }
     li {
-      @include flex-center;
       font-family: $font-main;
       color: $color-text-main;
       font-size: $font-size-link;
       text-shadow: $shadow-glow-cyan;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      @include respond-to(mobile) {
-        padding: 0.5rem 0;
-        font-size: $font-size-link;
-        width: 100%;
+      padding: 0.5rem 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      @include respond-to(desktop) {
+        padding: 0;
+        width: auto;
+        @include flex-center;
       }
       a {
         text-decoration: none;

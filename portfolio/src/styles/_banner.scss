@@ -5,67 +5,66 @@
   @include flex-column-start;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
-  @include respond-to(mobile) {
-    margin-bottom: 2rem;
+  @include respond-to(tablet) {
+    margin-bottom: 4rem;
   }
 
   .banner-title {
     font-family: $font-main;
     font-style: italic;
     color: $color-text-main;
-    font-size: $font-size-h1;
+    font-size: 1.5rem;
     text-shadow: $shadow-glow-gray;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
-    @include respond-to(mobile) {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    @include respond-to(tablet) {
+      font-size: 4rem;
+      margin-bottom: 1rem;
     }
 
     .banner-title-span {
-      color: $color-text-main;
-      text-shadow: $shadow-glow-gray;
+      color: $color-text-cyan;
     }
   }
 
   .banner-subtitle {
     font-family: $font-secondary;
     color: $color-text-cyan;
-    font-size: $font-size-small;
+    font-size: 0.75rem;
     text-shadow: none;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 
-    @include respond-to(mobile) {
-      font-size: 0.75rem;
-      margin-bottom: 0.75rem;
+    @include respond-to(tablet) {
+      font-size: $font-size-small;
+      margin-bottom: 1rem;
     }
   }
 
   .social-icons {
     @include flex-row;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 2rem;
+    gap: 15px;
+    margin-bottom: 1.5rem;
     list-style: none;
     padding: 0;
 
-    @include respond-to(mobile) {
-      gap: 15px;
-      margin-bottom: 1.5rem;
+    @include respond-to(tablet) {
+      gap: 20px;
+      margin-bottom: 2rem;
     }
 
     .icon-items {
-      font-size: $font-size-h2;
+      font-size: 1.25rem;
       list-style: none;
       transition: all 0.3s ease-in-out;
       @include neon-glow($color-accent-cyan);
       @include neon-filter-glow($color-accent-gray);
 
-      @include respond-to(mobile) {
-        font-size: 1.25rem;
+      @include respond-to(tablet) {
+        font-size: $font-size-h2;
       }
 
       a {
