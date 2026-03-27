@@ -20,14 +20,16 @@ const ProjetCard = ({ title, description, link, stack }) => {
         </ul>
       </div>
       <div className="card-footer">
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="card-link"
-        >
-          Voir le projet
-        </a>
+        <button className="button-link">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-link"
+          >
+            Voir le projet
+          </a>
+        </button>
       </div>
     </div>
   );

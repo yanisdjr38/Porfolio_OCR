@@ -9,14 +9,6 @@
   padding: 20px;
   transition: transform 0.2s ease-in-out;
   gap: 10px;
-  border-bottom: 1px solid $color-text-main;
-  &:hover {
-    border-bottom: 1px solid $color-text-cyan;
-    transform: translateY(-5px);
-    transition:
-      transform 0.2s ease-in-out,
-      border-bottom 0.2s ease-in-out;
-  }
 
   // Titre de la carte
   .card-title {
@@ -53,22 +45,27 @@
   // Lien du projet
   .card-footer {
     margin-top: auto;
-
-    .card-link {
-      display: block;
-      text-decoration: none;
-      color: $color-text-main;
-      text-shadow: $shadow-glow-gray;
-      font-weight: 600;
-      text-align: center;
-      transition: background-color 0.2s ease-in-out;
+    .button-link {
+      width: 100%;
+      border: none;
+      background-color: $color-bg-cyan;
+      padding: 10px 15px;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 
       &:hover {
-        color: $color-text-cyan;
-        text-shadow: $shadow-glow-cyan;
-        transition:
-          background-color 0.2s ease-in-out,
-          border 0.2s ease-in-out;
+        background-color: $color-bg-main;
+        color: $color-bg-cyan;
+        border: 1px solid $color-bg-cyan;
+      }
+
+      .card-link {
+        font-family: $font-code;
+        font-size: $font-size-link;
+        color: $color-text-blue;
+        text-decoration: none;
+        font-weight: 600;
       }
     }
   }

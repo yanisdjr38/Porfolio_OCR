@@ -8,6 +8,9 @@ $color-bg-main: #050505; // Fond principal (60%)
 $color-bg-secondary: #1a1a1a; // Surfaces et cartes (30%)
 $color-text-main: #e0e0e0; // Texte clair haute lisibilité
 $color-text-muted: #a0a0a0; // Texte secondaire / placeholders
+$color-bg-cyan: #00ffff; // Accent cyan pour éléments interactifs
+$color-bg-pink: #ff00ff; // Accent rose pour éléments interactifs
+$color-bg-blue: #005e5e; // Accent bleu pour éléments interactifs
 $color-text-cyan: #00ffff; // Bordures et séparateurs
 $color-text-pink: #ff00ff; // Accentuation et éléments interactifs
 $color-text-blue: #005e5e; // Titres et éléments importants
@@ -30,7 +33,7 @@ $font-size-base: 16px;
 $font-size-link: 12px;
 $font-size-link-mobile: 9px;
 $font-size-small: 0.875rem;
-$font-size-heading: 1.75rem;
+$font-size-heading: 1.6rem;
 $font-size-h1: 2.5rem;
 $font-size-h2: 1.25rem;
 $font-size-h3: 1rem;

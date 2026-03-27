@@ -77,6 +77,11 @@
         "name": "Notion",
         "icon": "notion",
         "category": "Productivity"
+      },
+      {
+        "name": "SEO",
+        "icon": "seo",
+        "category": "Marketing"
       }
     ],
     "Projets": [
@@ -87,7 +92,7 @@
         "link": "https://github.com/yanisdjr38/kasa"
       },
       {
-        "name": "Mon VieuxGrimoire",
+        "name": "Mon Vieux Grimoire",
         "description": "Application de gestion de livres.",
         "stack": ["React", "Mangodb", "Express"],
         "link": "https://github.com/yanisdjr38/MonVieuxGrimoire"
