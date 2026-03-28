@@ -1,7 +1,7 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//eslint-disable-next-line
 import { motion } from "framer-motion";
-
 
 function Banner() {
   return (
