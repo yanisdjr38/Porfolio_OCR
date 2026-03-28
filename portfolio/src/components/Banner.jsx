@@ -2,7 +2,6 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 
-import "../styles/_banner.scss";
 
 function Banner() {
   return (

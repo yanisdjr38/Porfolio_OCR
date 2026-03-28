@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import data from "../../backend/data.json";
-import "../styles/_projet.scss";
 import ProjetCard from "./ProjetCard";
 
 function Projet() {

@@ -1,5 +1,3 @@
-import "../styles/_timeline.scss";
-
 function Timeline({ name, description, niveau, lieu, stack, link }) {
   return (
     <div className="timeline-card">

@@ -1,5 +1,3 @@
-import "../styles/_projetcard.scss";
-
 const ProjetCard = ({ title, description, link, stack }) => {
   return (
     <div className="card">

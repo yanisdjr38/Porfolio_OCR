@@ -1,5 +1,3 @@
-import "../styles/_footer.scss";
-
 function Footer() {
   return (
     <div className="footer">
@@ -32,7 +30,7 @@ function Footer() {
           </a>
         </li>
       </ul>
-      <p>&copy; 2024 Yanis Djouahra. Tous droits réservés.</p>
+      <p>&copy; 2026 Yanis Djouahra. Tous droits réservés.</p>
     </div>
   );
 }

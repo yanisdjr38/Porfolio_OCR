@@ -11,8 +11,6 @@ library.add(fab, fas);
 import { motion } from "framer-motion";
 import { useState } from "react";
 import data from "../../backend/data.json";
-import "../styles/_filterbutton.scss";
-import "../styles/_stack.scss";
 
 function Stack() {
   const [activeCategory, setActiveCategory] = useState("All");
