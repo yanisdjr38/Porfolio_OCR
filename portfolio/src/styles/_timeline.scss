@@ -21,24 +21,28 @@
 
 .timeline-item {
   width: 100%;
+  max-width: 400px;
   height: auto;
-  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
   box-sizing: border-box;
 }
 
 // Timeline Card Style (same as ProjetCard)
 .timeline-card {
   width: 100%;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 20px;
   transition: transform 0.2s ease-in-out;
   gap: 10px;
+  margin: 0 auto;
+  @include respond-to(tablet) {
+    max-width: 500px;
+  }
 
   // Titre de la carte
   .card-title {

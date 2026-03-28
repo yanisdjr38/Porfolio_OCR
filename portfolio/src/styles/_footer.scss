@@ -10,6 +10,14 @@
   box-sizing: border-box;
   font-family: $font-main;
   font-size: $font-size-small;
+  @include respond-to(tablet) {
+    padding: 30px;
+    font-size: $font-size-body;
+  }
+  @include respond-to(desktop) {
+    padding: 40px;
+    font-size: $font-size-body;
+  }
 
   .footer-links {
     @include flex-center;
@@ -23,6 +31,12 @@
       &:hover {
         color: $color-accent-cyan;
       }
+    }
+    @include respond-to(tablet) {
+      margin-top: 15px;
+    }
+    @include respond-to(desktop) {
+      margin-top: 20px;
     }
   }
 }

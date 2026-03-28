@@ -75,9 +75,9 @@ $transition-smooth: all 0.3s ease-in-out;
 // 4. LAYOUT & BREAKPOINTS
 // -------------------------------------------------------------------
 $container-width: 1200px;
-$breakpoint-mobile: 768px;
-$breakpoint-tablet: 1024px;
-$breakpoint-desktop: 1440px;
+$breakpoint-mobile: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
 // 5. Neon linear gradient
 $gradient-neon: linear-gradient(45deg, #c700c7, #ff00ff);

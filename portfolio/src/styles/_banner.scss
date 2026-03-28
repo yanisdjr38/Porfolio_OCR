@@ -20,7 +20,7 @@
     margin-bottom: 0.5rem;
 
     @include respond-to(tablet) {
-      font-size: 4rem;
+      font-size: $font-size-h1-tablet;
       margin-bottom: 1rem;
     }
 
@@ -38,7 +38,7 @@
     margin-bottom: 0.75rem;
 
     @include respond-to(tablet) {
-      font-size: $font-size-small;
+      font-size: $font-size-small-tablet;
       margin-bottom: 1rem;
     }
   }
@@ -64,7 +64,7 @@
       @include neon-filter-glow($color-accent-gray);
 
       @include respond-to(tablet) {
-        font-size: $font-size-h2;
+        font-size: $font-size-h2-tablet;
       }
 
       a {
@@ -92,7 +92,7 @@
       font-family: $font-secondary;
       color: $color-text-main;
 
-      font-size: $font-size-body;
+      font-size: $font-size-body-tablet;
 
       @include neon-glow($color-accent-gray);
     }
