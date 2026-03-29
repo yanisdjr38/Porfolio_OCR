@@ -12,7 +12,8 @@ function Banner() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Yanis <span className="banner-title-span">Djouahra</span>
+        <span className="span-title-style">SYSTEME_INITALIZED</span>Yanis{" "}
+        <span className="banner-title-span">Djouahra</span>
       </motion.h2>
       <motion.h3
         initial={{ opacity: 0, y: -20 }}

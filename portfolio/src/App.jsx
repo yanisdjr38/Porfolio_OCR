@@ -6,11 +6,13 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import NavBar from "./components/Navbar";
 import Parcour from "./components/Parcour";
+import Pattern from "./components/Pattern";
 import Projet from "./components/Projet";
 
 function App() {
   return (
     <Router>
+      <Pattern />
       <header>
         <NavBar />
       </header>

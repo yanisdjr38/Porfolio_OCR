@@ -95,11 +95,10 @@
       gap: 10px;
 
       .stack-item {
-        border: 1px solid $color-text-cyan;
-        background-color: $color-bg-main;
+        background-color: $color-text-pink;
         padding: 5px 10px;
-        border-radius: 5px;
         font-size: $font-size-link;
+        color: $color-bg-main;
       }
     }
   }

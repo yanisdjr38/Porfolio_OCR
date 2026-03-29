@@ -2,7 +2,6 @@
 @use "./mixins" as *;
 
 .navbar {
-  background-color: $color-bg-secondary;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -13,7 +12,7 @@
   position: relative;
 
   @include respond-to(desktop) {
-    height: 113px;
+    height: 60px;
     flex-wrap: nowrap;
   }
   @include respond-to(tablet) {
@@ -25,6 +24,12 @@
     color: $color-text-main;
     font-size: $font-size-h1;
     text-shadow: $shadow-glow-cyan;
+    @include respond-to(desktop) {
+      font-size: $font-size-h1-desktop;
+    }
+    @include respond-to(tablet) {
+      font-size: $font-size-h1-tablet;
+    }
   }
 
   .hamburger {
@@ -42,8 +47,7 @@
       display: none;
     }
     @include respond-to(tablet) {
-      width: 25px;
-      height: 20px;
+      display: none;
     }
 
     span {
@@ -103,6 +107,20 @@
         padding: 0;
       }
     }
+    @include respond-to(tablet) {
+      position: static;
+      flex-direction: row;
+      max-height: none;
+      overflow: visible;
+      gap: 1.5rem;
+      padding: 0;
+      background-color: transparent;
+      width: 80%;
+
+      &.open {
+        padding: 0;
+      }
+    }
 
     li {
       font-family: $font-main;
@@ -124,6 +142,7 @@
       }
       @include respond-to(tablet) {
         padding: 0.5rem 0;
+        font-size: $font-size-link-tablet;
       }
       a {
         text-decoration: none;

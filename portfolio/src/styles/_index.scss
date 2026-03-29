@@ -26,16 +26,10 @@ body {
 
 main {
   padding: 20px;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-main;
-  color: $color-text-main;
+  @include respond-to(tablet) {
+    padding: 50px;
+  }
 }
 
 h1 {
@@ -59,10 +53,10 @@ h2 {
 }
 
 h3 {
+  font-family: $font-code;
   font-size: $font-size-h3;
   margin-bottom: 30px;
-  color: $color-text-main;
-  @include neon-glow($color-accent-cyan);
+  color: $color-text-pink;
 }
 
 code,
