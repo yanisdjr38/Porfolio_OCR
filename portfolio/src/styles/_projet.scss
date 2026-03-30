@@ -1,23 +1,47 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+/**
+ * Section Projets - Grille de cartes de projets
+ * Layout réactif: 1 colonne (mobile) -> auto-fit avec minmax (tablet+)
+ */
+
+/**
+ * Container principal de la grille
+ * Utilise CSS Grid pour un layout flexible
+ */
 .projet-container {
   display: grid;
+
+  // Mobile: une colonne
   grid-template-columns: 1fr;
   align-items: center;
   gap: 25px;
   margin-top: 20px;
   justify-items: center;
 
+  /**
+   * Tablet+: grille auto-fit avec largeur minimale
+   * Les cartes prennent au moins 300px et se distribuent équitablement
+   */
   @include respond-to(tablet) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
   }
 }
+
+/**
+ * Élément titres span (décoration)
+ */
 .span-title {
   width: 100%;
 }
+
+/**
+ * Élément individuel - Conteneur de la carte
+ * Largeur 100% pour occuper l'espace disponible
+ */
 .projet-item {
   width: 100%;
 }

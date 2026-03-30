@@ -1,47 +1,83 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+/**
+ * Section Soft Skills
+ * Affiche une liste de soft skills avec design neon réactif
+ */
 .softskill-section {
   color: $color-text-main;
+  font-family: $font-main;
+  width: 100%;
+  box-sizing: border-box;
+
+  // Layout et espacement
   border-radius: 5px;
   margin: 50px auto;
   text-align: center;
-  font-family: $font-main;
   padding: 30px 20px;
-  width: 100%;
-  box-sizing: border-box;
+
+  /**
+   * Titre de la section
+   * Style neon cyan avec glow effect
+   */
   h2 {
     font-size: $font-size-h2;
     margin-bottom: 20px;
     color: $color-text-main;
     @include neon-glow($color-accent-cyan);
   }
+
+  /**
+   * Sous-titres
+   */
   h3 {
     margin-bottom: 20px;
   }
+
+  /**
+   * Liste des soft skills
+   * Layout réactif: vertical (mobile) -> horizontal (tablet/desktop)
+   */
   .softskill-list {
     display: flex;
-    gap: 10px;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    list-style: none;
+
+    /**
+     * Layout tablet: grille horizontal
+     */
     @include respond-to(tablet) {
       flex-direction: row;
       justify-content: center;
     }
 
+    /**
+     * Layout desktop: distribution largeur complète
+     */
     @include respond-to(desktop) {
       gap: 20px;
       flex-direction: row;
       justify-content: space-between;
     }
 
+    /**
+     * Élément individuel - Soft Skill
+     * Card avec style neon cyan
+     */
     .softskill-item {
       list-style: none;
       @include neon-card($color-accent-cyan);
+
+      // Dimensions et espacement
       width: 100%;
       max-width: 350px;
       height: 100px;
       padding: 20px;
+
+      // Typographie
       font-size: $font-size-body;
       color: $color-text-main;
       font-family: $font-main;

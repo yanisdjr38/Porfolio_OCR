@@ -1,45 +1,80 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+/**
+ * Titre de section (décoration)
+ */
 .span-title {
   width: 100%;
 }
 
+/**
+ * Section Compétences Techniques
+ * Affiche la grille de compétences avec Stack component
+ */
 .competence-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
+
+  /**
+   * Tablet+: augmente la marge inférieure
+   */
   @include respond-to(tablet) {
     margin-bottom: 70px;
   }
+
+  /**
+   * Desktop: marge encore plus importante pour l'espace
+   */
   @include respond-to(desktop) {
     margin-bottom: 100px;
   }
 }
 
+/**
+ * Grille des compétences
+ * Layout responsive: 1 colonne (mobile) -> auto-fit (tablet+)
+ */
 .competence-list {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 15px;
   margin-top: 30px;
 
+  // Mobile: une colonne
+  grid-template-columns: 1fr;
+
+  /**
+   * Tablet: grille auto-fit avec largeur minimale 200px
+   */
   @include respond-to(tablet) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
   }
+
+  /**
+   * Desktop: grille auto-fit avec largeur minimale 250px
+   */
   @include respond-to(desktop) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
   }
 }
 
+/**
+ * Élément individuel de compétence
+ * Card réutilisable avec hover effect
+ */
 .competence-item {
   padding: 15px;
   background-color: $color-bg-secondary;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
 
+  /**
+   * Hover effect: translate vers le haut + box-shadow
+   */
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);

@@ -1,6 +1,10 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+/**
+ * Section Stack (Compétences Techniques)
+ * Affiche les technologies avec filtrage par catégorie
+ */
 .stack {
   color: $color-text-main;
   text-align: center;
@@ -8,53 +12,90 @@
   width: 100%;
   box-sizing: border-box;
 
+  /**
+   * Titre de la section
+   */
   h3 {
     margin-bottom: 30px;
   }
 
+  /**
+   * Grille des cartes de compétences
+   * Layout réactif: 3 colonnes (mobile) -> 4 colonnes (tablet/desktop)
+   */
   .stack-items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     justify-items: center;
     max-width: 100%;
     margin: 0 auto;
+
+    // Mobile: 3 colonnes
+    grid-template-columns: repeat(3, 1fr);
+
+    /**
+     * Tablet: augmenter l'espace et les colonnes
+     */
     @include respond-to(tablet) {
       max-width: 800px;
       gap: 20px;
       grid-template-columns: repeat(4, 1fr);
     }
 
+    /**
+     * Carte individuelle de compétence
+     * Design neon avec icon et label
+     */
     .stack-card {
       @include neon-card($color-accent-cyan);
+
+      // Dimensions
       width: 100%;
       height: 100px;
       padding: 12px;
+      background-color: $color-bg-main;
+
+      // Layout flex pour centrer icône et label
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      // Typographie
       font-size: $font-size-body;
       color: $color-text-main;
       font-family: $font-main;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
       list-style: none;
-      background-color: $color-bg-main;
-      align-items: center;
-      justify-content: center;
 
+      /**
+       * Icône (FontAwesome)
+       * Transition au hover
+       */
       svg {
         font-size: 2rem;
         transition: all 0.3s ease-in-out;
       }
 
+      /**
+       * Labels génériques
+       */
       span {
         font-size: 0.75rem;
         font-weight: 600;
       }
 
+      /**
+       * Hover effect: zoom sur l'icône
+       */
       &:hover svg {
         transform: scale(1.2);
       }
 
+      /**
+       * Fallback icon (lettre)
+       * Utilisé si pas d'icône disponible
+       */
       .icon-fallback {
         width: 40px;
         height: 40px;
@@ -64,6 +105,10 @@
         border: 2px solid currentColor;
         border-radius: 50%;
       }
+
+      /**
+       * Nom de la compétence
+       */
       .skill-name {
         font-size: $font-size-link;
         font-weight: 600;

@@ -2,29 +2,38 @@
 import { motion } from "framer-motion";
 import FormContact from "./FormContact";
 
+/**
+ * Animation variants pour l'effet cascade
+ */
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
+
+/**
+ * Composant Contact - Section de contact
+ * Affiche le formulaire de contact interactif
+ * @component
+ */
 function Contact() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
-
   return (
-    <motion.div
+    <motion.section
+      id="contact"
       className="contact"
       variants={containerVariants}
       initial="hidden"
@@ -37,7 +46,7 @@ function Contact() {
       <motion.div variants={itemVariants}>
         <FormContact />
       </motion.div>
-    </motion.div>
+    </motion.section>
   );
 }
 

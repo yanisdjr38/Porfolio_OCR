@@ -1,24 +1,47 @@
 import { useState } from "react";
 
+/**
+ * Composant Navbar - Barre de navigation responsive
+ * Menu hamburger sur mobile, nav classique sur desktop
+ * @component
+ */
 function Navbar() {
+  // État pour l'ouverture/fermeture du menu hamburger
   const [isOpen, setIsOpen] = useState(false);
 
+  /**
+   * Alterne l'état du menu
+   */
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  /**
+   * Ferme le menu (appelé lors du clic sur un lien)
+   */
   const closeMenu = () => {
     setIsOpen(false);
   };
 
   return (
     <nav className="navbar">
+      {/* Logo/Branding */}
       <h1>YD</h1>
-      <button className="hamburger" onClick={toggleMenu}>
+
+      {/* Bouton hamburger (mobile) */}
+      <button
+        className="hamburger"
+        onClick={toggleMenu}
+        aria-label="Menu"
+        aria-expanded={isOpen}
+      >
+        {/* Trois lignes du hamburger */}
         <span className={isOpen ? "open" : ""}></span>
         <span className={isOpen ? "open" : ""}></span>
         <span className={isOpen ? "open" : ""}></span>
       </button>
+
+      {/* Menu de navigation */}
       <ul className={`menu ${isOpen ? "open" : ""}`}>
         <li>
           <a href="#home" onClick={closeMenu}>

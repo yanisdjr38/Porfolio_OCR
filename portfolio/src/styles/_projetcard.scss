@@ -1,18 +1,30 @@
 @use "variables" as *;
 @use "mixins" as *;
 
+/**
+ * Carte de Projet / Expérience / Timeline
+ * Composant réutilisable pour afficher les détails avec stack et lien
+ */
 .card {
   width: 100%;
+
+  // Layout flex pour organiser le contenu verticalement
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 20px;
-  transition: transform 0.2s ease-in-out;
   gap: 10px;
 
-  // Titre de la carte
+  // Animation au hover
+  transition: transform 0.2s ease-in-out;
+
+  /**
+   * Section Titre
+   * Affiche le titre principal de la carte
+   */
   .card-title {
     justify-content: center;
+
     .heading {
       font-size: $font-size-heading;
       font-family: $font-code;
@@ -23,7 +35,22 @@
     }
   }
 
-  // Stack / Technologies
+  /**
+   * Section Contenu
+   * Description générale de l'élément
+   */
+  .card-content {
+    // Styles par défaut du paragraphe
+    p {
+      margin: 5px 0;
+      line-height: 1.6;
+    }
+  }
+
+  /**
+   * Section Stack
+   * Affiche les technologies/compétences
+   */
   .card-stack {
     .stack-list {
       list-style: none;
@@ -32,33 +59,47 @@
       flex-wrap: wrap;
       gap: 10px;
 
+      /**
+       * Élément individuel du stack
+       * Badge coloré avec technologie
+       */
       .stack-item {
         background-color: $color-text-pink;
         padding: 5px 10px;
         font-size: $font-size-link;
         color: $color-bg-main;
+        border-radius: 3px;
       }
     }
   }
 
-  // Lien du projet
+  /**
+   * Pied de page
+   * Contient le bouton d'action (lien)
+   */
   .card-footer {
     margin-top: auto;
+
     .button-link {
       width: 100%;
       border: none;
       background-color: $color-bg-cyan;
       padding: 10px 15px;
+      cursor: pointer;
       transition:
         background-color 0.3s ease,
         color 0.3s ease;
 
+      /**
+       * Hover effect: inversion des couleurs
+       */
       &:hover {
         background-color: $color-bg-main;
         color: $color-bg-cyan;
         border: 1px solid $color-bg-cyan;
       }
 
+      // Lien à l'intérieur du bouton
       .card-link {
         font-family: $font-code;
         font-size: $font-size-link;

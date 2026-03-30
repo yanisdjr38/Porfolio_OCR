@@ -17,7 +17,6 @@ function App() {
         <NavBar />
       </header>
       <main>
-        {/* Sections for About, Skills, Projects, Experience, Contact */}
         <Banner />
         <Apropos />
         <Compétence />
