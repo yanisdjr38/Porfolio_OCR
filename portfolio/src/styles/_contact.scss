@@ -195,9 +195,9 @@
         padding: 0.75rem 1.25rem;
         font-family: $font-code;
         font-size: $font-size-body;
-        color: $color-text-main;
-        background-color: transparent;
-        border: 1px solid rgba($color-text-cyan, 0.4);
+        color: $color-text-blue;
+        background-color: $color-bg-cyan;
+        border: none;
         border-radius: 3px;
         text-decoration: none;
         text-transform: uppercase;
@@ -226,31 +226,9 @@
         }
 
         &:hover {
-          border-color: rgba($color-text-cyan, 0.8);
-          color: $color-text-cyan;
-          text-shadow: $shadow-glow-cyan;
-          background-color: rgba($color-text-cyan, 0.05);
-        }
-
-        &.github-btn:hover {
-          border-color: rgba($color-text-pink, 0.8);
-          color: $color-text-pink;
-          text-shadow: $shadow-glow-pink;
-          background-color: rgba($color-text-pink, 0.05);
-        }
-
-        &.linkedin-btn:hover {
-          border-color: rgba(0, 102, 204, 0.8);
-          color: rgba(0, 102, 204, 1);
-          text-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
-          background-color: rgba(0, 102, 204, 0.05);
-        }
-
-        &.cv-btn:hover {
-          border-color: rgba($color-text-pink, 0.8);
-          color: $color-text-pink;
-          text-shadow: $shadow-glow-pink;
-          background-color: rgba($color-text-pink, 0.05);
+          background-color: $color-bg-main;
+          color: $color-bg-cyan;
+          border: 1px solid $color-bg-cyan;
         }
       }
     }
