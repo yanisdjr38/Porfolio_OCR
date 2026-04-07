@@ -21,13 +21,21 @@
   justify-items: center;
 
   /**
-   * Tablet+: grille auto-fit avec largeur minimale
-   * Les cartes prennent au moins 300px et se distribuent équitablement
+   * Tablet: grille 2 colonnes
    */
   @include respond-to(tablet) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 30px;
+  }
+
+  /**
+   * Desktop: grille 3 colonnes ou auto-fit selon l'espace
+   */
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
   }
 }
 

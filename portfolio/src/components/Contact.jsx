@@ -1,5 +1,6 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
+import ContactInfo from "./ContactInfo";
 import FormContact from "./FormContact";
 
 /**
@@ -27,7 +28,7 @@ const itemVariants = {
 
 /**
  * Composant Contact - Section de contact
- * Affiche le formulaire de contact interactif
+ * Affiche le formulaire de contact interactif et les infos de contact
  * @component
  */
 function Contact() {
@@ -43,8 +44,9 @@ function Contact() {
       <motion.h2 className="contact-title" variants={itemVariants}>
         Contact <span className="span-title"></span>
       </motion.h2>
-      <motion.div variants={itemVariants}>
+      <motion.div className="contact-wrapper" variants={itemVariants}>
         <FormContact />
+        <ContactInfo />
       </motion.div>
     </motion.section>
   );

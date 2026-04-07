@@ -7,13 +7,17 @@
  * @param {string} props.description - Description du projet
  * @param {Array<string>} props.stack - Technologies utilisées
  * @param {string} props.link - URL du projet
+ * @param {string} props.image - URL de l'image du projet
  */
-const ProjetCard = ({ title, description, link, stack }) => {
+const ProjetCard = ({ title, description, link, stack, image }) => {
   return (
     <article className="card">
-      {/* En-tête avec titre du projet */}
-      <div className="card-title">
-        <p className="heading">{title}</p>
+      {/* Image du projet avec cover et titre */}
+      <div className="card-image">
+        <img src={image} alt={title} />
+        <div className="card-image-overlay">
+          <h3 className="card-overlay-title">{title}</h3>
+        </div>
       </div>
 
       {/* Section contenu - Description du projet */}

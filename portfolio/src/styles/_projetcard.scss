@@ -19,8 +19,87 @@
   transition: transform 0.2s ease-in-out;
 
   /**
+   * Section Image
+   * Conteneur de l'image avec overlay neon
+   */
+  .card-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    border: 1px solid rgba($color-text-cyan, 0.6);
+    transition:
+      border-color $transition-smooth,
+      box-shadow $transition-smooth;
+    box-shadow: 0 0 10px rgba($color-text-cyan, 0.3);
+
+    // Image du projet
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-smooth;
+    }
+
+    // Overlay avec gradient neon toujours visible
+    .card-image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba($color-bg-main, 0.8),
+        rgba($color-bg-blue, 0.4)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: $transition-smooth;
+
+      // Titre sur l'overlay avec glow neon
+      .card-overlay-title {
+        color: $color-text-cyan;
+        font-family: $font-code;
+        font-size: $font-size-heading;
+        font-weight: 700;
+        text-align: center;
+        padding: 20px;
+        text-shadow:
+          $shadow-glow-cyan,
+          0 0 20px rgba($color-text-cyan, 0.6);
+        margin: 0;
+        letter-spacing: 1px;
+      }
+    }
+
+    // Hover effect: intensify glow and zoom
+    &:hover {
+      border-color: rgba($color-text-cyan, 1);
+      box-shadow:
+        0 0 20px rgba($color-text-cyan, 0.6),
+        inset 0 0 10px rgba($color-text-cyan, 0.1);
+
+      img {
+        transform: scale(1.05);
+      }
+
+      .card-image-overlay {
+        .card-overlay-title {
+          text-shadow:
+            $shadow-glow-cyan,
+            0 0 30px rgba($color-text-cyan, 0.8);
+        }
+      }
+    }
+  }
+
+  /**
    * Section Titre
-   * Affiche le titre principal de la carte
+   * Affiche le titre principal de la carte (caché au profit de l'overlay)
    */
   .card-title {
     justify-content: center;

@@ -7,17 +7,17 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2rem 0;
+  align-items: stretch;
+  padding: 2rem 1rem;
   margin: 3rem 0;
 
   @include respond-to(tablet) {
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
     margin: 4rem 0;
   }
 
   @include respond-to(desktop) {
-    padding: 4rem 3rem;
+    padding: 4rem;
     margin: 5rem 0;
   }
 
@@ -46,6 +46,213 @@
       height: 2px;
       background: $gradient-neon;
       margin-top: 1rem;
+    }
+  }
+
+  /**
+   * Contact Wrapper - Layout principal
+   * Affiche le formulaire et les infos en deux colonnes sur desktop
+   */
+  .contact-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @include respond-to(tablet) {
+      gap: 2.5rem;
+    }
+
+    @include respond-to(desktop) {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+  }
+
+  /**
+   * Contact Info - Infos de contact (email, réseaux sociaux)
+   */
+  .contact-info {
+    width: 100%;
+    height: fit-content;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    padding: 1.5rem;
+    background-color: rgba($color-bg-secondary, 0.4);
+    border: 1px solid rgba($color-text-cyan, 0.2);
+    border-radius: 4px;
+
+    @include respond-to(tablet) {
+      width: 100%;
+      padding: 2rem;
+    }
+
+    @include respond-to(desktop) {
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .contact-info-header {
+      margin-bottom: 1.5rem;
+
+      @include respond-to(tablet) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .contact-info-title {
+      font-family: $font-code;
+      font-size: $font-size-heading;
+      color: $color-text-cyan;
+      text-shadow: $shadow-glow-cyan;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+      margin-bottom: 1rem;
+
+      @include respond-to(tablet) {
+        font-size: $font-size-heading-tablet;
+        margin-bottom: 1.5rem;
+      }
+
+      @include respond-to(desktop) {
+        font-size: $font-size-heading-desktop;
+      }
+    }
+
+    /**
+     * Contact Item - Élément de contact (email)
+     */
+    .contact-item {
+      margin-bottom: 2rem;
+
+      @include respond-to(tablet) {
+        margin-bottom: 2.5rem;
+      }
+
+      .contact-label {
+        font-family: $font-code;
+        font-size: $font-size-body;
+        color: $color-text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+        opacity: 0.7;
+
+        @include respond-to(tablet) {
+          font-size: $font-size-body-tablet;
+        }
+      }
+
+      .contact-link {
+        font-family: $font-secondary;
+        font-size: $font-size-body;
+        color: $color-text-cyan;
+        text-decoration: none;
+        transition: $transition-smooth;
+        display: inline-block;
+        word-break: break-word;
+
+        @include respond-to(tablet) {
+          font-size: $font-size-body-tablet;
+        }
+
+        &:hover {
+          color: $color-text-pink;
+          text-shadow: $shadow-glow-pink;
+        }
+      }
+    }
+
+    /**
+     * Contact Buttons - Boutons réseaux sociaux et CV
+     */
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      @include respond-to(tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      @include respond-to(desktop) {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        font-family: $font-code;
+        font-size: $font-size-body;
+        color: $color-text-main;
+        background-color: transparent;
+        border: 1px solid rgba($color-text-cyan, 0.4);
+        border-radius: 3px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: $transition-smooth;
+        font-weight: 600;
+
+        /* Icône FontAwesome */
+        svg {
+          width: 20px;
+          height: 20px;
+          flex-shrink: 0;
+        }
+
+        @include respond-to(tablet) {
+          font-size: $font-size-body-tablet;
+          padding: 0.85rem 1.5rem;
+          flex: 1;
+          justify-content: center;
+        }
+
+        @include respond-to(desktop) {
+          width: 100%;
+          padding: 1rem 1.25rem;
+        }
+
+        &:hover {
+          border-color: rgba($color-text-cyan, 0.8);
+          color: $color-text-cyan;
+          text-shadow: $shadow-glow-cyan;
+          background-color: rgba($color-text-cyan, 0.05);
+        }
+
+        &.github-btn:hover {
+          border-color: rgba($color-text-pink, 0.8);
+          color: $color-text-pink;
+          text-shadow: $shadow-glow-pink;
+          background-color: rgba($color-text-pink, 0.05);
+        }
+
+        &.linkedin-btn:hover {
+          border-color: rgba(0, 102, 204, 0.8);
+          color: rgba(0, 102, 204, 1);
+          text-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+          background-color: rgba(0, 102, 204, 0.05);
+        }
+
+        &.cv-btn:hover {
+          border-color: rgba($color-text-pink, 0.8);
+          color: $color-text-pink;
+          text-shadow: $shadow-glow-pink;
+          background-color: rgba($color-text-pink, 0.05);
+        }
+      }
     }
   }
 }

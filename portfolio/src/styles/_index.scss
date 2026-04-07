@@ -30,6 +30,12 @@ main {
   @include respond-to(tablet) {
     padding: 50px;
   }
+
+  @include respond-to(desktop) {
+    padding: 60px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 
 h1 {

@@ -21,7 +21,7 @@
 
   /**
    * Grille des cartes de compétences
-   * Layout réactif: 3 colonnes (mobile) -> 4 colonnes (tablet/desktop)
+   * Layout réactif: 3 colonnes (mobile) -> 4 colonnes (tablet) -> 6 colonnes (desktop)
    */
   .stack-items {
     display: grid;
@@ -37,9 +37,18 @@
      * Tablet: augmenter l'espace et les colonnes
      */
     @include respond-to(tablet) {
-      max-width: 800px;
+      max-width: 900px;
       gap: 20px;
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    /**
+     * Desktop: 6 colonnes pour meilleur utilisation de l'espace
+     */
+    @include respond-to(desktop) {
+      max-width: 100%;
+      gap: 25px;
+      grid-template-columns: repeat(6, 1fr);
     }
 
     /**
