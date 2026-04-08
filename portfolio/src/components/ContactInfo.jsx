@@ -35,17 +35,17 @@ function ContactInfo() {
       <div className="contact-item">
         <div className="contact-label">Email</div>
         <a
-          href="mailto:your-email@example.com"
+          href="mailto:yanis.djouahra38@gmail.com"
           className="contact-link email-link"
         >
-          your-email@example.com
+          yanis.djouahra38@gmail.com
         </a>
       </div>
 
       {/* Réseaux sociaux et CV */}
       <div className="contact-buttons">
         <a
-          href="https://github.com"
+          href="https://github.com/yanisdjr38"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn github-btn"
@@ -56,7 +56,7 @@ function ContactInfo() {
         </a>
 
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/yanis-djouahra/"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn linkedin-btn"
@@ -67,7 +67,7 @@ function ContactInfo() {
         </a>
 
         <a
-          href="/cv.pdf"
+          href="/portfolio/src/assets/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn cv-btn"
