@@ -1,4 +1,6 @@
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
+emailjs.init("-AapzA3unXxaBBTHA"); // Remplace par ton User ID EmailJS
 
 /**
  * Composant FormContact - Formulaire de contact interactif
@@ -32,10 +34,23 @@ function FormContact() {
    */
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Données du formulaire:", formData);
-    // À connecter avec votre API backend
-    setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .send("service_sc45q1s", "template_xa6mua2", {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      })
+      .then(() => {
+        alert("Message envoyé !");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Erreur lors de l'envoi");
+      });
   };
+  // Icône de contact SVG
 
   const ContactIcon = () => (
     <svg
