@@ -52,6 +52,7 @@ h2 {
   font-weight: 600;
   font-style: italic;
   width: 100%;
+  color: $color-text-main;
 }
 
 .span-title {
@@ -67,7 +68,7 @@ h3 {
   font-family: $font-code;
   font-size: $font-size-h3;
   margin-bottom: 30px;
-  color: $color-text-pink;
+  color: $color-accent-cyan;
 }
 
 code,

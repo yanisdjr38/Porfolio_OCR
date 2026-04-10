@@ -15,6 +15,7 @@
 
   h2 {
     // Inherits from global h2 styles
+    color: $color-text-main;
   }
 
   @include respond-to(tablet) {

@@ -14,7 +14,7 @@ const ProjetCard = ({ title, description, link, stack, image }) => {
     <article className="card">
       {/* Image du projet avec cover et titre */}
       <div className="card-image">
-        <img src={image} alt={title} />
+        <img src={image} alt="" />
         <div className="card-image-overlay">
           <h3 className="card-overlay-title">{title}</h3>
         </div>
@@ -44,7 +44,6 @@ const ProjetCard = ({ title, description, link, stack, image }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="card-link"
-            aria-label={`Voir le projet ${title}`}
           >
             Voir le projet
           </a>

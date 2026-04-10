@@ -3,6 +3,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import cvPdf from "../assets/cv.pdf";
 
 // Initialize icon library
 library.add(fab, fas);
@@ -67,12 +68,13 @@ function ContactInfo() {
         </a>
 
         <a
-          href="/src/assets/cv.pdf"
+          href={cvPdf}
           download="Yanis_Djouahra_CV.pdf"
           className="contact-btn cv-btn"
-          aria-label="Télécharger CV"
+          aria-label="Télécharger mon CV (PDF)"
+          type="application/pdf"
         >
-          <FontAwesomeIcon icon={["fas", "file-pdf"]} />
+          <FontAwesomeIcon icon={["fas", "file-pdf"]} aria-hidden="true" />
           Mon CV
         </a>
       </div>

@@ -126,10 +126,9 @@ function Stack() {
         <button
           className="carousel-nav carousel-nav-left"
           onClick={() => handleNavigation("left")}
-          aria-label="Scroll vers la gauche"
-          title="Précédent"
+          aria-label="Précédent"
         >
-          <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+          <FontAwesomeIcon icon="fa-solid fa-chevron-left" aria-hidden="true" />
         </button>
 
         {/* Carrousel avec animation */}
@@ -146,7 +145,6 @@ function Stack() {
               key={skill.name}
               className="stack-card"
               variants={itemVariants}
-              title={skill.name}
             >
               {/* Icône ou initiale */}
               {skill.icon ? (
@@ -166,10 +164,12 @@ function Stack() {
         <button
           className="carousel-nav carousel-nav-right"
           onClick={() => handleNavigation("right")}
-          aria-label="Scroll vers la droite"
-          title="Suivant"
+          aria-label="Suivant"
         >
-          <FontAwesomeIcon icon="fa-solid fa-chevron-right" />
+          <FontAwesomeIcon
+            icon="fa-solid fa-chevron-right"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </div>

@@ -15,7 +15,7 @@ function Timeline({ name, description, niveau, lieu, stack, link }) {
     <div className="timeline-card">
       {/* En-tête avec titre */}
       <div className="card-title">
-        <p className="heading">{name}</p>
+        <h3 className="heading">{name}</h3>
       </div>
 
       {/* Contenu principal */}
@@ -47,7 +47,6 @@ function Timeline({ name, description, niveau, lieu, stack, link }) {
             target="_blank"
             rel="noopener noreferrer"
             className="card-link"
-            aria-label={`Voir le certificat: ${name}`}
           >
             Voir le diplôme
           </a>

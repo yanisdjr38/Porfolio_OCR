@@ -53,6 +53,7 @@ function Banner() {
             href="https://github.com/yanisdjr38"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -68,6 +69,7 @@ function Banner() {
             href="https://www.linkedin.com/in/yanis-djouahra/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
