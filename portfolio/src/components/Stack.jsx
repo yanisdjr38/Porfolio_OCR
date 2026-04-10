@@ -3,7 +3,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import data from "../../backend/data.json";
 
 // Initialize icon library
@@ -34,11 +34,14 @@ const itemVariants = {
 /**
  * Composant Stack - Affiche les compétences techniques avec filtrage par catégorie
  * @component
- * @returns {JSX.Element} Grille interactive des compétences
+ * @returns {JSX.Element} Carrousel interactif des compétences
  */
 function Stack() {
   // État pour la catégorie de filtre active
   const [activeCategory, setActiveCategory] = useState("All");
+
+  // Référence pour le carrousel
+  const carouselRef = useRef(null);
 
   // Extraction des catégories uniques depuis les données
   const categories = [
@@ -51,6 +54,50 @@ function Stack() {
     activeCategory === "All"
       ? data.stack.item
       : data.stack.item.filter((item) => item.category === activeCategory);
+
+  // Auto-scroll du carrousel
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const scrollInterval = setInterval(() => {
+      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+        // Retour au début
+        carousel.scroll({ left: 0, behavior: "smooth" });
+      } else {
+        // Scroll de la largeur d'une carte
+        const cardWidth =
+          carousel.querySelector(".stack-card")?.clientWidth || 90;
+        carousel.scroll({
+          left: carousel.scrollLeft + cardWidth + 12,
+          behavior: "smooth",
+        });
+      }
+    }, 3500); // Scroll tous les 3.5 secondes
+
+    return () => clearInterval(scrollInterval);
+  }, [activeCategory, filteredSkills]);
+
+  // Navigation manuelle
+  const handleNavigation = (direction) => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const cardWidth = carousel.querySelector(".stack-card")?.clientWidth || 90;
+    const scrollAmount = cardWidth + 12; // card width + gap
+
+    if (direction === "left") {
+      carousel.scroll({
+        left: carousel.scrollLeft - scrollAmount,
+        behavior: "smooth",
+      });
+    } else {
+      carousel.scroll({
+        left: carousel.scrollLeft + scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div className="stack">
@@ -73,34 +120,58 @@ function Stack() {
         </select>
       </div>
 
-      {/* Grille des compétences avec animation */}
-      <motion.div
-        className="stack-items"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        key={activeCategory}
-      >
-        {filteredSkills.map((skill) => (
-          <motion.div
-            key={skill.name}
-            className="stack-card"
-            variants={itemVariants}
-            title={skill.name}
-          >
-            {/* Icône ou initiale */}
-            {skill.icon ? (
-              <FontAwesomeIcon icon={skill.icon} aria-hidden="true" />
-            ) : (
-              <span className="icon-fallback" aria-label={skill.name}>
-                {skill.name[0]}
-              </span>
-            )}
-            {/* Nom de la compétence */}
-            <span className="skill-name">{skill.name}</span>
-          </motion.div>
-        ))}
-      </motion.div>
+      {/* Carrousel des compétences */}
+      <div className="carousel-wrapper">
+        {/* Bouton navigation gauche */}
+        <button
+          className="carousel-nav carousel-nav-left"
+          onClick={() => handleNavigation("left")}
+          aria-label="Scroll vers la gauche"
+          title="Précédent"
+        >
+          <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+        </button>
+
+        {/* Carrousel avec animation */}
+        <motion.div
+          ref={carouselRef}
+          className="stack-items-carousel"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          key={activeCategory}
+        >
+          {filteredSkills.map((skill) => (
+            <motion.div
+              key={skill.name}
+              className="stack-card"
+              variants={itemVariants}
+              title={skill.name}
+            >
+              {/* Icône ou initiale */}
+              {skill.icon ? (
+                <FontAwesomeIcon icon={skill.icon} aria-hidden="true" />
+              ) : (
+                <span className="icon-fallback" aria-label={skill.name}>
+                  {skill.name[0]}
+                </span>
+              )}
+              {/* Nom de la compétence */}
+              <span className="skill-name">{skill.name}</span>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Bouton navigation droite */}
+        <button
+          className="carousel-nav carousel-nav-right"
+          onClick={() => handleNavigation("right")}
+          aria-label="Scroll vers la droite"
+          title="Suivant"
+        >
+          <FontAwesomeIcon icon="fa-solid fa-chevron-right" />
+        </button>
+      </div>
     </div>
   );
 }

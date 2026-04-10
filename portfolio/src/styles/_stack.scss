@@ -3,7 +3,7 @@
 
 /**
  * Section Stack (Compétences Techniques)
- * Affiche les technologies avec filtrage par catégorie
+ * Affiche les technologies avec carrousel et filtrage par catégorie
  */
 .stack {
   color: $color-text-main;
@@ -11,6 +11,7 @@
   font-family: $font-main;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 
   /**
    * Titre de la section
@@ -20,56 +21,120 @@
   }
 
   /**
-   * Grille des cartes de compétences
-   * Layout réactif: 3 colonnes (mobile) -> 4 colonnes (tablet) -> 6 colonnes (desktop)
+   * Conteneur du carrousel avec navigation
    */
-  .stack-items {
-    display: grid;
-    gap: 15px;
-    justify-items: center;
-    max-width: 100%;
-    margin: 0 auto;
+  .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 
-    // Mobile: 3 colonnes
-    grid-template-columns: repeat(3, 1fr);
-
-    /**
-     * Tablet: augmenter l'espace et les colonnes
-     */
     @include respond-to(tablet) {
-      max-width: 900px;
-      gap: 20px;
-      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
     }
 
     /**
-     * Desktop: 6 colonnes pour meilleur utilisation de l'espace
+     * Boutons de navigation
      */
-    @include respond-to(desktop) {
-      max-width: 100%;
-      gap: 25px;
-      grid-template-columns: repeat(6, 1fr);
+    .carousel-nav {
+      flex-shrink: 0;
+      width: 35px;
+      height: 35px;
+      border: 2px solid $color-accent-cyan;
+      background-color: $color-bg-main;
+      color: $color-accent-cyan;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: all 0.3s ease-in-out;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: $color-accent-cyan;
+        color: $color-bg-main;
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      @include respond-to(tablet) {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /**
+   * Carrousel des compétences
+   * Affiche 2-3 cartes sur mobile, 4-5 sur tablet, 6 sur desktop
+   */
+  .stack-items-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 5px 0;
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+
+    @include respond-to(tablet) {
+      gap: 12px;
+      padding: 8px 0;
+    }
+
+    // Masquer la scrollbar par défaut
+    &::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-accent-cyan;
+      border-radius: 2px;
+
+      &:hover {
+        background: lighten($color-accent-cyan, 10%);
+      }
     }
 
     /**
      * Carte individuelle de compétence
-     * Design neon avec icon et label
      */
     .stack-card {
       @include neon-card($color-accent-cyan);
 
-      // Dimensions
-      width: 100%;
-      height: 100px;
-      padding: 12px;
+      // Dimensions pour afficher 2-3 cartes à la fois sur mobile
+      width: 75px;
+      height: 75px;
+      min-width: 75px;
+      padding: 8px;
       background-color: $color-bg-main;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+      box-sizing: border-box;
 
       // Layout flex pour centrer icône et label
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 5px;
 
       // Typographie
       font-size: $font-size-body;
@@ -82,7 +147,7 @@
        * Transition au hover
        */
       svg {
-        font-size: 2rem;
+        font-size: 1.5rem;
         transition: all 0.3s ease-in-out;
       }
 
@@ -90,7 +155,7 @@
        * Labels génériques
        */
       span {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         font-weight: 600;
       }
 
@@ -106,10 +171,10 @@
        * Utilisé si pas d'icône disponible
        */
       .icon-fallback {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         @include flex-center;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         font-weight: bold;
         border: 2px solid currentColor;
         border-radius: 50%;
@@ -119,8 +184,54 @@
        * Nom de la compétence
        */
       .skill-name {
-        font-size: $font-size-link;
+        font-size: 0.6rem;
         font-weight: 600;
+      }
+
+      /**
+       * Tablet: augmenter les dimensions
+       */
+      @include respond-to(tablet) {
+        width: 85px;
+        height: 85px;
+        min-width: 85px;
+
+        svg {
+          font-size: 1.7rem;
+        }
+
+        span {
+          font-size: 0.65rem;
+        }
+
+        .icon-fallback {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+      }
+
+      /**
+       * Desktop: cartes plus grandes
+       */
+      @include respond-to(desktop) {
+        width: 95px;
+        height: 95px;
+        min-width: 95px;
+
+        svg {
+          font-size: 1.9rem;
+        }
+
+        span {
+          font-size: 0.7rem;
+        }
+
+        .icon-fallback {
+          width: 38px;
+          height: 38px;
+          font-size: 1.1rem;
+        }
       }
     }
   }
