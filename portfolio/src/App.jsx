@@ -8,11 +8,13 @@ import NavBar from "./components/Navbar";
 import Parcour from "./components/Parcour";
 import Pattern from "./components/Pattern";
 import Projet from "./components/Projet";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <Pattern />
+      <ScrollToTop />
       <header>
         <NavBar />
       </header>

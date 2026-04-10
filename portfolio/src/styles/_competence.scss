@@ -2,11 +2,8 @@
 @use "./mixins" as *;
 
 /**
- * Titre de section (décoration)
+ * Note: .span-title is now globally styled in _index.scss
  */
-.span-title {
-  width: 100%;
-}
 
 /**
  * Section Compétences Techniques
@@ -17,18 +14,23 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
+  padding: 30px 20px;
 
-  /**
-   * Tablet+: augmente la marge inférieure
-   */
+  h2 {
+    // Inherits from global h2 styles
+  }
+
+  h2 .span-title {
+    background-color: $color-accent-cyan !important;
+  }
+
   @include respond-to(tablet) {
+    padding: 40px;
     margin-bottom: 70px;
   }
 
-  /**
-   * Desktop: marge encore plus importante pour l'espace
-   */
   @include respond-to(desktop) {
+    padding: 50px;
     margin-bottom: 100px;
   }
 }

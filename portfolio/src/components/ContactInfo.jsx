@@ -67,9 +67,8 @@ function ContactInfo() {
         </a>
 
         <a
-          href="/portfolio/src/assets/cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/src/assets/cv.pdf"
+          download="Yanis_Djouahra_CV.pdf"
           className="contact-btn cv-btn"
           aria-label="Télécharger CV"
         >

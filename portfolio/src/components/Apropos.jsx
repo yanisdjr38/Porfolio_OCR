@@ -33,7 +33,7 @@ const itemVariants = {
  */
 function Apropos() {
   return (
-    <section id="about" className="apropos-container apropos">
+    <section id="about" className="apropos">
       <motion.div
         variants={containerVariants}
         initial="hidden"

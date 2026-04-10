@@ -12,7 +12,7 @@ function Softskill() {
   return (
     <section className="softskill-section">
       {/* Titre de la section */}
-      <h2>Soft Skills</h2>
+      <h3>Soft Skills</h3>
 
       {/* Liste des soft skills */}
       <ul className="softskill-list">

@@ -21,14 +21,10 @@
     margin: 5rem 0;
   }
 
-  .contact-title {
-    font-family: $font-main;
-    font-size: $font-size-h2;
+  h2 {
+    // Inherits from global h2 styles
     color: $color-text-main;
-    text-shadow: $shadow-glow-pink;
     margin-bottom: 2rem;
-    text-align: center;
-    width: 100%;
 
     @include respond-to(tablet) {
       font-size: $font-size-h2-tablet;
@@ -38,14 +34,6 @@
     @include respond-to(desktop) {
       font-size: $font-size-h2-desktop;
       margin-bottom: 3rem;
-    }
-
-    .span-title {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: $gradient-neon;
-      margin-top: 1rem;
     }
   }
 
@@ -103,7 +91,7 @@
     }
 
     .contact-info-title {
-      font-family: $font-code;
+      font-family: $font-main;
       font-size: $font-size-heading;
       color: $color-text-cyan;
       text-shadow: $shadow-glow-cyan;

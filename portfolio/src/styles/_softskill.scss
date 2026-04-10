@@ -16,16 +16,26 @@
   margin: 50px auto;
   text-align: center;
   padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   /**
    * Titre de la section
    * Style neon cyan avec glow effect
    */
   h2 {
-    font-size: $font-size-h2;
-    margin-bottom: 20px;
+    // Inherits from global h2 styles
     color: $color-text-main;
-    @include neon-glow($color-accent-cyan);
+    margin-bottom: 20px;
+
+    @include respond-to(tablet) {
+      font-size: $font-size-h2-tablet;
+    }
+
+    @include respond-to(desktop) {
+      font-size: $font-size-h2-desktop;
+    }
   }
 
   /**

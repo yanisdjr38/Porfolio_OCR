@@ -43,13 +43,17 @@
     gap: 30px;
     align-items: stretch;
     justify-content: flex-start;
+    height: 550px;
   }
 
   /* Enfants directs du parcour-container (motion.div) */
   > div {
+    display: flex;
+    flex-direction: column;
+
     @include respond-to(desktop) {
       flex: 1 1 0;
-      height: 450px;
+      height: 100%;
       min-width: 0;
     }
   }
@@ -66,11 +70,12 @@
 
   @include respond-to(tablet) {
     max-width: 500px;
+    height: auto;
   }
 
   @include respond-to(desktop) {
     flex: 1 1 0;
-    height: 450px;
+    height: 550px;
     margin: 0;
     min-width: 0;
     max-width: none;
@@ -94,22 +99,21 @@
   @include respond-to(tablet) {
     margin: 0 auto;
     max-width: 500px;
+    height: 100%;
   }
 
   @include respond-to(desktop) {
     width: 100%;
-    height: 100%;
+    height: 550px;
     margin: 0;
     padding: 15px;
-    overflow-y: auto;
-    overflow-x: hidden;
     box-sizing: border-box;
-    scrollbar-gutter: stable;
   }
 
   // Titre de la carte
   .card-title {
     justify-content: center;
+    flex-shrink: 0;
     .heading {
       font-size: $font-size-heading;
       font-family: $font-code;
@@ -125,6 +129,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
 
     .timeline-niveau {
       font-weight: 600;
@@ -150,6 +155,7 @@
 
   // Stack / Technologies
   .card-stack {
+    flex-shrink: 0;
     .stack-list {
       list-style: none;
       padding: 0;
@@ -169,6 +175,7 @@
   // Lien
   .card-footer {
     margin-top: auto;
+    flex-shrink: 0;
     .button-link {
       width: 100%;
       border: none;

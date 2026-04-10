@@ -41,7 +41,7 @@ function Contact() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <motion.h2 className="contact-title" variants={itemVariants}>
+      <motion.h2 variants={itemVariants}>
         Contact <span className="span-title"></span>
       </motion.h2>
       <motion.div className="contact-wrapper" variants={itemVariants}>

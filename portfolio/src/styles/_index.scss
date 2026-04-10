@@ -46,16 +46,21 @@ h2 {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: flex-start;
   gap: 15px;
   font-size: $font-size-h2;
   font-weight: 600;
   font-style: italic;
-  .span-title {
-    border-color: $color-text-cyan;
-    border-width: 1px;
-    border-style: solid;
-    display: inline-block;
-  }
+  width: 100%;
+}
+
+.span-title {
+  display: block;
+  flex: 1;
+  height: 2px;
+  background-color: $color-accent-cyan !important;
+  border: none !important;
+  min-width: 100px;
 }
 
 h3 {

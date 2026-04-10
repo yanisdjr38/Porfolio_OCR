@@ -1,0 +1,53 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+/**
+ * Bouton "Retour au top" - Flottant/Fixe
+ * Positionné en bas à droite de l'écran
+ */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: $color-accent-cyan;
+  border: 2px solid $color-accent-cyan;
+  color: $color-bg-main;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+
+  &:hover {
+    background-color: transparent;
+    color: $color-accent-cyan;
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+
+  @include respond-to(tablet) {
+    width: 55px;
+    height: 55px;
+    bottom: 40px;
+    right: 40px;
+    font-size: 1.3rem;
+  }
+
+  @include respond-to(desktop) {
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    right: 50px;
+    font-size: 1.4rem;
+  }
+}

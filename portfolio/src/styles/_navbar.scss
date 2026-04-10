@@ -14,9 +14,11 @@
   @include respond-to(desktop) {
     height: 60px;
     flex-wrap: nowrap;
+    justify-content: flex-start;
   }
   @include respond-to(tablet) {
     padding: 0 1rem;
+    justify-content: flex-start;
   }
 
   h1 {
@@ -102,6 +104,8 @@
       gap: 2rem;
       padding: 0;
       background-color: transparent;
+      flex: 1;
+      justify-content: center;
 
       &.open {
         padding: 0;
@@ -115,7 +119,8 @@
       gap: 1.5rem;
       padding: 0;
       background-color: transparent;
-      width: 80%;
+      flex: 1;
+      justify-content: center;
 
       &.open {
         padding: 0;

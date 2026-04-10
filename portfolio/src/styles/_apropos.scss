@@ -17,8 +17,11 @@
   // Layout par défaut (mobile)
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 30px 20px;
+
+  h2 {
+    // Inherits from global h2 styles
+  }
 
   /**
    * Titres h3
@@ -88,9 +91,5 @@
     align-items: flex-start;
     gap: 2rem;
     padding: 50px;
-
-    .span-title {
-      width: 40%;
-    }
   }
 }

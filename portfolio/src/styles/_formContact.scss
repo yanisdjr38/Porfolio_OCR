@@ -1,9 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-.span-title {
-  width: 100%;
-}
+/* .span-title is globally styled in _index.scss */
 
 /* --- Root Variables for the component --- */
 .glitch-form-wrapper {
@@ -393,5 +391,86 @@
   }
   50% {
     box-shadow: 0 0 25px rgba(0, 242, 234, 0.7);
+  }
+}
+
+/* --- Validation d'erreurs --- */
+.input-error {
+  border-bottom-color: #ff4466 !important;
+
+  &:focus {
+    border-bottom-color: #ff4466 !important;
+  }
+}
+
+/**
+ * Message d'erreur sous les inputs
+ */
+.error-text {
+  display: block;
+  font-size: 0.75rem;
+  color: #ff4466;
+  margin-top: 0.5em;
+  font-family: var(--font-family);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Messages de feedback (succès/erreur)
+ */
+.feedback-message {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+  animation: slideDown 0.4s ease-out;
+  border-left: 4px solid;
+
+  @include respond-to(tablet) {
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+}
+
+.success-message {
+  background-color: rgba(102, 255, 153, 0.1);
+  color: #66ff99;
+  border-left-color: #66ff99;
+  box-shadow: 0 0 15px rgba(102, 255, 153, 0.2);
+}
+
+.error-message {
+  background-color: rgba(255, 68, 102, 0.1);
+  color: #ff4466;
+  border-left-color: #ff4466;
+  box-shadow: 0 0 15px rgba(255, 68, 102, 0.2);
+}
+
+/**
+ * Bouton désactivé pendant l'envoi
+ */
+.submit-btn:disabled {
+  cursor: not-allowed;
+  border-color: rgba(0, 255, 255, 0.3);
+  color: rgba(0, 255, 255, 0.3);
+  animation: pulse 1.5s ease-in-out infinite;
+
+  &:hover {
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   }
 }
