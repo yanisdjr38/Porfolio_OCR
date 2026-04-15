@@ -90,28 +90,28 @@
         "description": "Application de location d'appartements.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/kasa",
-        "image": "../src/assets/images/kasa.png"
+        "image": "/portfolio/src/assets/images/kasa.png"
       },
       {
         "name": "Mon Vieux Grimoire",
         "description": "Application de gestion de livres.",
         "stack": ["React", "Mangodb", "Express"],
         "link": "https://github.com/yanisdjr38/MonVieuxGrimoire",
-        "image": "../src/assets/images/mon-vieux-grimoire.png"
+        "image": "/portfolio/src/assets/images/mon-vieux-grimoire.png"
       },
       {
         "name": "Effetmer",
         "description": "Application de suivi de progression pour le JJB",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://yanisdjr38.github.io/effetmer-bjj/",
-        "image": "../src/assets/images/effetmer.png"
+        "image": "/portfolio/src/assets/images/effetmer.png"
       },
       {
         "name": "CardTrackr",
         "description": "Application de suivi de collection de cartes à jouer",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/pokecard_app",
-        "image": "../src/assets/images/cardtrackr.png"
+        "image": "/portfolio/src/assets/images/cardtrackr.png"
       }
     ],
     "Parcours": [
