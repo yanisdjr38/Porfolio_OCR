@@ -1,6 +1,10 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
 import data from "../../backend/data.json";
+import cardtrackrImg from "../assets/images/cardtrackr.png";
+import effetmerImg from "../assets/images/effetmer.png";
+import kasaImg from "../assets/images/kasa.png";
+import monVieuxGrimoireImg from "../assets/images/mon-vieux-grimoire.png";
 import ProjetCard from "./ProjetCard";
 
 /**
@@ -32,6 +36,14 @@ const itemVariants = {
  * @component
  */
 function Projet() {
+  // Mapping des noms de projets à leurs images importées
+  const projectImages = {
+    Kasa: kasaImg,
+    "Mon Vieux Grimoire": monVieuxGrimoireImg,
+    Effetmer: effetmerImg,
+    CardTrackr: cardtrackrImg,
+  };
+
   return (
     <section id="projects" className="projet">
       {/* Titre de la section avec décoration */}
@@ -63,7 +75,7 @@ function Projet() {
             <ProjetCard
               title={project.name}
               description={project.description}
-              image={project.image}
+              image={projectImages[project.name]}
               stack={project.stack}
               link={project.link}
               className="projet-card"
