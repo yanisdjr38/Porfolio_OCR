@@ -7,11 +7,16 @@ export default defineConfig({
   base: "/",
   build: {
     sourcemap: false,
-    minify: "terser",
+    minify: "esbuild",
+    target: "es2020",
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ["react", "react-dom"],
+          vendor: ["react", "react-dom", "framer-motion"],
+          icons: [
+            "@fortawesome/fontawesome-svg-core",
+            "@fortawesome/free-brands-svg-icons",
+          ],
         },
       },
     },
