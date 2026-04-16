@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Bleu pro (moins flashy) -->
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4FD1FF"></stop>
+      <stop offset="100%" stop-color="#2563EB"></stop>
+    </linearGradient>
+
+    <!-- Glow très léger -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="1.2" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Cercle très subtil -->
+  <circle cx="100" cy="100" r="78" stroke="url(#grad)" stroke-width="1.5" fill="none" opacity="0.5"></circle>
+
+  <!-- Accent diagonal discret -->
+  <line x1="60" y1="140" x2="140" y2="60" stroke="url(#grad)" stroke-width="1.5" opacity="0.6"></line>
+
+  <!-- YD typographique clean -->
+  <text x="50%" y="54%" text-anchor="middle" fill="white" font-size="58" font-family="Inter, Arial, sans-serif" font-weight="600" letter-spacing="2">
+    YD
+  </text>
+</svg>

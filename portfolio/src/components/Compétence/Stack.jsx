@@ -4,7 +4,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import data from "../../backend/data.json";
+import data from "../../../backend/data.json";
 
 // Initialize icon library
 library.add(fab, fas);

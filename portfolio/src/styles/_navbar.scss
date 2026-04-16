@@ -21,16 +21,40 @@
     justify-content: flex-start;
   }
 
-  h1 {
-    font-family: $font-main;
-    color: $color-text-main;
-    font-size: $font-size-h1;
-    text-shadow: $shadow-glow-cyan;
-    @include respond-to(desktop) {
-      font-size: $font-size-h1-desktop;
-    }
-    @include respond-to(tablet) {
-      font-size: $font-size-h1-tablet;
+  h1.logo {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+
+      img {
+        height: 60px;
+        width: auto;
+        @include respond-to(desktop) {
+          height: 80px;
+        }
+      }
+
+      .logo-text {
+        font-family: $font-main;
+        color: $color-text-main;
+        font-size: $font-size-h1;
+        text-shadow: $shadow-glow-cyan;
+        display: none;
+        @include respond-to(desktop) {
+          display: inline;
+          font-size: $font-size-h1-desktop;
+        }
+        @include respond-to(tablet) {
+          display: none;
+        }
+      }
     }
   }
 

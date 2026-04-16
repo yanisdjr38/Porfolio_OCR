@@ -3,7 +3,7 @@
  * Les skills sont chargées depuis le fichier de données JSON
  * @component
  */
-import data from "../../backend/data.json";
+import data from "../../../backend/data.json";
 
 function Softskill() {
   // Récupère les soft skills depuis la source de données

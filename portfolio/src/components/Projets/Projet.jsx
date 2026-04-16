@@ -1,10 +1,10 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
-import data from "../../backend/data.json";
-import cardtrackrImg from "../assets/images/cardtrackr.png";
-import effetmerImg from "../assets/images/effetmer.png";
-import kasaImg from "../assets/images/kasa.png";
-import monVieuxGrimoireImg from "../assets/images/mon-vieux-grimoire.png";
+import data from "../../../backend/data.json";
+import cardtrackrImg from "../../assets/images/cardtrackr.png";
+import effetmerImg from "../../assets/images/effetmer.png";
+import kasaImg from "../../assets/images/kasa.png";
+import monVieuxGrimoireImg from "../../assets/images/mon-vieux-grimoire.png";
 import ProjetCard from "./ProjetCard";
 
 /**
