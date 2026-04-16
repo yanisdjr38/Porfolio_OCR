@@ -20,3 +20,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Headers for SEO
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
