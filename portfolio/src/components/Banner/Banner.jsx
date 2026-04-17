@@ -32,7 +32,7 @@ function Banner() {
       >
         Yanis <span className="banner-title-span">Djouahra</span>
       </motion.h1>
-      <motion.h3
+      <motion.h2
         variants={itemVariants}
         initial="hidden"
         animate="visible"
@@ -40,7 +40,7 @@ function Banner() {
         className="banner-subtitle"
       >
         Développeur Web Full Stack
-      </motion.h3>
+      </motion.h2>
       <ul className="social-icons">
         <motion.li
           variants={itemVariants}

@@ -25,13 +25,6 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* Logo/Branding */}
-      <h1 className="logo">
-        <a href="#home" className="logo-link">
-          <span className="logo-text">Yanis Djouahra</span>
-        </a>
-      </h1>
-
       {/* Bouton hamburger (mobile) */}
       <button
         className="hamburger"

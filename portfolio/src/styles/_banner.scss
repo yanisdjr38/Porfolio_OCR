@@ -68,12 +68,17 @@
   }
 
   .banner-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: $font-secondary;
     color: $color-text-cyan;
     font-size: 0.75rem;
     text-shadow: none;
     font-weight: 500;
     margin-bottom: 0.75rem;
+    text-align: center;
+    width: 100%;
 
     @include respond-to(tablet) {
       font-size: $font-size-small-tablet;
