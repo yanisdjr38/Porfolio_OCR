@@ -31,9 +31,15 @@
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    justify-content: center;
 
     @include respond-to(tablet) {
       gap: 15px;
+    }
+
+    @include respond-to(desktop) {
+      width: fit-content;
+      margin: 0 auto;
     }
 
     /**
@@ -71,6 +77,10 @@
         height: 40px;
         font-size: 1rem;
       }
+
+      @include respond-to(desktop) {
+        display: none;
+      }
     }
   }
 
@@ -94,6 +104,16 @@
     @include respond-to(tablet) {
       gap: 12px;
       padding: 8px 0;
+    }
+
+    @include respond-to(desktop) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      overflow: visible;
+      padding: 15px 0;
+      margin: 0 auto;
+      width: fit-content;
     }
 
     // Masquer la scrollbar par défaut
@@ -216,22 +236,22 @@
        * Desktop: cartes plus grandes
        */
       @include respond-to(desktop) {
-        width: 95px;
-        height: 95px;
-        min-width: 95px;
+        width: 110px;
+        height: 110px;
+        min-width: 110px;
 
         svg {
-          font-size: 1.9rem;
+          font-size: 2.2rem;
         }
 
         span {
-          font-size: 0.85rem;
+          font-size: 0.9rem;
         }
 
         .icon-fallback {
-          width: 38px;
-          height: 38px;
-          font-size: 1.1rem;
+          width: 42px;
+          height: 42px;
+          font-size: 1.2rem;
         }
       }
     }

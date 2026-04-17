@@ -68,7 +68,7 @@
     visibility: visible;
     opacity: 1;
     padding: 1.5rem;
-    background-color: rgba($color-bg-secondary, 0.4);
+    background-color: rgba($color-bg-main, 0.4);
     border: 1px solid rgba($color-text-cyan, 0.2);
     border-radius: 4px;
 
@@ -121,7 +121,7 @@
       }
 
       .contact-label {
-        font-family: $font-code;
+        font-family: $font-main;
         font-size: $font-size-body;
         color: $color-text-muted;
         text-transform: uppercase;
@@ -135,7 +135,7 @@
       }
 
       .contact-link {
-        font-family: $font-secondary;
+        font-family: $font-main;
         font-size: $font-size-body;
         color: $color-text-cyan;
         text-decoration: none;
@@ -181,7 +181,7 @@
         justify-content: center;
         gap: 0.75rem;
         padding: 0.75rem 1.25rem;
-        font-family: $font-code;
+        font-family: $font-main;
         font-size: $font-size-body;
         color: $color-text-blue;
         background-color: $color-bg-cyan;

@@ -90,58 +90,31 @@
         "description": "Application de location d'appartements.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/kasa",
-        "image": "/portfolio/src/assets/images/kasa.png"
+        "image": "/portfolio/src/assets/images/kasa.webp"
       },
       {
         "name": "Mon Vieux Grimoire",
         "description": "Application de gestion de livres.",
         "stack": ["React", "Mangodb", "Express"],
         "link": "https://github.com/yanisdjr38/MonVieuxGrimoire",
-        "image": "/portfolio/src/assets/images/mon-vieux-grimoire.png"
+        "image": "/portfolio/src/assets/images/mon-vieux-grimoire.webp"
       },
       {
         "name": "Effetmer",
         "description": "Application de suivi de progression pour le JJB",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://yanisdjr38.github.io/effetmer-bjj/",
-        "image": "/portfolio/src/assets/images/effetmer.png"
+        "image": "/portfolio/src/assets/images/effetmer.webp"
       },
       {
         "name": "CardTrackr",
         "description": "Application de suivi de collection de cartes à jouer",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/pokecard_app",
-        "image": "/portfolio/src/assets/images/cardtrackr.png"
+        "image": "/portfolio/src/assets/images/cardtrackr.webp"
       }
     ],
     "Parcours": [
-      {
-        "name": "BTS Communication - 2023",
-        "description": "Diplôme axé sur les stratégies de communication et les médias.",
-        "niveau": "Bac +2",
-        "lieu": "Lyçée Ella Fitzgerald , Vienne",
-        "image": "",
-        "stack": [
-          "Stratégies de communication",
-          "Médias et publicité",
-          "Gestion de projet"
-        ],
-        "link": "https://ella-fitzgerald.ent.auvergnerhonealpes.fr/formations-et-dispositifs/superieures/"
-      },
-      {
-        "name": "Titre de Responsable de Développement Commerciale France et Internationale - 2024",
-        "description": "Diplome axé sur les stratégies de développement commercial et les techniques de vente.",
-        "niveau": "Bac +3",
-        "lieu": "ECEMA , Lyon 7",
-        "image": "",
-        "stack": [
-          "Gestion de projet",
-          "Techniques de vente",
-          "Stratégies de développement commercial",
-          "Management"
-        ],
-        "link": "https://www.ecema.fr/formations/bachelor-3/bachelor-3-responsable-developpement-affaires/"
-      },
       {
         "name": "Developpeur Web et Web Mobile - 2026",
         "description": "Formation intensive axée sur les compétences de développement web et mobile.",
@@ -158,6 +131,33 @@
           "MongoDB"
         ],
         "link": "https://openclassrooms.com/fr/paths/899-developpeur-web"
+      },
+      {
+        "name": "Responsable de Développement Commerciale France et Internationale - 2024",
+        "description": "Diplome axé sur les stratégies de développement commercial et les techniques de vente.",
+        "niveau": "Bac +3",
+        "lieu": "ECEMA , Lyon 7",
+        "image": "",
+        "stack": [
+          "Gestion de projet",
+          "Techniques de vente",
+          "Stratégies de développement commercial",
+          "Management"
+        ],
+        "link": "https://www.ecema.fr/formations/bachelor-3/bachelor-3-responsable-developpement-affaires/"
+      },
+      {
+        "name": "BTS Communication - 2023",
+        "description": "Diplôme axé sur les stratégies de communication et les médias.",
+        "niveau": "Bac +2",
+        "lieu": "Lyçée Ella Fitzgerald , Vienne",
+        "image": "",
+        "stack": [
+          "Stratégies de communication",
+          "Médias et publicité",
+          "Gestion de projet"
+        ],
+        "link": "https://ella-fitzgerald.ent.auvergnerhonealpes.fr/formations-et-dispositifs/superieures/"
       }
     ]
   }

@@ -20,13 +20,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     flex-wrap: wrap;
     font-family: $font-main;
     font-style: italic;
     color: $color-text-main;
     font-size: 1.5rem;
     text-shadow: $shadow-glow-gray;
-    margin-bottom: 0.5rem;
+    margin: 0 auto 0.5rem auto;
+    width: 100%;
 
     @include respond-to(tablet) {
       font-size: $font-size-h1-tablet;

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import logo from "../../assets/images/logo-portfolio-wbg.png";
 
 /**
  * Composant Navbar - Barre de navigation responsive
@@ -29,7 +28,6 @@ function Navbar() {
       {/* Logo/Branding */}
       <h1 className="logo">
         <a href="#home" className="logo-link">
-          <img src={logo} alt="Yanis Djouahra - Portfolio" />
           <span className="logo-text">Yanis Djouahra</span>
         </a>
       </h1>

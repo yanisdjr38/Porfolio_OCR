@@ -23,15 +23,15 @@ const itemVariants = {
 function Banner() {
   return (
     <section id="home" className="banner">
-      <motion.h2
+      <span className="span-title-style">SYSTEME_INITALIZED</span>
+      <motion.h1
         className="banner-title"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
       >
-        <span className="span-title-style">SYSTEME_INITALIZED</span>Yanis{" "}
-        <span className="banner-title-span">Djouahra</span>
-      </motion.h2>
+        Yanis <span className="banner-title-span">Djouahra</span>
+      </motion.h1>
       <motion.h3
         variants={itemVariants}
         initial="hidden"
