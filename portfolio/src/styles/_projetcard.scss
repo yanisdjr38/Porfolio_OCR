@@ -22,6 +22,12 @@
    * Section Image
    * Conteneur de l'image avec overlay neon
    */
+  .card-image-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+
   .card-image {
     position: relative;
     overflow: hidden;
@@ -180,6 +186,11 @@
 
       // Lien à l'intérieur du bouton
       .card-link {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
         font-family: $font-code;
         font-size: $font-size-link;
         color: $color-text-blue;

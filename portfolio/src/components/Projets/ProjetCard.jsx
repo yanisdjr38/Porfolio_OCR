@@ -12,13 +12,20 @@
 const ProjetCard = ({ title, description, link, stack, image }) => {
   return (
     <article className="card">
-      {/* Image du projet avec cover et titre */}
-      <div className="card-image">
-        <img src={image} alt="" />
-        <div className="card-image-overlay">
-          <h3 className="card-overlay-title">{title}</h3>
+      {/* Image du projet avec cover et titre - Cliquable */}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="card-image-link"
+      >
+        <div className="card-image">
+          <img src={image} alt="" />
+          <div className="card-image-overlay">
+            <h3 className="card-overlay-title">{title}</h3>
+          </div>
         </div>
-      </div>
+      </a>
 
       {/* Section contenu - Description du projet */}
       <div className="card-content">

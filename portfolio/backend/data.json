@@ -89,28 +89,28 @@
         "name": "Kasa",
         "description": "Application de location d'appartements.",
         "stack": ["React", "Sass", "React Router"],
-        "link": "https://github.com/yanisdjr38/kasa",
+        "link": "https://kasa-yd.netlify.app",
         "image": "/portfolio/src/assets/images/kasa.webp"
       },
       {
         "name": "Mon Vieux Grimoire",
         "description": "Application de gestion de livres.",
         "stack": ["React", "Mangodb", "Express"],
-        "link": "https://github.com/yanisdjr38/MonVieuxGrimoire",
+        "link": "https://mon-vieux-grimoire-yd.netlify.app",
         "image": "/portfolio/src/assets/images/mon-vieux-grimoire.webp"
       },
       {
         "name": "Effetmer",
         "description": "Application de suivi de progression pour le JJB",
         "stack": ["React", "Sass", "React Router"],
-        "link": "https://yanisdjr38.github.io/effetmer-bjj/",
+        "link": "https://effetmer-bjj.netlify.app",
         "image": "/portfolio/src/assets/images/effetmer.webp"
       },
       {
         "name": "CardTrackr",
         "description": "Application de suivi de collection de cartes à jouer",
         "stack": ["React", "Sass", "React Router"],
-        "link": "https://github.com/yanisdjr38/pokecard_app",
+        "link": "https://github.com/yanisdjr38/Cardtrackr",
         "image": "/portfolio/src/assets/images/cardtrackr.webp"
       }
     ],

@@ -10,6 +10,7 @@
   height: auto;
   padding: 0 2rem;
   position: relative;
+  flex-direction: row-reverse;
 
   @include respond-to(desktop) {
     height: 60px;
