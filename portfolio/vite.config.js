@@ -5,9 +5,6 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   base: "/",
-  optimizeDeps: {
-    exclude: ["html2pdf.js"],
-  },
   build: {
     sourcemap: true,
     minify: "esbuild",
