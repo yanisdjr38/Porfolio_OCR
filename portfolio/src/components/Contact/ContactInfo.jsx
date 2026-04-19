@@ -1,12 +1,6 @@
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import cvPdf from "../../assets/cv.pdf";
-
-// Initialize icon library
-library.add(fab, fas);
 
 /**
  * Animation variants
