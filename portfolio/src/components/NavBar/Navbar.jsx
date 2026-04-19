@@ -62,7 +62,7 @@ function Navbar() {
         </li>
         <li>
           <a href="#experience" onClick={closeMenu}>
-            Parcour
+            Parcours
           </a>
         </li>
         <li>
