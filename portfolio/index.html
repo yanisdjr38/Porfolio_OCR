@@ -47,36 +47,76 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Yanis Djouahra",
-    "url": "https://yanisdjouahra.dev",
-    "email": "yanis.djouahra38@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "FR",
-      "addressCity": "Bourgoin-Jallieu",
-      "postalCode": "38300",
-      "addressRegion": "Auvergne-Rhône-Alpes"
-    },
-    "sameAs": [
-      "https://github.com/yanisdjr38",
-      "https://www.linkedin.com/in/yanis-djouahra/"
-    ],
-    "jobTitle": "Développeur Web",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Freelance"
-    },
-    "knowsAbout": [
-      "React",
-      "Node.js",
-      "JavaScript",
-      "Web Development",
-      "Frontend Development",
-      "Backend Development"
-    ],
-    "image": "https://yanisdjouahra.dev/og.webp",
-    "description": "Portfolio de Yanis, développeur web spécialisé en React et Node.js"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://yanisdjouahra.dev",
+        "url": "https://yanisdjouahra.dev",
+        "name": "Portfolio Yanis Djouahra - Développeur React & Node.js",
+        "description": "Portfolio de Yanis, développeur web React & Node.js. Découvrez mes projets, compétences et expérience professionnelle.",
+        "image": "https://yanisdjouahra.dev/og.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Yanis Djouahra",
+          "url": "https://yanisdjouahra.dev",
+          "email": "yanis.djouahra38@gmail.com",
+          "jobTitle": "Développeur Web",
+          "image": "https://yanisdjouahra.dev/og.webp",
+          "sameAs": [
+            "https://github.com/yanisdjr38",
+            "https://www.linkedin.com/in/yanis-djouahra/"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR",
+            "addressCity": "Bourgoin-Jallieu",
+            "postalCode": "38300",
+            "addressRegion": "Auvergne-Rhône-Alpes"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://yanisdjouahra.dev"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "À propos",
+            "item": "https://yanisdjouahra.dev/#about"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Compétences",
+            "item": "https://yanisdjouahra.dev/#skills"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Projets",
+            "item": "https://yanisdjouahra.dev/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Parcours",
+            "item": "https://yanisdjouahra.dev/#experience"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Contact",
+            "item": "https://yanisdjouahra.dev/#contact"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
