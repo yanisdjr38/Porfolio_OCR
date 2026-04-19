@@ -200,7 +200,7 @@ function FormContact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Ecrire votre message"
+              placeholder="Écrivez votre message"
               rows="4"
               aria-label="Message"
               className={errors.message ? "input-error" : ""}

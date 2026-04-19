@@ -42,7 +42,7 @@ function Navbar() {
       <ul className={`menu ${isOpen ? "open" : ""}`}>
         <li>
           <a href="#home" onClick={closeMenu}>
-            Acceuil
+            Accueil
           </a>
         </li>
         <li>

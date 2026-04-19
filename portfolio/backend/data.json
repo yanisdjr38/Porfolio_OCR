@@ -116,7 +116,7 @@
     ],
     "Parcours": [
       {
-        "name": "Developpeur Web et Web Mobile - 2026",
+        "name": "Développeur Web et Web Mobile - 2026",
         "description": "Formation intensive axée sur les compétences de développement web et mobile.",
         "niveau": "Bac +2",
         "lieu": "OpenClassrooms , En ligne",
@@ -133,8 +133,8 @@
         "link": "https://openclassrooms.com/fr/paths/899-developpeur-web"
       },
       {
-        "name": "Responsable de Développement Commerciale France et Internationale - 2024",
-        "description": "Diplome axé sur les stratégies de développement commercial et les techniques de vente.",
+        "name": "Responsable de Développement Commercial France et Internationale - 2024",
+        "description": "Diplôme axé sur les stratégies de développement commercial et les techniques de vente.",
         "niveau": "Bac +3",
         "lieu": "ECEMA , Lyon 7",
         "image": "",
@@ -150,7 +150,7 @@
         "name": "BTS Communication - 2023",
         "description": "Diplôme axé sur les stratégies de communication et les médias.",
         "niveau": "Bac +2",
-        "lieu": "Lyçée Ella Fitzgerald , Vienne",
+        "lieu": "Lycée Ella Fitzgerald , Vienne",
         "image": "",
         "stack": [
           "Stratégies de communication",
