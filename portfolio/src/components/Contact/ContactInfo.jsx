@@ -63,7 +63,7 @@ function ContactInfo() {
 
         <a
           href={cvPdf}
-          download="Yanis_Djouahra_CV.pdf"
+          download="/portfolio/src/assets/Djouahra_Yanis.pdf"
           className="contact-btn cv-btn"
           aria-label="Télécharger mon CV (PDF)"
           type="application/pdf"
