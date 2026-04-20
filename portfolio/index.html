@@ -2,13 +2,30 @@
 <html lang="fr">
 
 <head>
+  <!-- Charset & Viewport -->
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Title -->
+  <title>Portfolio Yanis Djouahra - Développeur Web React et Node.js</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Développeur web React & Node.js, je crée des applications modernes, performantes et sur mesure. Découvrez mes projets et compétences." />
+  <meta name="keywords"
+    content="Yanis, portfolio, développeur web, React, Node.js, projets, compétences, expériences professionnelles" />
+  <meta name="author" content="Yanis Djouahra" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yanisdjouahra.dev" />
+
+  <!-- Favicon & Theme -->
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="theme-color" content="#0f0f0f" />
+
+  <!-- Google Fonts (avec opt-in pour performance) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="./src/styles/_index.scss" />
-
-  <!-- Async Google Fonts with font-display: swap -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Audiowide&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Fira+Code:wght@400;500&family=Michroma&display=swap">
   <link rel="stylesheet"
@@ -18,30 +35,25 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Audiowide&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Fira+Code:wght@400;500&family=Michroma&display=swap">
   </noscript>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Portfolio de Yanis, développeur web React & Node.js. Découvrez mes projets, compétences et expérience professionnelle." />
-  <meta name="keywords"
-    content="Yanis, portfolio, développeur web, React, Node.js, projets, compétences, expériences professionnelles" />
-  <meta name="author" content="Yanis Djouahra" />
-  <meta name="robots" content="index, follow" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./src/styles/_index.scss" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Portfolio Yanis Djouahra - Développeur React & Node.js" />
-  <meta property="og:description"
-    content="Découvrez le portfolio de Yanis, développeur web React & Node.js. Projets, compétences et expérience en développement web." />
+  <meta property="og:description" content="Découvrez mes projets et compétences en développement web moderne." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yanisdjouahra.dev" />
   <meta property="og:image" content="https://yanisdjouahra.dev/og.webp" />
   <meta property="og:logo" content="https://yanisdjouahra.dev/logo.svg" />
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Portfolio Yanis Djouahra - Développeur React & Node.js" />
-  <meta name="twitter:description"
-    content="Découvrez le portfolio de Yanis, développeur web React & Node.js. Projets, compétences et expérience en développement web." />
+  <meta name="twitter:description" content="Découvrez mes projets et compétences en développement web moderne." />
   <meta name="twitter:image" content="https://yanisdjouahra.dev/twitter-image.webp" />
   <meta name="twitter:domain" content="yanisdjouahra.dev" />
   <meta name="twitter:url" content="https://yanisdjouahra.dev" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="theme-color" content="#0f0f0f" />
-  <link rel="canonical" href="https://yanisdjouahra.dev" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -49,31 +61,28 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": "https://yanisdjouahra.dev",
+        "@type": "Person",
+        "name": "Yanis Djouahra",
         "url": "https://yanisdjouahra.dev",
-        "name": "Portfolio Yanis Djouahra - Développeur React & Node.js",
-        "description": "Portfolio de Yanis, développeur web React & Node.js. Découvrez mes projets, compétences et expérience professionnelle.",
+        "email": "yanis.djouahra38@gmail.com",
+        "jobTitle": "Développeur Web",
         "image": "https://yanisdjouahra.dev/og.webp",
-        "author": {
-          "@type": "Person",
-          "name": "Yanis Djouahra",
-          "url": "https://yanisdjouahra.dev",
-          "email": "yanis.djouahra38@gmail.com",
-          "jobTitle": "Développeur Web",
-          "image": "https://yanisdjouahra.dev/og.webp",
-          "sameAs": [
-            "https://github.com/yanisdjr38",
-            "https://www.linkedin.com/in/yanis-djouahra/"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "FR",
-            "addressCity": "Bourgoin-Jallieu",
-            "postalCode": "38300",
-            "addressRegion": "Auvergne-Rhône-Alpes"
-          }
+        "sameAs": [
+          "https://github.com/yanisdjr38",
+          "https://www.linkedin.com/in/yanis-djouahra/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "FR",
+          "addressCity": "Bourgoin-Jallieu",
+          "postalCode": "38300",
+          "addressRegion": "Auvergne-Rhône-Alpes"
         }
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://yanisdjouahra.dev",
+        "name": "Portfolio Yanis Djouahra"
       },
       {
         "@type": "BreadcrumbList",
@@ -119,8 +128,6 @@
     ]
   }
   </script>
-
-  <title>Portfolio de Yanis Djouahra - Développeur Web React et Node.js</title>
 </head>
 
 <body>
