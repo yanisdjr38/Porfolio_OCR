@@ -100,8 +100,9 @@ function Banner() {
         custom={5}
         className="button-link banner-button"
         onClick={handleScrollToAbout}
+        data-text="Entrer dans le système >"
       >
-        Entrer dans le système {">"}_
+        <span>Entrer dans le système {">"}_</span>
       </motion.button>{" "}
     </section>
   );

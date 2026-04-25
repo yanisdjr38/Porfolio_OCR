@@ -184,17 +184,27 @@
       transition:
         background-color 0.3s ease,
         color 0.3s ease;
+      font-family: $font-code;
+      font-size: $font-size-link;
+      color: $color-bg-main;
+      font-weight: 600;
+      @include glitch-button(
+        $color-bg-cyan,
+        $color-bg-main,
+        $color-accent-pink
+      );
 
       &:hover {
         background-color: $color-bg-main;
         color: $color-bg-cyan;
         border: 1px solid $color-bg-cyan;
+        box-shadow: 0 0 25px $color-bg-cyan;
       }
 
       .card-link {
         font-family: $font-code;
         font-size: $font-size-link;
-        color: $color-text-blue;
+        color: $color-bg-main;
         text-decoration: none;
         font-weight: 600;
       }

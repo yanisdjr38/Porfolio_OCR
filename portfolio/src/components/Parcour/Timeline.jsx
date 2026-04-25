@@ -41,15 +41,17 @@ function Timeline({ name, description, niveau, lieu, stack, link }) {
 
       {/* Pied: lien vers le certificat */}
       <div className="card-footer">
-        <button className="button-link">
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-link"
-          >
-            Voir le diplôme
-          </a>
+        <button className="button-link" data-text="Voir le diplôme">
+          <span>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-link"
+            >
+              Voir le diplôme
+            </a>
+          </span>
         </button>
       </div>
     </div>

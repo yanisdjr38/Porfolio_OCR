@@ -45,15 +45,17 @@ const ProjetCard = ({ title, description, link, stack, image }) => {
 
       {/* Pied de page avec bouton d'action */}
       <div className="card-footer">
-        <button className="button-link">
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-link"
-          >
-            Voir le projet
-          </a>
+        <button className="button-link" data-text="Voir le projet">
+          <span>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-link"
+            >
+              Voir le projet
+            </a>
+          </span>
         </button>
       </div>
     </article>

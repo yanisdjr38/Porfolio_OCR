@@ -45,9 +45,10 @@ function ContactInfo() {
           rel="noopener noreferrer"
           className="contact-btn github-btn"
           aria-label="GitHub"
+          data-text="GitHub"
         >
           <FontAwesomeIcon icon={["fab", "github"]} />
-          GitHub
+          <span>GitHub</span>
         </a>
 
         <a
@@ -56,9 +57,10 @@ function ContactInfo() {
           rel="noopener noreferrer"
           className="contact-btn linkedin-btn"
           aria-label="LinkedIn"
+          data-text="LinkedIn"
         >
           <FontAwesomeIcon icon={["fab", "linkedin"]} />
-          LinkedIn
+          <span>LinkedIn</span>
         </a>
 
         <a
@@ -67,9 +69,10 @@ function ContactInfo() {
           className="contact-btn cv-btn"
           aria-label="Télécharger mon CV (PDF)"
           type="application/pdf"
+          data-text="Mon CV"
         >
           <FontAwesomeIcon icon={["fas", "file-pdf"]} aria-hidden="true" />
-          Mon CV
+          <span>Mon CV</span>
         </a>
       </div>
     </motion.div>

@@ -188,7 +188,7 @@
         padding: 0.75rem 1.25rem;
         font-family: $font-main;
         font-size: $font-size-body;
-        color: $color-text-blue;
+        color: $color-bg-main;
         background-color: $color-bg-cyan;
         border: none;
         border-radius: 3px;
@@ -198,6 +198,11 @@
         cursor: pointer;
         transition: $transition-smooth;
         font-weight: 600;
+        @include glitch-button(
+          $color-bg-cyan,
+          $color-bg-main,
+          $color-accent-pink
+        );
 
         /* Icône FontAwesome */
         svg {
@@ -222,6 +227,7 @@
           background-color: $color-bg-main;
           color: $color-bg-cyan;
           border: 1px solid $color-bg-cyan;
+          box-shadow: 0 0 25px $color-bg-cyan;
         }
       }
     }

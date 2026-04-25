@@ -166,3 +166,59 @@
 @mixin transition($property, $duration: 0.3s) {
   transition: $property $duration ease-in-out;
 }
+
+// Glitch button mixin - Creates glitch effect with two colors
+@mixin glitch-button(
+  $bg-color,
+  $text-color,
+  $secondary-color: $color-accent-pink,
+  $duration: 0.5s
+) {
+  position: relative;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover span,
+  &:focus span {
+    opacity: 0;
+  }
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: $bg-color;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    opacity: 1;
+    color: $secondary-color;
+    animation: glitch-anim $duration cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    color: $color-bg-main;
+    animation: glitch-anim $duration cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      reverse both;
+  }
+}
