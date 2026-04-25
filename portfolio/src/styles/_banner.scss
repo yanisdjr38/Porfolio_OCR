@@ -8,35 +8,43 @@
   margin-bottom: 2rem;
 
   @include respond-to(tablet) {
-    margin-bottom: 4rem;
+    min-height: 100vh;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 60px 40px;
   }
   @include respond-to(desktop) {
+    min-height: 100vh;
+    margin-bottom: 0;
     display: flex;
-    align-items: center;
-    margin-bottom: 6rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 60px;
   }
 
   .banner-title {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
     flex-wrap: wrap;
     font-family: $font-main;
     font-style: italic;
     color: $color-text-main;
     font-size: 1.5rem;
     text-shadow: $shadow-glow-gray;
-    margin: 0 auto 0.5rem auto;
+    margin: 0 0 0.5rem 0;
     width: 100%;
 
     @include respond-to(tablet) {
-      font-size: $font-size-h1-tablet;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
     @include respond-to(desktop) {
-      font-size: $font-size-h1-desktop;
+      font-size: 3.5rem;
       margin-bottom: 1.5rem;
     }
 
@@ -69,24 +77,24 @@
 
   .banner-subtitle {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     font-family: $font-secondary;
     color: $color-text-cyan;
     font-size: 0.75rem;
     text-shadow: none;
     font-weight: 500;
     margin-bottom: 0.75rem;
-    text-align: center;
+    text-align: left;
     width: 100%;
 
     @include respond-to(tablet) {
-      font-size: $font-size-small-tablet;
-      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
     @include respond-to(desktop) {
-      font-size: $font-size-small-desktop;
-      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -99,11 +107,13 @@
     padding: 0;
 
     @include respond-to(tablet) {
-      gap: 20px;
+      justify-content: flex-start;
+      gap: 25px;
       margin-bottom: 2rem;
     }
     @include respond-to(desktop) {
-      gap: 25px;
+      justify-content: flex-start;
+      gap: 35px;
       margin-bottom: 2.5rem;
     }
 
@@ -140,19 +150,27 @@
     }
   }
   .banner-description {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+
     @include respond-to(tablet) {
-      max-width: 700px;
+      max-width: 600px;
     }
     @include respond-to(desktop) {
-      max-width: 600px;
+      max-width: 700px;
     }
     p {
       font-family: $font-secondary;
       color: $color-text-main;
+      font-size: 0.95rem;
 
-      font-size: $font-size-body-tablet;
+      @include respond-to(tablet) {
+        font-size: 1.05rem;
+      }
+      @include respond-to(desktop) {
+        font-size: 1.15rem;
+      }
 
       @include neon-glow($color-accent-gray);
     }

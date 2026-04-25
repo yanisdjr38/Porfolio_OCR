@@ -17,11 +17,15 @@
   }
 
   @include respond-to(tablet) {
+    min-height: 100vh;
     padding: 40px;
+    justify-content: center;
   }
 
   @include respond-to(desktop) {
+    min-height: 100vh;
     padding: 50px;
+    justify-content: center;
   }
 }
 
@@ -34,10 +38,10 @@
 
   // Mobile: une colonne
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: stretch;
   gap: 25px;
   margin-top: 20px;
-  justify-items: center;
+  justify-items: stretch;
 
   /**
    * Tablet: grille 2 colonnes

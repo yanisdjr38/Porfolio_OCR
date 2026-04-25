@@ -19,25 +19,17 @@
   }
 
   @include respond-to(tablet) {
+    min-height: 100vh;
     padding: 40px;
+    margin-bottom: 0;
+    justify-content: center;
   }
 
   @include respond-to(desktop) {
+    min-height: 100vh;
     padding: 50px;
-  }
-
-  /**
-   * Tablet+: augmente la marge inférieure
-   */
-  @include respond-to(tablet) {
-    margin-bottom: 70px;
-  }
-
-  /**
-   * Desktop: marge encore plus importante pour l'espace
-   */
-  @include respond-to(desktop) {
-    margin-bottom: 100px;
+    margin-bottom: 0;
+    justify-content: center;
   }
 
   /**

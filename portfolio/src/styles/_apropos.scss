@@ -19,8 +19,17 @@
   flex-direction: column;
   padding: 30px 20px;
 
+  @include respond-to(tablet) {
+    min-height: 100vh;
+  }
+
+  @include respond-to(desktop) {
+    min-height: 100vh;
+  }
+
   h2 {
     // Inherits from global h2 styles
+    margin-bottom: 3rem;
   }
 
   /**
