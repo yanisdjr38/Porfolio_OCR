@@ -36,7 +36,7 @@
    * Titres h3
    */
   h3 {
-    margin-top: 1.5rem;
+    margin-top: 0;
     margin-bottom: 1rem;
 
     &:first-child {
@@ -45,19 +45,40 @@
   }
 
   /**
-   * Article principal - À propos
+   * Titres des colonnes
    */
-  .apropos-article {
-    flex: 1;
+  .column-title {
+    color: $color-text-cyan;
+    font-family: $font-code;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
 
-    /**
-     * Paragraphe de description avec style neon
-     */
+  /**
+   * Contenu des colonnes avec style neon
+   */
+  .column-content {
+    border-radius: 5px;
+    padding: 1.25rem;
+    transition: 0.4s ease;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include neon-glow($color-accent-gray);
+  }
+
+  /**
+   * Article description - Full width
+   */
+  .apropos-article-description {
+    width: 100%;
+    margin-bottom: 3rem;
+
     .apropos-description {
-      @include neon-box-shadow($color-accent-cyan);
-      box-sizing: border-box;
-      border: 1px solid $color-accent-cyan;
+      border: 2px solid $color-accent-cyan;
       border-radius: 5px;
+      box-sizing: border-box;
       padding: 1.25rem;
       transition: 0.4s ease;
 
@@ -66,22 +87,47 @@
       color: $color-text-main;
       font-size: $font-size-body;
       line-height: 1.8;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
 
       @include neon-glow($color-accent-gray);
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
+  }
+
+  /**
+   * Layout 3 colonnes - Expériences | Soft Skills | Hobbies
+   */
+  .apropos-three-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    @include respond-to(tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @include respond-to(desktop) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      align-items: start;
+    }
+  }
+
+  .apropos-column {
+    width: 100%;
   }
 
   /**
    * Container des soft skills
    */
   .softskill-container {
-    flex: 1;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   /**
@@ -96,9 +142,6 @@
    * Change vers un layout horizontal
    */
   @include respond-to(desktop) {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2rem;
     padding: 50px;
   }
 }

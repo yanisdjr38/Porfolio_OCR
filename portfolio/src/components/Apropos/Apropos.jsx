@@ -1,5 +1,7 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
+import Experience from "./Experience";
+import Hobbies from "./Hobbies";
 import Softskill from "./Softskill";
 
 /**
@@ -43,22 +45,54 @@ function Apropos() {
         <motion.h2 variants={itemVariants}>
           À propos de moi <span className="span-title"></span>
         </motion.h2>
-        <div className="apropos-softskill-container">
-          <article className="apropos-article">
-            <motion.h3 variants={itemVariants}>
-              Un profil hybride au service de la performance web
+
+        {/* Section description - Full width */}
+        <article className="apropos-article apropos-article-description">
+          <motion.h3 variants={itemVariants}>
+            Un profil hybride au service de la performance web
+          </motion.h3>
+          <motion.p variants={itemVariants} className="apropos-description">
+            Issu d'une formation en communication et en développement
+            commercial, j'ai acquis une compréhension profonde des besoins
+            utilisateur. J'applique cette vision stratégique au développement
+            React, en créant des interfaces intuitives et performantes centrées
+            sur l'expérience utilisateur.
+          </motion.p>
+        </article>
+
+        {/* Section 3 colonnes: Soft Skills | Expériences | Hobbies */}
+        <div className="apropos-three-columns">
+          <article className="apropos-column">
+            <motion.h3 variants={itemVariants} className="column-title">
+              Soft Skills
             </motion.h3>
-            <motion.p variants={itemVariants} className="apropos-description">
-              Issu d'une formation en communication et en développement
-              commercial, j'ai acquis une compréhension profonde des besoins
-              utilisateur. J'applique cette vision stratégique au développement
-              React, en créant des interfaces intuitives et performantes
-              centrées sur l'expérience utilisateur.
-            </motion.p>
-          </article>
-          <article className="softskill-article">
-            <motion.div variants={itemVariants} className="softskill-container">
+            <motion.div
+              variants={itemVariants}
+              className="column-content softskill-wrapper"
+            >
               <Softskill />
+            </motion.div>
+          </article>
+          <article className="apropos-column">
+            <motion.h3 variants={itemVariants} className="column-title">
+              Expériences Professionnelles
+            </motion.h3>
+            <motion.div
+              variants={itemVariants}
+              className="column-content experience"
+            >
+              <Experience />
+            </motion.div>
+          </article>
+          <article className="apropos-column">
+            <motion.h3 variants={itemVariants} className="column-title">
+              Hobbies
+            </motion.h3>
+            <motion.div
+              variants={itemVariants}
+              className="column-content hobbies"
+            >
+              <Hobbies />
             </motion.div>
           </article>
         </div>

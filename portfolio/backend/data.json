@@ -160,5 +160,42 @@
         "link": "https://ella-fitzgerald.ent.auvergnerhonealpes.fr/formations-et-dispositifs/superieures/"
       }
     ]
-  }
+  },
+  "experiences": [
+    {
+      "role": "Monteur PC",
+      "company": "LDLC",
+      "location": "Saint-Quentin-Fallavier",
+      "year": "2024",
+      "type": null
+    },
+    {
+      "role": "Assistant Manager",
+      "company": "New Balance",
+      "location": "Villefontaine",
+      "year": "2023-2024",
+      "type": "Alternance"
+    },
+    {
+      "role": "Chargé de Communication",
+      "company": "ABD Club de Basket",
+      "location": null,
+      "year": "2022",
+      "type": "Stage"
+    },
+    {
+      "role": "Commercial",
+      "company": "ABD Club de Basket",
+      "location": null,
+      "year": "2022",
+      "type": "Stage"
+    }
+  ],
+  "hobbies": [
+    "JJB",
+    "Renforcement musculaire",
+    "Course à pied",
+    "Cinéma",
+    "Technologie"
+  ]
 }

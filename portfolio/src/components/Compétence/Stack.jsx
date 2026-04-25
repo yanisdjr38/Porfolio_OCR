@@ -1,3 +1,7 @@
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -122,7 +126,7 @@ function Stack() {
           onClick={() => handleNavigation("left")}
           aria-label="Précédent"
         >
-          <FontAwesomeIcon icon="fa-solid fa-chevron-left" aria-hidden="true" />
+          <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
         </button>
 
         {/* Carrousel avec animation */}
@@ -160,10 +164,7 @@ function Stack() {
           onClick={() => handleNavigation("right")}
           aria-label="Suivant"
         >
-          <FontAwesomeIcon
-            icon="fa-solid fa-chevron-right"
-            aria-hidden="true"
-          />
+          <FontAwesomeIcon icon={faChevronRight} aria-hidden="true" />
         </button>
       </div>
     </div>

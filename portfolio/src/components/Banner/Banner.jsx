@@ -21,6 +21,13 @@ const itemVariants = {
  * @component
  */
 function Banner() {
+  const handleScrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="home" className="banner">
       <span className="span-title-style">SYSTEME_INITALIZED</span>
@@ -85,7 +92,17 @@ function Banner() {
           De la stratégie commerciale au développement React : Créateur
           d’applications déterminé et centré sur l’utilisateur
         </motion.p>
-      </div>
+      </div>{" "}
+      <motion.button
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        custom={5}
+        className="button-link banner-button"
+        onClick={handleScrollToAbout}
+      >
+        Entrer dans le système {">"}_
+      </motion.button>{" "}
     </section>
   );
 }

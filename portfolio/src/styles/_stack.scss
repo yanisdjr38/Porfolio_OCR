@@ -30,11 +30,14 @@
     gap: 10px;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
     justify-content: center;
 
     @include respond-to(tablet) {
-      gap: 15px;
+      gap: 0px;
+      overflow: visible;
+      width: fit-content;
+      margin: 0 auto;
     }
 
     @include respond-to(desktop) {
@@ -73,9 +76,9 @@
       }
 
       @include respond-to(tablet) {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
       }
 
       @include respond-to(desktop) {
@@ -86,7 +89,7 @@
 
   /**
    * Carrousel des compétences
-   * Affiche 2-3 cartes sur mobile, 4-5 sur tablet, 6 sur desktop
+   * Affiche 2-3 cartes sur mobile, grid sur tablet et desktop
    */
   .stack-items-carousel {
     display: flex;
@@ -100,16 +103,22 @@
     flex: 1;
     min-width: 0;
     box-sizing: border-box;
+    justify-content: center;
 
     @include respond-to(tablet) {
-      gap: 12px;
+      display: grid;
+      grid-template-columns: repeat(4, 90px);
+      gap: 1px;
+      overflow: visible;
       padding: 8px 0;
+      margin: 0 auto;
+      width: fit-content;
     }
 
     @include respond-to(desktop) {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(4, 120px);
+      gap: 1px;
       overflow: visible;
       padding: 15px 0;
       margin: 0 auto;

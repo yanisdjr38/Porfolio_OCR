@@ -152,13 +152,16 @@
   .banner-description {
     max-width: 100%;
     margin: 0;
+    margin-bottom: 1.5rem;
     text-align: left;
 
     @include respond-to(tablet) {
       max-width: 600px;
+      margin-bottom: 2rem;
     }
     @include respond-to(desktop) {
       max-width: 700px;
+      margin-bottom: 2.5rem;
     }
     p {
       font-family: $font-secondary;
@@ -173,6 +176,40 @@
       }
 
       @include neon-glow($color-accent-gray);
+    }
+  }
+
+  .button-link {
+    border: none;
+    background-color: $color-bg-cyan;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    font-family: $font-code;
+    font-size: $font-size-link;
+    color: $color-text-blue;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $color-bg-main;
+      color: $color-bg-cyan;
+      border: 1px solid $color-bg-cyan;
+    }
+
+    &.banner-button {
+      padding: 12px 20px;
+      font-size: 1rem;
+
+      @include respond-to(tablet) {
+        padding: 15px 25px;
+        font-size: 1.05rem;
+      }
+      @include respond-to(desktop) {
+        padding: 15px 25px;
+        font-size: 1.15rem;
+      }
     }
   }
 }

@@ -1,0 +1,27 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+/**
+ * Section Hobbies
+ * Affiche les hobbies avec le même effet neon que les soft skills
+ */
+.hobbies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  li {
+    list-style: none;
+    @include neon-card($color-accent-cyan);
+
+    font-family: $font-main;
+    color: $color-text-main;
+    font-size: $font-size-body;
+    background-color: $color-bg-main;
+    border-radius: 3px;
+    padding: 0.5rem 0.75rem;
+  }
+}
