@@ -21,19 +21,19 @@ function App() {
         <NavBar />
       </header>
       <main>
-        <section id="banner">
+        <section id="accueil">
           <Banner />
         </section>
-        <section id="projets">
+        <section id="projects">
           <Projet />
         </section>
-        <section id="temoignages">
+        <section id="testimonials">
           <Temoignage />
         </section>
-        <section id="competences">
+        <section id="skills">
           <Compétence />
         </section>
-        <section id="apropos">
+        <section id="about">
           <Apropos />
         </section>
         <section id="contact">

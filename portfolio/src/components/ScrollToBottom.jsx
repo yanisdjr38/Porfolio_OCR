@@ -4,11 +4,11 @@ import { useCallback, useEffect, useState } from "react";
 
 // Liste des sections dans l'ordre
 const SECTIONS = [
-  "banner",
-  "projets",
-  "temoignages",
-  "competences",
-  "apropos",
+  "accueil",
+  "projects",
+  "testimonials",
+  "skills",
+  "about",
   "contact",
   "footer",
 ];
