@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import cvPdf from "../../assets/cv.pdf";
+import cvPdf from "../../assets/Djouahra_Yanis.pdf";
 
 /**
  * Animation variants

@@ -1,0 +1,266 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+/**
+ * Section Témoignages
+ * Grille de cartes de témoignages clients avec style neon
+ */
+.temoignage-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  padding: 30px 20px;
+
+  h2 .span-title {
+    background-color: $color-accent-cyan !important;
+  }
+
+  @include respond-to(tablet) {
+    min-height: 100vh;
+    padding: 40px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include respond-to(desktop) {
+    min-height: 100vh;
+    padding: 50px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/**
+ * Conteneur de la grille de témoignages
+ * Layout responsive: 1 colonne (mobile) -> 2 colonnes (tablet) -> 3 colonnes (desktop)
+ */
+.temoignage-container {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr;
+  margin-top: 30px;
+  align-items: center;
+
+  @include respond-to(tablet) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin-top: 50px;
+  }
+}
+
+/**
+ * Carte individuelle de témoignage
+ * Design avec bordure neon et gradient
+ */
+.temoignage-card {
+  @include neon-card($color-accent-cyan);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.05) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  border: 2px solid $color-accent-cyan;
+  border-radius: 12px;
+  padding: 30px 25px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.2),
+    inset 0 0 10px rgba(0, 255, 255, 0.05);
+  transition: all 0.4s ease;
+
+  @include respond-to(tablet) {
+    padding: 35px 28px;
+    min-height: 320px;
+  }
+
+  @include respond-to(desktop) {
+    padding: 40px 30px;
+    height: 400px;
+  }
+
+  /**
+   * Hover effect avec border color change
+   */
+  &:hover {
+    border-color: $color-accent-pink;
+    box-shadow:
+      0 15px 40px rgba(255, 0, 255, 0.3),
+      inset 0 0 15px rgba(255, 0, 255, 0.1);
+    color: $color-accent-pink;
+  }
+}
+
+/**
+ * Contenu du témoignage
+ * Le texte de la citation
+ */
+.temoignage-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  .temoignage-text {
+    color: $color-text-main;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    transition: color 0.4s ease;
+
+    @include respond-to(tablet) {
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.1rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+    }
+  }
+}
+
+/**
+ * Section auteur du témoignage
+ * Avatar + Nom/Rôle/Entreprise
+ */
+.temoignage-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+
+  @include respond-to(tablet) {
+    gap: 18px;
+    padding-top: 25px;
+  }
+
+  @include respond-to(desktop) {
+    gap: 20px;
+    padding-top: 25px;
+  }
+}
+
+/**
+ * Avatar de l'auteur
+ * Photo de profil circulaire
+ */
+.author-avatar {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid $color-accent-cyan;
+  background-color: $color-bg-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to(desktop) {
+    width: 60px;
+    height: 60px;
+  }
+
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/**
+ * Informations de l'auteur
+ * Nom, rôle, entreprise
+ */
+.author-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .author-name {
+    margin: 0;
+    color: $color-text-main;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: color 0.4s ease;
+
+    @include respond-to(tablet) {
+      font-size: 0.85rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 1.025rem;
+    }
+  }
+
+  .author-role {
+    margin: 0;
+    color: $color-accent-cyan;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: color 0.4s ease;
+
+    @include respond-to(tablet) {
+      font-size: 0.78rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .author-company {
+    margin: 0;
+    color: $color-text-muted;
+    font-size: 0.75rem;
+    transition: color 0.4s ease;
+
+    @include respond-to(tablet) {
+      font-size: 0.72rem;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/**
+ * Change color au hover du card
+ */
+.temoignage-card:hover {
+  .temoignage-text {
+    color: $color-accent-pink;
+  }
+
+  .author-role {
+    color: $color-accent-pink;
+  }
+
+  .author-company {
+    color: $color-accent-pink;
+  }
+}

@@ -21,10 +21,10 @@ const itemVariants = {
  * @component
  */
 function Banner() {
-  const handleScrollToAbout = () => {
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
+  const handleScrollToProjects = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -99,7 +99,7 @@ function Banner() {
         animate="visible"
         custom={5}
         className="button-link banner-button"
-        onClick={handleScrollToAbout}
+        onClick={handleScrollToProjects}
         data-text="Entrer dans le système >"
       >
         <span>Entrer dans le système {">"}_</span>

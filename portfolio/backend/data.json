@@ -3,7 +3,7 @@
     "Curiosité et apprentissage continu",
     "Communication et écoute active",
     "Esprit d'équipe et collaboration",
-    "Ésprit d'initiative et créativité",
+    "Esprit d'initiative et créativité",
     "Adaptabilité et flexibilité"
   ],
   "stack": {
@@ -95,7 +95,7 @@
       {
         "name": "Mon Vieux Grimoire",
         "description": "Application de gestion de livres.",
-        "stack": ["React", "Mangodb", "Express"],
+        "stack": ["React", "MongoDB", "Express"],
         "link": "https://mon-vieux-grimoire-yd.netlify.app",
         "image": "/portfolio/src/assets/images/mon-vieux-grimoire.webp"
       },
@@ -119,7 +119,7 @@
         "name": "Développeur Web et Web Mobile - 2026",
         "description": "Formation intensive axée sur les compétences de développement web et mobile.",
         "niveau": "Bac +2",
-        "lieu": "OpenClassrooms , En ligne",
+        "lieu": "OpenClassrooms, En ligne",
         "image": "",
         "stack": [
           "HTML",
@@ -136,7 +136,7 @@
         "name": "Responsable de Développement Commercial France et Internationale - 2024",
         "description": "Diplôme axé sur les stratégies de développement commercial et les techniques de vente.",
         "niveau": "Bac +3",
-        "lieu": "ECEMA , Lyon 7",
+        "lieu": "ECEMA",
         "image": "",
         "stack": [
           "Gestion de projet",
@@ -150,7 +150,7 @@
         "name": "BTS Communication - 2023",
         "description": "Diplôme axé sur les stratégies de communication et les médias.",
         "niveau": "Bac +2",
-        "lieu": "Lycée Ella Fitzgerald , Vienne",
+        "lieu": "Lycée Ella Fitzgerald",
         "image": "",
         "stack": [
           "Stratégies de communication",
@@ -166,8 +166,8 @@
       "role": "Monteur PC",
       "company": "LDLC",
       "location": "Saint-Quentin-Fallavier",
-      "year": "2024",
-      "type": null
+      "year": "2025",
+      "type": "Intérim"
     },
     {
       "role": "Assistant Manager",
@@ -197,5 +197,43 @@
     "Course à pied",
     "Cinéma",
     "Technologie"
+  ],
+  "capacites": [
+    "Développer une app React performante",
+    "Créer une API REST sécurisée",
+    "Intégrer un design Figma pixel-perfect",
+    "Optimiser le SEO technique"
+  ],
+  "resultats": [
+    {
+      "title": "Application avec authentification complète",
+      "icon": "faLock"
+    },
+    {
+      "title": "Score Lighthouse optimisé",
+      "icon": "faBolt"
+    },
+    {
+      "title": "Responsive 100% mobile",
+      "icon": "faMobile"
+    }
+  ],
+  "temoignages": [
+    {
+      "nom": "Axel Gor",
+      "role": "Manager",
+      "alt": "Photo de Axel Gor",
+      "entreprise": "New Balance",
+      "temoignage": "Yanis est arrivé en tant que jeune « adolescent » dans ce milieu. Je l'ai vu grandir pour avoir partagé presque 2 ans et demi avec lui, et j'ai déjà remarqué un bon profil managérial. C'est une personne appréciée et appréciable, qui met souvent son cœur à l'ouvrage et ne rechigne jamais sur la tâche.\n\nCe qui est agréable, c'est qu'il est sans cesse dans la proposition pour faciliter et développer l'intra-service, et également humain. S'il continue à se structurer dans le cœur et dans la tête, je pense qu'il peut réaliser de belles choses au cours de sa carrière professionnelle.",
+      "photo": "/portfolio/src/assets/images/testimonial-1.jpg"
+    },
+    {
+      "nom": "Sébastien Gallet",
+      "role": "Mentor et formateur",
+      "alt": "Photo de Sébastien Gallet",
+      "entreprise": "Openclassrooms",
+      "temoignage": "J’ai eu le plaisir d’accompagner Yanis dans le cadre de sa formation de développeur web chez OpenClassrooms.\nSérieux, motivé et à l’écoute, il a su progresser rapidement tout au long de son parcours. Yanis fait preuve d’une bonne capacité d’adaptation, d’autonomie et d’un vrai intérêt pour le développement web.\nJe le recommande avec confiance pour ses futurs projets professionnels.",
+      "photo": "/portfolio/src/assets/images/testimonial-2.webp"
+    }
   ]
 }

@@ -1,5 +1,7 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
+import Capacites from "./Capacites";
+import Resultats from "./Resultats";
 import Stack from "./Stack";
 
 /**
@@ -27,7 +29,7 @@ const itemVariants = {
 
 /**
  * Composant Compétence - Section des compétences techniques
- * Affiche la grille de technologies avec filtrage par catégorie
+ * Layout: colonne sur mobile/tablette, deux colonnes sur desktop
  * @component
  */
 function Compétence() {
@@ -44,9 +46,21 @@ function Compétence() {
         Compétences Techniques <span className="span-title"></span>
       </motion.h2>
 
-      <motion.div className="competence-list" variants={itemVariants}>
-        <Stack />
-      </motion.div>
+      {/* Layout two-column desktop */}
+      <div className="competence-layout">
+        {/* Colonne gauche: Stack */}
+        <motion.div className="competence-left" variants={itemVariants}>
+          <div className="competence-list">
+            <Stack />
+          </div>
+        </motion.div>
+
+        {/* Colonne droite: Capacités + Résultats */}
+        <motion.div className="competence-right" variants={itemVariants}>
+          <Capacites />
+          <Resultats />
+        </motion.div>
+      </div>
     </motion.section>
   );
 }

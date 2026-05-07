@@ -44,6 +44,55 @@
 }
 
 /**
+ * Layout deux colonnes desktop
+ * Gauche: Stack, Droite: Capacités + Résultats
+ */
+.competence-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 30px;
+  width: 100%;
+
+  @include respond-to(desktop) {
+    flex-direction: row;
+    gap: 60px;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+/**
+ * Colonne gauche: Stack
+ */
+.competence-left {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include respond-to(desktop) {
+    flex: 1 1 50%;
+    min-width: 0;
+    justify-content: flex-start;
+  }
+}
+
+/**
+ * Colonne droite: Capacités + Résultats empilés
+ */
+.competence-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  @include respond-to(desktop) {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+}
+
+/**
  * Grille des compétences
  * Layout responsive: 1 colonne (mobile) -> auto-fit (tablet+)
  */
@@ -65,10 +114,12 @@
 
   /**
    * Desktop: grille auto-fit avec largeur minimale 250px
+   * Pas de margin-top pour aligner avec les autres colonnes
    */
   @include respond-to(desktop) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
+    margin-top: 0;
   }
 }
 

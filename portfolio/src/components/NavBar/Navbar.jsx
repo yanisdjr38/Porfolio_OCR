@@ -46,8 +46,13 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#about" onClick={closeMenu}>
-            À propos
+          <a href="#projects" onClick={closeMenu}>
+            Projets
+          </a>
+        </li>
+        <li>
+          <a href="#testimonials" onClick={closeMenu}>
+            Témoignages
           </a>
         </li>
         <li>
@@ -56,13 +61,8 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#projects" onClick={closeMenu}>
-            Projets
-          </a>
-        </li>
-        <li>
-          <a href="#experience" onClick={closeMenu}>
-            Parcours
+          <a href="#about" onClick={closeMenu}>
+            À propos
           </a>
         </li>
         <li>
