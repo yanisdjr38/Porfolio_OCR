@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Pattern = () => {
   return (
     <StyledWrapper>
-      <div className="cyber-pattern" />
+      <div className="client-pattern" />
     </StyledWrapper>
   );
 };
@@ -17,52 +17,22 @@ const StyledWrapper = styled.div`
   pointer-events: none;
   z-index: -1;
 
-  .cyber-pattern {
+  .client-pattern {
     width: 100%;
     height: 100%;
-    background-color: #050505; /* Fond presque noir */
+    background-color: #050505;
 
-    /* C'est ici que la magie opère. On empile plusieurs couches : */
-    background-image: 
-      /* 1. La Vignette (Ombre sur les bords pour l'effet cinéma) */
-      radial-gradient(circle at center, transparent 30%, #000 90%),
-      /* 2. GRILLE PRINCIPALE (Cyan - Grande) - Lignes Verticales & Horizontales */
-      linear-gradient(rgba(3, 233, 244, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(3, 233, 244, 0.1) 1px, transparent 1px),
-      /* 3. GRILLE SECONDAIRE (Magenta - Petite) - Lignes Verticales & Horizontales */
-      linear-gradient(rgba(217, 3, 244, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(217, 3, 244, 0.05) 1px, transparent 1px);
+    background-image:
+      radial-gradient(circle at top, rgba(0, 255, 255, 0.06), transparent 35%),
+      radial-gradient(
+        circle at bottom right,
+        rgba(255, 0, 255, 0.04),
+        transparent 30%
+      );
 
-    /* On définit la taille des grilles */
     background-size:
       100% 100%,
-      /* Vignette */ 60px 60px,
-      /* Grande grille Cyan (60px) */ 60px 60px,
-      20px 20px,
-      /* Petite grille Magenta (20px) */ 20px 20px;
-
-    /* On lance l'animation */
-    animation: cyber-move 10s linear infinite;
-  }
-
-  /* L'animation qui fait bouger les grilles */
-  @keyframes cyber-move {
-    0% {
-      background-position:
-        0 0,
-        /* Vignette (ne bouge pas) */ 0 0,
-        0 0,
-        /* Grille Cyan (Départ) */ 0 0,
-        0 0; /* Grille Magenta (Départ) */
-    }
-    100% {
-      background-position:
-        0 0,
-        /* Vignette */ 60px 60px,
-        60px 60px,
-        /* Grille Cyan bouge de 60px (1 carreau) */ 40px 40px,
-        40px 40px; /* Grille Magenta bouge de 40px (plus vite/décalé) */
-    }
+      100% 100%;
   }
 `;
 

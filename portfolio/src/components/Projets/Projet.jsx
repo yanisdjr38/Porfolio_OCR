@@ -53,8 +53,19 @@ function Projet() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Mes projets <span className="span-title"></span>
+        Exemples de réalisations <span className="span-title"></span>
       </motion.h2>
+
+      <motion.p
+        className="projet-intro"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        Quelques exemples de ce que j'ai créé. Chacun montre un vrai problème,
+        une vraie solution, et un vrai résultat.
+      </motion.p>
 
       {/* Grille des projets avec animation en cascade */}
       <motion.div
@@ -75,6 +86,8 @@ function Projet() {
             <ProjetCard
               title={project.name}
               description={project.description}
+              problem={project.problem}
+              result={project.result}
               image={projectImages[project.name]}
               stack={project.stack}
               link={project.link}

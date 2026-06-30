@@ -51,7 +51,7 @@ const titleVariants = {
 function Resultats() {
   return (
     <motion.div className="resultats-container">
-      <motion.h3 variants={titleVariants}>Résultats & Impact</motion.h3>
+      <motion.h3 variants={titleVariants}>Ce que vous gagnez</motion.h3>
       <motion.ul
         className="resultats-list"
         variants={containerVariants}

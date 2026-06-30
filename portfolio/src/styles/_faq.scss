@@ -1,0 +1,87 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.faq-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
+  min-height: auto;
+
+  @include respond-to(tablet) {
+    min-height: 100vh;
+    padding: 50px 40px;
+    justify-content: center;
+  }
+
+  @include respond-to(desktop) {
+    min-height: 100vh;
+    padding: 60px 50px;
+    justify-content: center;
+  }
+
+  .faq-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @include respond-to(desktop) {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      max-width: 900px;
+      margin-top: 3rem;
+    }
+  }
+
+  .faq-item {
+    background: $color-bg-main;
+    border: 1px solid rgba($color-accent-cyan, 0.16);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease;
+
+    @include respond-to(tablet) {
+      padding: 1.75rem;
+    }
+    @include respond-to(desktop) {
+      padding: 2rem;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+      color: $color-text-cyan;
+      font-size: 1.05rem;
+      line-height: 1.5;
+
+      @include respond-to(tablet) {
+        font-size: 1.1rem;
+      }
+    }
+
+    p {
+      margin: 0;
+      color: $color-text-muted;
+      font-family: $font-secondary;
+      line-height: 1.7;
+      font-size: 0.95rem;
+
+      @include respond-to(tablet) {
+        font-size: 1rem;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba($color-accent-cyan, 0.32);
+    }
+  }
+}

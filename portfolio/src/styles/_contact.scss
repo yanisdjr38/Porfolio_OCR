@@ -8,20 +8,19 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 2rem 1rem;
-  margin: 3rem 0;
+  padding: 40px 24px;
+  margin: 0;
+  min-height: auto;
 
   @include respond-to(tablet) {
     min-height: 100vh;
-    padding: 3rem 2rem;
-    margin: 0;
+    padding: 50px 40px;
     justify-content: center;
   }
 
   @include respond-to(desktop) {
     min-height: 100vh;
-    padding: 4rem;
-    margin: 0;
+    padding: 60px 50px;
     justify-content: center;
   }
 
@@ -57,7 +56,7 @@
 
     @include respond-to(desktop) {
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 3.5rem;
       align-items: stretch;
     }
   }
@@ -72,7 +71,7 @@
     visibility: visible;
     opacity: 1;
     padding: 1.5rem;
-    background-color: rgba($color-bg-main, 0.4);
+    background-color: $color-bg-main;
     border: 1px solid rgba($color-text-cyan, 0.2);
     border-radius: 4px;
 
@@ -92,6 +91,32 @@
 
       @include respond-to(tablet) {
         margin-bottom: 2rem;
+      }
+    }
+
+    .contact-summary {
+      margin: 0 0 1rem;
+      color: $color-text-muted;
+      font-family: $font-secondary;
+      line-height: 1.7;
+    }
+
+    .contact-commitments {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+
+      li {
+        font-family: $font-secondary;
+        font-size: $font-size-small;
+        color: $color-text-main;
+        background: $color-bg-main;
+        border: 1px solid rgba($color-text-cyan, 0.15);
+        border-radius: 999px;
+        padding: 0.55rem 0.85rem;
       }
     }
 

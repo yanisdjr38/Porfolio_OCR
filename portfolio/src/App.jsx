@@ -1,16 +1,17 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import Apropos from "./components/Apropos/Apropos";
 import Banner from "./components/Banner/Banner";
-import Compétence from "./components/Compétence/Compétence";
 import Contact from "./components/Contact/Contact";
+import Faq from "./components/Faq/Faq";
 import Footer from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/Navbar";
 import Pattern from "./components/Pattern";
+import Prices from "./components/Prices/Prices";
+import Process from "./components/Process/Process";
 import Projet from "./components/Projets/Projet";
 import ScrollToBottom from "./components/ScrollToBottom";
 import ScrollToTop from "./components/ScrollToTop";
-import Temoignage from "./components/Temoignage/Temoignage";
-
+import Services from "./components/Services/Services";
 function App() {
   return (
     <Router>
@@ -24,14 +25,20 @@ function App() {
         <section id="accueil">
           <Banner />
         </section>
+        <section id="services">
+          <Services />
+        </section>
+        <section id="process">
+          <Process />
+        </section>
         <section id="projects">
           <Projet />
         </section>
-        <section id="testimonials">
-          <Temoignage />
+        <section id="tarifs">
+          <Prices />
         </section>
-        <section id="skills">
-          <Compétence />
+        <section id="faq">
+          <Faq />
         </section>
         <section id="about">
           <Apropos />

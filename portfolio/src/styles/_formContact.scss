@@ -90,6 +90,18 @@
   }
 }
 
+.form-hint {
+  padding: 1rem 1rem 0;
+  margin: 0;
+  color: $color-text-muted;
+  font-family: $font-secondary;
+  line-height: 1.6;
+
+  @include respond-to(tablet) {
+    padding: 1rem 1.5rem 0;
+  }
+}
+
 /* --- Form Elements --- */
 .form-group {
   position: relative;

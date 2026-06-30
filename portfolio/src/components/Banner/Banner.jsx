@@ -21,16 +21,8 @@ const itemVariants = {
  * @component
  */
 function Banner() {
-  const handleScrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="home" className="banner">
-      <span className="span-title-style">SYSTEME_INITALIZED</span>
       <motion.h1
         className="banner-title"
         variants={itemVariants}
@@ -46,7 +38,8 @@ function Banner() {
         custom={2}
         className="banner-subtitle"
       >
-        Développeur Web Full Stack
+        Votre site fonctionne. Vous captez des clients. C'est tout ce qui
+        compte.
       </motion.h2>
       <ul className="social-icons">
         <motion.li
@@ -89,21 +82,45 @@ function Banner() {
           animate="visible"
           custom={4}
         >
-          De la stratégie commerciale au développement React : Créateur
-          d’applications déterminé et centré sur l’utilisateur
+          Vous avez un site cassé? WordPress qui rechigne? Une idée à mettre en
+          ligne? Je fais ça. Sans prise de tête. Sans facture surprise. Juste du
+          travail solide qui rend votre vie plus facile.
         </motion.p>
       </div>{" "}
-      <motion.button
+      <motion.ul
+        className="banner-trust"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
         custom={5}
-        className="button-link banner-button"
-        onClick={handleScrollToProjects}
-        data-text="Entrer dans le système >"
       >
-        <span>Entrer dans le système {">"}_</span>
-      </motion.button>{" "}
+        <li>Réponse garantie en 24h</li>
+        <li>Budget transparent</li>
+        <li>Zéro surprise</li>
+      </motion.ul>
+      <motion.div
+        className="banner-actions"
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        custom={6}
+      >
+        <a className="button-link banner-button" href="#services">
+          Voir ce que je fais
+        </a>
+        <a className="button-link banner-button" href="#contact">
+          Prendre rendez-vous
+        </a>
+      </motion.div>
+      <a
+        href="#services"
+        className="scroll-down-arrow"
+        aria-label="Scroller vers le bas"
+      >
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="6 10 12 16 18 10"></polyline>
+        </svg>
+      </a>
     </section>
   );
 }

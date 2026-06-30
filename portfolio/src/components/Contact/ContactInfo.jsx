@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import cvPdf from "../../assets/Djouahra_Yanis.pdf";
 
 /**
  * Animation variants
@@ -15,16 +14,27 @@ const itemVariants = {
 };
 
 /**
- * Composant ContactInfo - Infos de contact (email, réseaux sociaux, CV)
+ * Composant ContactInfo - Infos de contact (email, réseaux sociaux)
  * @component
- * @returns {JSX.Element} Section avec email, liens réseaux et CV
+ * @returns {JSX.Element} Section avec email et liens réseaux
  */
 function ContactInfo() {
   return (
     <motion.div className="contact-info" variants={itemVariants}>
       <div className="contact-info-header">
-        <h3 className="contact-info-title">Autres moyens de contact</h3>
+        <h3 className="contact-info-title">Parlons de votre projet</h3>
       </div>
+
+      <p className="contact-summary">
+        C'est simple: décrivez votre besoin, vos délais, ce que vous imaginez.
+        Je vous rappelle en 24h avec un plan clair. Aucun engagement avant ça.
+      </p>
+
+      <ul className="contact-commitments">
+        <li>Réponse en 24h</li>
+        <li>Plan transparent</li>
+        <li>Pas d'engagement jusqu'à accord</li>
+      </ul>
 
       {/* Email */}
       <div className="contact-item">
@@ -37,7 +47,7 @@ function ContactInfo() {
         </a>
       </div>
 
-      {/* Réseaux sociaux et CV */}
+      {/* Réseaux sociaux */}
       <div className="contact-buttons">
         <a
           href="https://github.com/yanisdjr38"
@@ -61,18 +71,6 @@ function ContactInfo() {
         >
           <FontAwesomeIcon icon={["fab", "linkedin"]} />
           <span>LinkedIn</span>
-        </a>
-
-        <a
-          href={cvPdf}
-          download="/portfolio/src/assets/Djouahra_Yanis.pdf"
-          className="contact-btn cv-btn"
-          aria-label="Télécharger mon CV (PDF)"
-          type="application/pdf"
-          data-text="Mon CV"
-        >
-          <FontAwesomeIcon icon={["fas", "file-pdf"]} aria-hidden="true" />
-          <span>Mon CV</span>
         </a>
       </div>
     </motion.div>

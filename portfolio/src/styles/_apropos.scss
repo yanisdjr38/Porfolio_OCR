@@ -17,14 +17,20 @@
   // Layout par défaut (mobile)
   display: flex;
   flex-direction: column;
-  padding: 30px 20px;
+  padding: 40px 24px;
+  min-height: auto;
+  gap: 2rem;
 
   @include respond-to(tablet) {
     min-height: 100vh;
+    padding: 50px 40px;
+    gap: 2.5rem;
   }
 
   @include respond-to(desktop) {
     min-height: 100vh;
+    padding: 60px 50px;
+    gap: 3rem;
   }
 
   h2 {
@@ -73,23 +79,60 @@
    */
   .apropos-article-description {
     width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+
+    h3 {
+      margin-bottom: 1.5rem;
+    }
 
     .apropos-description {
       border: 2px solid $color-accent-cyan;
       border-radius: 5px;
       box-sizing: border-box;
-      padding: 1.25rem;
+      padding: 1.5rem;
       transition: 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
 
-      // Typographie
-      font-family: $font-main;
-      color: $color-text-main;
-      font-size: $font-size-body;
-      line-height: 1.8;
-      margin-bottom: 0;
+      @include respond-to(tablet) {
+        padding: 1.75rem;
+      }
+
+      @include respond-to(desktop) {
+        padding: 2rem;
+      }
 
       @include neon-glow($color-accent-gray);
+
+      p {
+        // Typographie
+        font-family: $font-main;
+        color: $color-text-main;
+        font-size: $font-size-body;
+        line-height: 1.8;
+        margin: 0;
+        padding: 0;
+      }
+
+      .apropos-separator {
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          $color-accent-cyan,
+          transparent
+        );
+        margin: 0.5rem 0;
+      }
+
+      .apropos-description-highlight {
+        color: $color-accent-cyan;
+        font-weight: 600;
+        font-size: $font-size-body;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 
@@ -104,7 +147,7 @@
 
     @include respond-to(tablet) {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
 

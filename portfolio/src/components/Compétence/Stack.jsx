@@ -100,7 +100,7 @@ function Stack() {
   return (
     <div className="stack">
       {/* Titre de la section */}
-      <h3>Stack</h3>
+      <h3>Stack technique</h3>
 
       {/* Sélecteur de catégorie */}
       <div className="filter-dropdown-container">

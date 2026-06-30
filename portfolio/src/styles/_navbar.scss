@@ -8,24 +8,32 @@
   justify-content: space-between;
   width: 100%;
   height: auto;
-  padding: 0 2rem;
+  padding: 0.75rem 1.2rem;
   position: relative;
   flex-direction: row-reverse;
+  background: $color-bg-main;
+  border-bottom: 1px solid rgba($color-accent-cyan, 0.1);
+  z-index: 100;
 
-  @include respond-to(desktop) {
-    height: 60px;
-    flex-wrap: nowrap;
+  @include respond-to(tablet) {
+    padding: 1rem 1.5rem;
     justify-content: flex-start;
   }
-  @include respond-to(tablet) {
-    padding: 0 1rem;
+
+  @include respond-to(desktop) {
+    height: 70px;
+    padding: 1rem 2rem;
+    flex-wrap: nowrap;
     justify-content: flex-start;
+    border-bottom: none;
   }
 
   h1.logo {
     margin: 0;
     padding: 0;
     font-size: 0;
+    display: flex;
+    align-items: center;
 
     .logo-link {
       display: flex;
@@ -35,23 +43,30 @@
       transition: all 0.3s ease-in-out;
 
       img {
-        height: 60px;
+        height: 45px;
         width: auto;
+
+        @include respond-to(tablet) {
+          height: 50px;
+        }
+
         @include respond-to(desktop) {
-          height: 80px;
+          height: 60px;
         }
       }
 
       .logo-text {
         font-family: $font-main;
         color: $color-text-main;
-        font-size: $font-size-h1;
+        font-size: 1.2rem;
         text-shadow: $shadow-glow-cyan;
         display: none;
+
         @include respond-to(desktop) {
           display: inline;
-          font-size: $font-size-h1-desktop;
+          font-size: 1.5rem;
         }
+
         @include respond-to(tablet) {
           display: none;
         }
@@ -65,35 +80,38 @@
     background: none;
     border: none;
     cursor: pointer;
-    width: 30px;
+    width: 32px;
     height: 24px;
     padding: 0;
-    gap: 6px;
+    gap: 5px;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
 
-    @include respond-to(desktop) {
+    @include respond-to(tablet) {
       display: none;
     }
-    @include respond-to(tablet) {
+
+    @include respond-to(desktop) {
       display: none;
     }
 
     span {
       width: 100%;
-      height: 3px;
+      height: 2.5px;
       background-color: $color-text-main;
-      border-radius: 3px;
+      border-radius: 2px;
       transition: all 0.3s ease-in-out;
       display: block;
 
       &.open {
         &:nth-child(1) {
-          transform: rotate(45deg) translate(10px, 10px);
+          transform: rotate(45deg) translate(8px, 8px);
         }
         &:nth-child(2) {
           opacity: 0;
         }
         &:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -7px);
+          transform: rotate(-45deg) translate(7px, -6px);
         }
       }
     }
@@ -111,13 +129,16 @@
     background-color: $color-bg-main;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    transition:
+      max-height 0.4s ease-in-out,
+      padding 0.4s ease-in-out;
     padding: 0;
     margin: 0;
+    border-bottom: 1px solid rgba($color-accent-cyan, 0.1);
 
     &.open {
-      max-height: 500px;
-      padding: 1rem 2rem;
+      max-height: 600px;
+      padding: 1rem 1.2rem;
       z-index: 10;
     }
 
@@ -159,19 +180,26 @@
       text-shadow: $shadow-glow-cyan;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      padding: 0.5rem 0;
+      padding: 0.75rem 0;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      border-bottom: 1px solid rgba($color-accent-cyan, 0.05);
+
+      &:last-child {
+        border-bottom: none;
+      }
 
       @include respond-to(desktop) {
         padding: 0;
         width: auto;
+        border-bottom: none;
         @include flex-center;
       }
       @include respond-to(tablet) {
         padding: 0.5rem 0;
+        border-bottom: none;
         font-size: $font-size-link-tablet;
       }
       a {
@@ -180,6 +208,7 @@
         display: inherit;
         align-items: inherit;
         width: 100%;
+        padding: 0.25rem 0;
       }
       &:hover {
         color: $color-accent-cyan;

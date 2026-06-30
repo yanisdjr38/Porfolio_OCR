@@ -48,7 +48,7 @@ function Temoignage() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.h2 variants={itemVariants}>
-        Témoignages <span className="span-title"></span>
+        Ce que disent les clients <span className="span-title"></span>
       </motion.h2>
 
       <motion.div

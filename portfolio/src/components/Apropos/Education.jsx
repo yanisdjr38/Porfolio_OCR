@@ -1,20 +1,21 @@
-import data from "../../../backend/data.json";
-
 /**
- * Composant Education - Affiche le parcours scolaire
+ * Composant Education - Affiche zone de disponibilité et modalités
  * @component
- * @returns {JSX.Element} Liste du parcours scolaire
+ * @returns {JSX.Element} Liste de disponibilité géographique
  */
 function Education() {
-  const educations = data.stack?.Parcours || [];
+  const availability = [
+    "Disponible en France",
+    "Sur place ou hybride",
+    "Travail à distance possible",
+    "Flexibilité selon le projet",
+  ];
 
   return (
     <ul className="education-list">
-      {educations.map((edu, index) => (
+      {availability.map((item, index) => (
         <li key={index} className="education-item">
-          <strong>{edu.name}</strong> – {edu.niveau}
-          <br />
-          <span className="education-location">{edu.lieu}</span>
+          {item}
         </li>
       ))}
     </ul>

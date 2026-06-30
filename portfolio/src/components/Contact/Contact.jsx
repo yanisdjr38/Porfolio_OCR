@@ -42,7 +42,7 @@ function Contact() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.h2 variants={itemVariants}>
-        Contact <span className="span-title"></span>
+        Parlons de votre besoin <span className="span-title"></span>
       </motion.h2>
       <motion.div className="contact-wrapper" variants={itemVariants}>
         <FormContact />

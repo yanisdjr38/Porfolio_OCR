@@ -121,12 +121,12 @@
 }
 // Neon card with shine effect
 @mixin neon-card($color: $color-accent-cyan) {
-  background-color: rgba(26, 26, 26, 0.8);
-  border: 2px solid $color;
+  background-color: rgba($color-bg-main, 0.95);
+  border: 1px solid rgba($color, 0.22);
   box-shadow:
-    0 0 10px rgba($color, 0.3),
-    inset 0 0 10px rgba($color, 0.1);
-  transition: all 0.3s ease-in-out;
+    0 8px 18px rgba(0, 0, 0, 0.16),
+    inset 0 0 8px rgba($color, 0.06);
+  transition: all 0.25s ease-in-out;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -153,12 +153,12 @@
   }
 
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: $color-accent-pink;
+    transform: translateY(-4px);
+    border-color: rgba($color-accent-pink, 0.45);
     box-shadow:
-      0 0 20px rgba(255, 0, 255, 0.6),
-      inset 0 0 15px rgba(255, 0, 255, 0.2);
-    color: $color-accent-pink;
+      0 12px 22px rgba(0, 0, 0, 0.2),
+      inset 0 0 10px rgba($color-accent-pink, 0.06);
+    color: $color-text-cyan;
 
     &::before {
       left: 100%;

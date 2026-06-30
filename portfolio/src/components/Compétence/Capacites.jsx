@@ -40,7 +40,7 @@ const titleVariants = {
 function Capacites() {
   return (
     <motion.div className="capacites-container">
-      <motion.h3 variants={titleVariants}>Ce que je peux faire</motion.h3>
+      <motion.h3 variants={titleVariants}>Ce que je propose</motion.h3>
       <motion.ul
         className="capacites-list"
         variants={containerVariants}

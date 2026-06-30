@@ -23,6 +23,11 @@ const cardVariants = {
  * @returns {JSX.Element} Carte de témoignage animée
  */
 function TemoignageCard({ temoignage, photoSrc }) {
+  const quote =
+    temoignage.temoignage.length > 160
+      ? `${temoignage.temoignage.slice(0, 157)}...`
+      : temoignage.temoignage;
+
   return (
     <motion.div
       className="temoignage-card"
@@ -31,7 +36,7 @@ function TemoignageCard({ temoignage, photoSrc }) {
     >
       {/* Contenu du témoignage */}
       <div className="temoignage-content">
-        <p className="temoignage-text">"{temoignage.temoignage}"</p>
+        <p className="temoignage-text">"{quote}"</p>
       </div>
 
       {/* Informations de la personne */}

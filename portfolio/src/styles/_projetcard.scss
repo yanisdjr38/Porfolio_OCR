@@ -125,6 +125,35 @@
    * Description générale de l'élément
    */
   .card-content {
+    .card-meta {
+      display: grid;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+
+      .card-meta-item {
+        padding: 0.85rem 0.95rem;
+        background: $color-bg-main;
+        border: 1px solid rgba($color-text-cyan, 0.12);
+        border-radius: 10px;
+
+        .card-meta-label {
+          display: inline-block;
+          font-family: $font-code;
+          font-size: $font-size-small;
+          color: $color-text-cyan;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          margin-bottom: 0.4rem;
+        }
+
+        p {
+          margin: 0;
+          color: $color-text-main;
+          line-height: 1.5;
+        }
+      }
+    }
+
     // Styles par défaut du paragraphe
     p {
       margin: 5px 0;

@@ -46,18 +46,28 @@ function Navbar() {
           </a>
         </li>
         <li>
+          <a href="#services" onClick={closeMenu}>
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="#process" onClick={closeMenu}>
+            Méthode
+          </a>
+        </li>
+        <li>
           <a href="#projects" onClick={closeMenu}>
-            Projets
+            Réalisations
           </a>
         </li>
         <li>
-          <a href="#testimonials" onClick={closeMenu}>
-            Témoignages
+          <a href="#tarifs" onClick={closeMenu}>
+            Tarifs
           </a>
         </li>
         <li>
-          <a href="#skills" onClick={closeMenu}>
-            Compétences
+          <a href="#faq" onClick={closeMenu}>
+            FAQ
           </a>
         </li>
         <li>
@@ -67,7 +77,7 @@ function Navbar() {
         </li>
         <li>
           <a href="#contact" onClick={closeMenu}>
-            Contact
+            Devis
           </a>
         </li>
       </ul>

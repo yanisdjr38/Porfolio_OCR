@@ -1,15 +1,25 @@
 /**
  * Composant ProjetCard - Carte affichant les détails d'un projet
- * Affiche le titre, la description, la stack utilisée et un lien vers le projet
+ * Affiche le titre, la description, le contexte, le résultat et un lien vers le projet
  * @component
  * @param {Object} props - Les propriétés du composant
  * @param {string} props.title - Titre du projet
  * @param {string} props.description - Description du projet
+ * @param {string} props.problem - Besoin ou contexte du projet
+ * @param {string} props.result - Résultat obtenu ou bénéfice
  * @param {Array<string>} props.stack - Technologies utilisées
  * @param {string} props.link - URL du projet
  * @param {string} props.image - URL de l'image du projet
  */
-const ProjetCard = ({ title, description, link, stack, image }) => {
+const ProjetCard = ({
+  title,
+  description,
+  problem,
+  result,
+  link,
+  stack,
+  image,
+}) => {
   return (
     <article className="card">
       {/* Image du projet avec cover et titre - Cliquable */}
@@ -29,6 +39,16 @@ const ProjetCard = ({ title, description, link, stack, image }) => {
 
       {/* Section contenu - Description du projet */}
       <div className="card-content">
+        <div className="card-meta">
+          <div className="card-meta-item">
+            <span className="card-meta-label">Besoin</span>
+            <p>{problem}</p>
+          </div>
+          <div className="card-meta-item">
+            <span className="card-meta-label">Résultat</span>
+            <p>{result}</p>
+          </div>
+        </div>
         <p>{description}</p>
       </div>
 
@@ -45,7 +65,7 @@ const ProjetCard = ({ title, description, link, stack, image }) => {
 
       {/* Pied de page avec bouton d'action */}
       <div className="card-footer">
-        <button className="button-link" data-text="Voir le projet">
+        <button className="button-link" data-text="Voir la réalisation">
           <span>
             <a
               href={link}
@@ -53,7 +73,7 @@ const ProjetCard = ({ title, description, link, stack, image }) => {
               rel="noopener noreferrer"
               className="card-link"
             >
-              Voir le projet
+              Voir la réalisation
             </a>
           </span>
         </button>

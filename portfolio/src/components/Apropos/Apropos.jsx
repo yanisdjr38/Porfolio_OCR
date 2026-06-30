@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Education from "./Education";
 import Experience from "./Experience";
-import Hobbies from "./Hobbies";
 import Softskill from "./Softskill";
 
 /**
@@ -44,28 +43,35 @@ function Apropos() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2 variants={itemVariants}>
-          À propos de moi <span className="span-title"></span>
+          Pourquoi travailler avec moi ? <span className="span-title"></span>
         </motion.h2>
 
         {/* Section description - Full width */}
         <article className="apropos-article apropos-article-description">
           <motion.h3 variants={itemVariants}>
-            Un profil hybride au service de la performance web
+            Pourquoi c'est différent avec moi
           </motion.h3>
-          <motion.p variants={itemVariants} className="apropos-description">
-            Issu d'une formation en communication et en développement
-            commercial, j'ai acquis une compréhension profonde des besoins
-            utilisateur. J'applique cette vision stratégique au développement
-            React, en créant des interfaces intuitives et performantes centrées
-            sur l'expérience utilisateur.
-          </motion.p>
+          <motion.div variants={itemVariants} className="apropos-description">
+            <p>
+              Je suis développeur depuis 2 ans, mais avant ça je venais du
+              commercial et de la communication. Ça change tout: je parle votre
+              langue, pas celle des techno-geeks. Quand vous dites « je veux un
+              formulaire », je comprends qu'à travers ce formulaire, c'est une
+              relation client qui commence.
+            </p>
+            <div className="apropos-separator"></div>
+            <p className="apropos-description-highlight">
+              Pas de promesses, des faits: délais tenus, zéro surprise, et des
+              gens qui reviennent.
+            </p>
+          </motion.div>
         </article>
 
-        {/* Section 3 colonnes: Soft Skills | Expériences | Hobbies */}
+        {/* Section 4 colonnes: collaboration | repères | formation | centres d'intérêt */}
         <div className="apropos-three-columns">
           <article className="apropos-column">
             <motion.h3 variants={itemVariants} className="column-title">
-              Soft Skills
+              Ce que vous pouvez attendre
             </motion.h3>
             <motion.div
               variants={itemVariants}
@@ -76,7 +82,7 @@ function Apropos() {
           </article>
           <article className="apropos-column">
             <motion.h3 variants={itemVariants} className="column-title">
-              Expériences Professionnelles
+              Disponibilité & fiabilité
             </motion.h3>
             <motion.div
               variants={itemVariants}
@@ -87,25 +93,13 @@ function Apropos() {
           </article>
           <article className="apropos-column">
             <motion.h3 variants={itemVariants} className="column-title">
-              Parcours Scolaire
+              Zone et missions
             </motion.h3>
             <motion.div
               variants={itemVariants}
               className="column-content education"
             >
               <Education />
-            </motion.div>
-          </article>
-
-          <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
-              Hobbies
-            </motion.h3>
-            <motion.div
-              variants={itemVariants}
-              className="column-content hobbies"
-            >
-              <Hobbies />
             </motion.div>
           </article>
         </div>

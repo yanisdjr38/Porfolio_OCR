@@ -35,7 +35,7 @@ const itemVariants = {
 function Compétence() {
   return (
     <motion.section
-      id="skills"
+      id="services"
       className="competence-section"
       variants={containerVariants}
       initial="hidden"
@@ -43,7 +43,7 @@ function Compétence() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.h2 variants={itemVariants}>
-        Compétences Techniques <span className="span-title"></span>
+        Services <span className="span-title"></span>
       </motion.h2>
 
       {/* Layout two-column desktop */}

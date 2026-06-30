@@ -137,23 +137,28 @@ function FormContact() {
         <div className="card-header">
           <div className="card-title">
             <ContactIcon />
-            <span>FORMULAIRE_DE_CONTACT</span>
+            <span>DEMANDE_DE_BRIEF</span>
           </div>
         </div>
+
+        <p className="form-hint">
+          Decrivez votre besoin en quelques lignes. Plus c'est clair, plus je
+          peux vous aider rapidement. Budget estime? Delai souhaite? Dites-moi.
+        </p>
 
         {/* Corps du formulaire */}
         <div className="card-body">
           {/* Message de succès */}
           {status === "success" && (
             <div className="feedback-message success-message">
-              ✓ Message envoyé avec succès ! Je te répondrai bientôt.
+              ✓ Message envoyé avec succès ! Je reviens vers vous rapidement.
             </div>
           )}
 
           {/* Message d'erreur d'envoi */}
           {status === "error" && (
             <div className="feedback-message error-message">
-              ✗ Erreur lors de l'envoi. Réessaie s'il te plaît.
+              ✗ Erreur lors de l'envoi. Réessaie ou écris-moi directement.
             </div>
           )}
 
@@ -165,7 +170,7 @@ function FormContact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Entrer votre nom"
+              placeholder="Votre nom ou société"
               aria-label="Nom complet"
               className={errors.name ? "input-error" : ""}
             />
@@ -183,7 +188,7 @@ function FormContact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Entrer votre email"
+              placeholder="Votre adresse email"
               aria-label="Adresse email"
               className={errors.email ? "input-error" : ""}
             />
@@ -200,7 +205,7 @@ function FormContact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Écrivez votre message"
+              placeholder="Décrivez votre besoin, votre délai ou votre idée"
               rows="4"
               aria-label="Message"
               className={errors.message ? "input-error" : ""}
@@ -217,11 +222,11 @@ function FormContact() {
           <button
             type="submit"
             className="submit-btn"
-            data-text={status === "loading" ? "ENVOI..." : "ENVOYER"}
+            data-text={status === "loading" ? "ENVOI..." : "ENVOYER LA DEMANDE"}
             disabled={status === "loading"}
           >
             <span className="btn-text">
-              {status === "loading" ? "ENVOI..." : "ENVOYER"}
+              {status === "loading" ? "ENVOI..." : "ENVOYER LA DEMANDE"}
             </span>
           </button>
         </div>

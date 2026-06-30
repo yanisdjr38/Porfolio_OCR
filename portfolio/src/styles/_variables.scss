@@ -24,9 +24,10 @@ $color-accent-gray: #888888; // Gray Glow (Texte secondaire, hover)
 // 2. TYPOGRAPHIE - Mobile First Responsive
 // -------------------------------------------------------------------
 $font-main:
-  "Orbitron", "Michroma", sans-serif; // Futuriste et rétro [Synthwave vibes]
+  "Inter", "Segoe UI", "Helvetica Neue", sans-serif; // Sobre et lisible
 $font-code: "IBM Plex Mono", "JetBrains Mono", monospace; // Tech-oriented
-$font-secondary: "Jost", "Poppins", sans-serif; // Moderne et lisible
+$font-secondary:
+  "Inter", "Segoe UI", "Helvetica Neue", sans-serif; // Moderne et lisible
 
 // TAILLES MOBILE (Base)
 // -------------------------------------------
