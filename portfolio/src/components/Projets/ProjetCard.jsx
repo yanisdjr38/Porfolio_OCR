@@ -30,7 +30,7 @@ const ProjetCard = ({
         className="card-image-link"
       >
         <div className="card-image">
-          <img src={image} alt="" />
+          <img src={image} alt={`Aperçu du projet ${title}`} loading="lazy" />
           <div className="card-image-overlay">
             <h3 className="card-overlay-title">{title}</h3>
           </div>
@@ -65,18 +65,15 @@ const ProjetCard = ({
 
       {/* Pied de page avec bouton d'action */}
       <div className="card-footer">
-        <button className="button-link" data-text="Voir la réalisation">
-          <span>
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-link"
-            >
-              Voir la réalisation
-            </a>
-          </span>
-        </button>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button-link card-link"
+          data-text="Voir la réalisation"
+        >
+          <span>Voir la réalisation</span>
+        </a>
       </div>
     </article>
   );

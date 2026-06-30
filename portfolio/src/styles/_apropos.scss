@@ -35,7 +35,7 @@
 
   h2 {
     // Inherits from global h2 styles
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   /**
@@ -56,22 +56,63 @@
   .column-title {
     color: $color-text-cyan;
     font-family: $font-code;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.9rem;
+
+    @include respond-to(tablet) {
+      font-size: 1rem;
+    }
   }
 
   /**
    * Contenu des colonnes avec style neon
    */
   .column-content {
-    border-radius: 5px;
-    padding: 1.25rem;
-    transition: 0.4s ease;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: 0.25s ease;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid rgba($color-accent-cyan, 0.22);
+    background: rgba($color-bg-main, 0.9);
+    min-height: 100%;
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 
-    @include neon-glow($color-accent-gray);
+    @include respond-to(tablet) {
+      padding: 1.1rem;
+    }
+
+    @include respond-to(desktop) {
+      padding: 1.2rem;
+    }
+
+    ul {
+      list-style: none;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    li {
+      font-family: $font-secondary;
+      color: $color-text-main;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid rgba($color-accent-cyan, 0.14);
+      background: rgba($color-accent-cyan, 0.04);
+      border-radius: 8px;
+
+      @include respond-to(tablet) {
+        font-size: 0.9rem;
+      }
+    }
   }
 
   /**
@@ -79,7 +120,7 @@
    */
   .apropos-article-description {
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     h3 {
       margin-bottom: 1.5rem;
@@ -87,7 +128,7 @@
 
     .apropos-description {
       border: 2px solid $color-accent-cyan;
-      border-radius: 5px;
+      border-radius: 10px;
       box-sizing: border-box;
       padding: 1.5rem;
       transition: 0.4s ease;
@@ -142,25 +183,28 @@
   .apropos-three-columns {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.15rem;
     width: 100%;
 
     @include respond-to(tablet) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1rem;
     }
 
     @include respond-to(desktop) {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2.5rem;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      align-items: stretch;
     }
   }
 
   .apropos-column {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   /**

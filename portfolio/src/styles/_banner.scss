@@ -80,7 +80,7 @@
     justify-content: flex-start;
     font-family: $font-secondary;
     color: $color-text-main;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     text-shadow: none;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -89,11 +89,11 @@
     line-height: 1.4;
 
     @include respond-to(tablet) {
-      font-size: 1.15rem;
+      font-size: 1.22rem;
       margin-bottom: 1.5rem;
     }
     @include respond-to(desktop) {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin-bottom: 2rem;
     }
   }
@@ -178,7 +178,32 @@
         line-height: 1.7;
       }
 
-      @include neon-glow($color-accent-gray);
+      text-shadow: none;
+    }
+  }
+
+  .banner-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+
+    li {
+      font-family: $font-secondary;
+      font-size: 0.88rem;
+      color: $color-text-main;
+      background: rgba($color-accent-cyan, 0.08);
+      border: 1px solid rgba($color-accent-cyan, 0.24);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+    }
+
+    @include respond-to(tablet) {
+      li {
+        font-size: 0.92rem;
+      }
     }
   }
 
@@ -225,7 +250,11 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      width: fit-content;
+      width: 100%;
+
+      @include respond-to(tablet) {
+        width: fit-content;
+      }
     }
   }
 
@@ -260,69 +289,5 @@
         font-size: 1.15rem;
       }
     }
-  }
-
-  .scroll-down-arrow {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    animation: bounce 2s infinite;
-    z-index: 100;
-
-    @include respond-to(tablet) {
-      width: 60px;
-      height: 60px;
-      bottom: 30px;
-      right: 30px;
-    }
-
-    @include respond-to(desktop) {
-      width: 70px;
-      height: 70px;
-      bottom: 40px;
-      right: 40px;
-    }
-
-    svg {
-      width: 100%;
-      height: 100%;
-      stroke: $color-accent-cyan;
-      stroke-width: 2.5;
-      fill: none;
-      transition: all 0.3s ease-in-out;
-      filter: drop-shadow(0 0 10px $color-accent-cyan);
-
-      @include neon-glow($color-accent-cyan);
-    }
-
-    &:hover {
-      svg {
-        stroke: $color-accent-pink;
-        filter: drop-shadow(0 0 15px $color-accent-pink);
-        @include neon-glow($color-accent-pink);
-      }
-    }
-  }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
   }
 }

@@ -1,5 +1,6 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 /**
@@ -38,8 +39,8 @@ function Banner() {
         custom={2}
         className="banner-subtitle"
       >
-        Votre site fonctionne. Vous captez des clients. C'est tout ce qui
-        compte.
+        Je conçois des sites qui transforment vos visiteurs en demandes de
+        devis.
       </motion.h2>
       <ul className="social-icons">
         <motion.li
@@ -82,19 +83,30 @@ function Banner() {
           animate="visible"
           custom={4}
         >
-          Vous avez un site cassé? WordPress qui rechigne? Une idée à mettre en
-          ligne? Je fais ça. Sans prise de tête. Sans facture surprise. Juste du
-          travail solide qui rend votre vie plus facile.
+          TPE, PME, indépendants: vous avez besoin d'un site clair, rapide et
+          utile pour votre business. Je vous accompagne de l'idée à la mise en
+          ligne avec un plan simple, un budget transparent, et un suivi concret.
         </motion.p>
-      </div>{" "}
+      </div>
       <motion.ul
-        className="banner-trust"
+        className="banner-proof"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
         custom={5}
       >
-        <li>Réponse garantie en 24h</li>
+        <li>Réponse sous 24h</li>
+        <li>Appel découverte offert (20 min)</li>
+        <li>Plan d'action clair en 48h</li>
+      </motion.ul>
+      <motion.ul
+        className="banner-trust"
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        custom={6}
+      >
+        <li>Révisions incluses</li>
         <li>Budget transparent</li>
         <li>Zéro surprise</li>
       </motion.ul>
@@ -103,24 +115,15 @@ function Banner() {
         variants={itemVariants}
         initial="hidden"
         animate="visible"
-        custom={6}
+        custom={7}
       >
-        <a className="button-link banner-button" href="#services">
-          Voir ce que je fais
-        </a>
         <a className="button-link banner-button" href="#contact">
-          Prendre rendez-vous
+          Recevoir un plan d'action
+        </a>
+        <a className="button-link banner-button" href="#projects">
+          Voir des résultats concrets
         </a>
       </motion.div>
-      <a
-        href="#services"
-        className="scroll-down-arrow"
-        aria-label="Scroller vers le bas"
-      >
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="6 10 12 16 18 10"></polyline>
-        </svg>
-      </a>
     </section>
   );
 }

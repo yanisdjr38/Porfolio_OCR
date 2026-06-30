@@ -37,8 +37,8 @@ function Services() {
       </motion.h2>
 
       <motion.p className="services-intro" variants={itemVariants}>
-        Je fais 5 choses bien. Pas plus, pas moins. Chacune résout un vrai
-        problème que mes clients rencontrent. Trouvez la vôtre.
+        Choisissez le niveau d'accompagnement adapte a votre objectif: corriger,
+        ameliorer, ou lancer un site qui genere plus de demandes.
       </motion.p>
 
       <motion.div className="services-audience" variants={itemVariants}>

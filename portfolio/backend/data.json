@@ -4,7 +4,7 @@
     "Je dis non si un projet me semble mal parti",
     "Je garde le code propre pour la suite",
     "Je prévois les ajustements (inclus)",
-    "Pas de jargon. Parlant clair."
+    "Pas de jargon. Je parle clair."
   ],
   "audience": [
     "Indépendants",
@@ -76,7 +76,7 @@
   ],
   "faq": [
     {
-      "q": "Quelle est votre temps de réponse ?",
+      "q": "Quel est votre délai de réponse ?",
       "a": "Je réponds à tous les messages dans l'heure. On peut faire un premier appel gratuitement (30 min) pour préciser vos besoins. Si c'est clair, je peux commencer dès le lendemain."
     },
     {
@@ -88,8 +88,8 @@
       "a": "Oui, bien sûr. Les 2 semaines après la livraison, c'est illimité. Vous dites « ce truc n'est pas parfait », je corrige. Zéro frais supplémentaire. Après, si besoin de mises à jour, on en rediscute."
     },
     {
-      "q": "Vous allez vraiment comprendre mon besoin ?",
-      "a": "Je n'ai pas que une formation développeur. Je viens aussi du commercial et de la communication. Ça veut dire: je parle votre langue. Quand vous dites « je veux un formulaire », je comprends que c'est une relation client qui commence. Pas du jargon tech."
+      "q": "Allez-vous vraiment comprendre mon besoin ?",
+      "a": "Je n'ai pas seulement un profil développeur. Je viens aussi du commercial et de la communication. Je parle votre langue. Quand vous dites « je veux un formulaire », je comprends qu'une relation client commence."
     },
     {
       "q": "Est-ce que je vais rester dépendant de vous après ?",
@@ -97,7 +97,7 @@
     },
     {
       "q": "Vous faites de la maintenance après ?",
-      "a": "Optionnel. Je peux faire des mises à jour régulières si vous le souhaitez. Ou juste quand vous en avez besoin, facturé à l'heure. À vous de choisir."
+      "a": "Oui, en option. Je peux gérer des mises à jour régulières ou intervenir ponctuellement, facturé à l'heure. Vous choisissez le rythme."
     }
   ],
   "stack": {

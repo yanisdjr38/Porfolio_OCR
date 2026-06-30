@@ -5,19 +5,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 40px 24px;
+  padding: 32px 24px;
   min-height: auto;
 
   @include respond-to(tablet) {
-    min-height: 100vh;
-    padding: 50px 40px;
-    justify-content: center;
+    min-height: auto;
+    padding: 36px 40px;
+    justify-content: flex-start;
   }
 
   @include respond-to(desktop) {
-    min-height: 100vh;
-    padding: 60px 50px;
-    justify-content: center;
+    min-height: auto;
+    padding: 40px 50px;
+    justify-content: flex-start;
   }
 
   .faq-list {

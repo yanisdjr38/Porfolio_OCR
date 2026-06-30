@@ -1,6 +1,14 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-emailjs.init("-AapzA3unXxaBBTHA");
+
+const EMAILJS_PUBLIC_KEY =
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "-AapzA3unXxaBBTHA";
+const EMAILJS_SERVICE_ID =
+  import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_sc45q1s";
+const EMAILJS_TEMPLATE_ID =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_xa6mua2";
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 /**
  * Icône de contact SVG
@@ -106,7 +114,7 @@ function FormContact() {
     setStatus("loading");
 
     try {
-      await emailjs.send("service_sc45q1s", "template_xa6mua2", {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         name: formData.name,
         email: formData.email,
         message: formData.message,
@@ -143,7 +151,7 @@ function FormContact() {
 
         <p className="form-hint">
           Decrivez votre besoin en quelques lignes. Plus c'est clair, plus je
-          peux vous aider rapidement. Budget estime? Delai souhaite? Dites-moi.
+          peux vous aider vite. Budget estime ? Delai souhaite ? Dites-moi.
         </p>
 
         {/* Corps du formulaire */}

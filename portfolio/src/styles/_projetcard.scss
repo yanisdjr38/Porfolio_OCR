@@ -194,6 +194,9 @@
     margin-top: auto;
 
     .button-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       border: none;
       background-color: $color-bg-cyan;
@@ -206,6 +209,7 @@
       font-size: $font-size-link;
       color: $color-bg-main;
       font-weight: 600;
+      text-decoration: none;
       @include glitch-button(
         $color-bg-cyan,
         $color-bg-main,
@@ -222,19 +226,22 @@
         box-shadow: 0 0 25px $color-bg-cyan;
       }
 
-      // Lien à l'intérieur du bouton
+      // Texte du lien
       .card-link {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
         font-family: $font-code;
         font-size: $font-size-link;
         color: $color-bg-main;
         text-decoration: none;
         font-weight: 600;
       }
+    }
+
+    .card-link {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

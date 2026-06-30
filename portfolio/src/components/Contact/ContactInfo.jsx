@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 /**
@@ -26,8 +27,9 @@ function ContactInfo() {
       </div>
 
       <p className="contact-summary">
-        C'est simple: décrivez votre besoin, vos délais, ce que vous imaginez.
-        Je vous rappelle en 24h avec un plan clair. Aucun engagement avant ça.
+        Decrivez votre besoin, vos delais et votre budget. Je vous reponds sous
+        24h avec un plan concret et les prochaines etapes. Aucun engagement
+        avant votre accord.
       </p>
 
       <ul className="contact-commitments">

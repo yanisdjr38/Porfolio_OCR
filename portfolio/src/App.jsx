@@ -9,7 +9,6 @@ import Pattern from "./components/Pattern";
 import Prices from "./components/Prices/Prices";
 import Process from "./components/Process/Process";
 import Projet from "./components/Projets/Projet";
-import ScrollToBottom from "./components/ScrollToBottom";
 import ScrollToTop from "./components/ScrollToTop";
 import Services from "./components/Services/Services";
 function App() {
@@ -17,7 +16,6 @@ function App() {
     <Router>
       <Pattern />
       <ScrollToTop />
-      <ScrollToBottom />
       <header>
         <NavBar />
       </header>
