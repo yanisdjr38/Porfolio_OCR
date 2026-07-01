@@ -45,7 +45,7 @@ function Projet() {
   };
 
   return (
-    <section id="projects" className="projet">
+    <section className="projet">
       {/* Titre de la section avec décoration */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
@@ -53,7 +53,7 @@ function Projet() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Exemples de réalisations <span className="span-title"></span>
+        Mes réalisations <span className="span-title"></span>
       </motion.h2>
 
       <motion.p
@@ -63,8 +63,8 @@ function Projet() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        Quelques exemples de ce que j'ai créé. Chacun montre un vrai problème,
-        une vraie solution, et un vrai résultat.
+        Des projets réels, avec un vrai besoin à satisfaire. Pas des démos : des
+        interfaces pensées pour être utilisées.
       </motion.p>
 
       {/* Grille des projets avec animation en cascade */}

@@ -122,21 +122,20 @@
 
     .contact-info-title {
       font-family: $font-main;
-      font-size: $font-size-heading;
+      font-size: 1.1rem;
       color: $color-text-cyan;
       text-shadow: $shadow-glow-cyan;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       margin: 0;
       margin-bottom: 1rem;
 
       @include respond-to(tablet) {
-        font-size: $font-size-heading-tablet;
+        font-size: 1.2rem;
         margin-bottom: 1.5rem;
       }
 
       @include respond-to(desktop) {
-        font-size: $font-size-heading-desktop;
+        font-size: 1.3rem;
       }
     }
 

@@ -1,5 +1,6 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
+import photoYD from "../../assets/images/photo-yd.png";
 import Education from "./Education";
 import Experience from "./Experience";
 import Softskill from "./Softskill";
@@ -40,31 +41,43 @@ function Apropos() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <motion.h2 variants={itemVariants}>
-          Pourquoi travailler avec moi ? <span className="span-title"></span>
+          Pourquoi me choisir <span className="span-title"></span>
         </motion.h2>
 
         {/* Section description - Full width */}
         <article className="apropos-article apropos-article-description">
-          <motion.h3 variants={itemVariants}>
-            Pourquoi c'est différent avec moi
-          </motion.h3>
-          <motion.div variants={itemVariants} className="apropos-description">
-            <p>
-              Je suis développeur depuis 2 ans, mais avant ça je venais du
-              commercial et de la communication. Ça change tout: je parle votre
-              langue, pas celle des techno-geeks. Quand vous dites « je veux un
-              formulaire », je comprends qu'à travers ce formulaire, c'est une
-              relation client qui commence.
-            </p>
-            <div className="apropos-separator"></div>
-            <p className="apropos-description-highlight">
-              Pas de promesses, des faits: délais tenus, zéro surprise, et des
-              gens qui reviennent.
-            </p>
-          </motion.div>
+          <div className="apropos-description-layout">
+            <motion.img
+              src={photoYD}
+              alt="Yanis Djouahra, développeur web freelance"
+              className="apropos-photo"
+              variants={itemVariants}
+            />
+            <div className="apropos-description-content">
+              <motion.h3 variants={itemVariants}>
+                Un dev qui parle business, pas jargon
+              </motion.h3>
+              <motion.div
+                variants={itemVariants}
+                className="apropos-description"
+              >
+                <p>
+                  Avant de coder, j'ai travaillé dans le commercial et la
+                  communication. Je comprends ce que vous voulez vraiment dire
+                  quand vous dites « je veux un beau site » : vous voulez un
+                  site qui fait rentrer des clients, pas un projet d'expo.
+                </p>
+                <div className="apropos-separator"></div>
+                <p className="apropos-description-highlight">
+                  Une méthode claire, des délais annoncés à l'avance, et un site
+                  pensé pour être utile à votre activité.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </article>
 
         {/* Section 4 colonnes: collaboration | repères | formation | centres d'intérêt */}

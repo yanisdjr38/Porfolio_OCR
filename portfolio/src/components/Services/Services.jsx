@@ -25,20 +25,19 @@ const itemVariants = {
 function Services() {
   return (
     <motion.section
-      id="services"
       className="services-section"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.h2 variants={itemVariants}>
-        Services <span className="span-title"></span>
+        Ce que je fais pour vous <span className="span-title"></span>
       </motion.h2>
 
       <motion.p className="services-intro" variants={itemVariants}>
-        Choisissez le niveau d'accompagnement adapte a votre objectif: corriger,
-        ameliorer, ou lancer un site qui genere plus de demandes.
+        Que vous ayez un site cassé, un projet à lancer ou une idée à
+        concrétiser, voici comment je peux vous aider concrètement.
       </motion.p>
 
       <motion.div className="services-audience" variants={itemVariants}>

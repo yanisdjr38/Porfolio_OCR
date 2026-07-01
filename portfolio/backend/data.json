@@ -1,10 +1,10 @@
 {
   "softskills": [
-    "Je lis vos emails et je réponds dans l'heure",
-    "Je dis non si un projet me semble mal parti",
-    "Je garde le code propre pour la suite",
-    "Je prévois les ajustements (inclus)",
-    "Pas de jargon. Je parle clair."
+    "Réponse dans l'heure, même le soir",
+    "Je refuse les projets qui ne tiennent pas la route",
+    "Code propre, maintenable, réutilisable",
+    "Ajustements post-livraison inclus",
+    "Pas de jargon, que du concret"
   ],
   "audience": [
     "Indépendants",
@@ -43,61 +43,61 @@
   "process": [
     {
       "step": "01",
-      "title": "On définit le plan",
-      "description": "Vous décrivez le besoin, les délais, ce que vous avez comme ressources. On échange pour s'assurer qu'on vise la même cible. Vous recevez un résumé écrit de ce qu'on va faire. Pas d'ambiguïté."
+      "title": "On cadre votre projet",
+      "description": "Vous m'expliquez votre activité, votre besoin et ce que vous voulez atteindre. On fixe les délais et le budget. Vous repartez avec un résumé écrit de ce qu'on va faire : zéro ambiguïté, zéro surprise."
     },
     {
       "step": "02",
-      "title": "Je développe",
-      "description": "Vous recevez un lien privé pour suivre l'avancement. Vous pouvez tester la version en cours, poser des questions, suggérer des ajustements. Pas de surprise quand c'est fini."
+      "title": "Je construis, vous suivez",
+      "description": "Vous recevez un lien pour voir l'avancement en direct. Vous testez, vous commentez, on ajuste. Le résultat final, vous l'avez déjà vu avant même la mise en ligne."
     },
     {
       "step": "03",
-      "title": "C'est live et ajusté",
-      "description": "On teste ensemble. Vous me signalez ce qui fonctionne pas. Je corrige. Tout est inclus, aucun frais caché. Quand vous dites « ok, c'est bon », ça part en production."
+      "title": "Livraison et suivi inclus",
+      "description": "On valide ensemble. Je corrige ce qui ne vous convient pas — c'est inclus. Quand vous êtes satisfait, ça passe en production. Et si quelque chose cloche dans les deux semaines, je suis là."
     }
   ],
   "pricing": [
     {
-      "label": "Intervention rapide",
-      "detail": "Bug, ajustement, petite correction",
-      "time": "2h à 1 jour"
+      "label": "Dépannage rapide",
+      "detail": "Bug, ajustement, petite correction urgente",
+      "time": "Livré en 2h à 1 jour"
     },
     {
-      "label": "Projet modéré",
-      "detail": "Modification, intégration design, amélioration",
-      "time": "3 à 10 jours"
+      "label": "Mission courte",
+      "detail": "Modification, intégration de maquette, amélioration",
+      "time": "Livré en 3 à 10 jours"
     },
     {
-      "label": "Site complet",
-      "detail": "Vitrine, landing page, application simple",
-      "time": "2 à 4 semaines"
+      "label": "Projet complet",
+      "detail": "Site vitrine, landing page ou application simple",
+      "time": "Livré en 2 à 4 semaines"
     }
   ],
   "faq": [
     {
-      "q": "Quel est votre délai de réponse ?",
-      "a": "Je réponds à tous les messages dans l'heure. On peut faire un premier appel gratuitement (30 min) pour préciser vos besoins. Si c'est clair, je peux commencer dès le lendemain."
+      "q": "Combien de temps pour avoir une réponse ?",
+      "a": "Je réponds dans l'heure en semaine. Si vous préférez un échange rapide, proposez un créneau : je fais un appel découverte gratuit de 20 minutes pour comprendre votre besoin avant de vous envoyer quoi que ce soit."
     },
     {
-      "q": "Est-ce que vous cachez des frais ou des délais ?",
-      "a": "Non. Je suis direct sur les délais et le budget. Avant de commencer, vous avez un devis écrit clair. Si quelque chose peut prendre plus de temps, je vous préviens avant."
+      "q": "Est-ce qu'il y aura des frais cachés ?",
+      "a": "Non. Le devis est écrit, détaillé et fixe. Si une difficulté imprévue change le scope, je vous préviens avant d'agir, jamais après. Vous décidez."
     },
     {
-      "q": "Et après la livraison ? On peut ajuster ?",
-      "a": "Oui, bien sûr. Les 2 semaines après la livraison, c'est illimité. Vous dites « ce truc n'est pas parfait », je corrige. Zéro frais supplémentaire. Après, si besoin de mises à jour, on en rediscute."
+      "q": "Que se passe-t-il après la livraison ?",
+      "a": "Pendant deux semaines, les ajustements sont inclus sans condition. Si quelque chose ne vous convient pas, je corrige. Après, je reste disponible pour des mises à jour ponctuelles ou un suivi régulier — à vous de choisir."
     },
     {
-      "q": "Allez-vous vraiment comprendre mon besoin ?",
-      "a": "Je n'ai pas seulement un profil développeur. Je viens aussi du commercial et de la communication. Je parle votre langue. Quand vous dites « je veux un formulaire », je comprends qu'une relation client commence."
+      "q": "Vous comprendrez vraiment ce que je veux ?",
+      "a": "Très probablement oui. Avant de coder, j'ai travaillé dans le commercial et la communication. Je ne traduis pas votre besoin en fonctionnalités techniques : je cherche d'abord à comprendre ce que vous voulez accomplir pour votre activité."
     },
     {
-      "q": "Est-ce que je vais rester dépendant de vous après ?",
-      "a": "Non. Je vous laisse accès complet, le code est organisé pour qu'un autre dev puisse reprendre. Si c'est WordPress, vous gérez seul facilement. Aucune prise d'otage."
+      "q": "Est-ce que je serai dépendant de vous après ?",
+      "a": "Non. Vous avez tous les accès, le code est organisé pour que vous ou un autre développeur puissiez reprendre facilement. Si c'est WordPress, vous gérez seul au quotidien. Aucune dépendance forcée."
     },
     {
-      "q": "Vous faites de la maintenance après ?",
-      "a": "Oui, en option. Je peux gérer des mises à jour régulières ou intervenir ponctuellement, facturé à l'heure. Vous choisissez le rythme."
+      "q": "Vous faites de la maintenance après livraison ?",
+      "a": "Oui, si vous en avez besoin. Je propose un suivi régulier ou des interventions ponctuelles. Vous choisissez le niveau d'accompagnement selon votre situation."
     }
   ],
   "stack": {
@@ -181,36 +181,36 @@
     "Projets": [
       {
         "name": "Kasa",
-        "description": "Interface de réservation d'appartements claire, rapide et responsive.",
-        "problem": "Offrir une réservation facile et rassurante, pas compliquée.",
-        "result": "Interface claire, navigation simple, adapté au mobile.",
+        "description": "Interface de réservation d'appartements construite avec React et React Router, responsive et accessible sur tous les écrans.",
+        "problem": "Rendre la navigation dans une offre de location aussi simple que possible pour un utilisateur mobile.",
+        "result": "Navigation fluide, fiches lisibles, rendu mobile-first irréprochable.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://kasa-yd.netlify.app",
         "image": "/portfolio/src/assets/images/kasa.webp"
       },
       {
         "name": "Mon Vieux Grimoire",
-        "description": "Application de gestion de livres avec ajout, filtrage et API REST.",
-        "problem": "Permettre de gérer et d'ajouter du contenu sans complexité.",
-        "result": "Ajout de livres et tri simple, données organisées.",
+        "description": "Application full-stack de gestion de bibliothèque avec authentification, API Express/MongoDB et interface React.",
+        "problem": "Gérer une collection de livres et leurs notes de lecture sans outil dédié.",
+        "result": "CRUD complet, authentification sécurisée, données persistées en base.",
         "stack": ["React", "MongoDB", "Express"],
         "link": "https://mon-vieux-grimoire-yd.netlify.app",
         "image": "/portfolio/src/assets/images/mon-vieux-grimoire.webp"
       },
       {
         "name": "Effetmer",
-        "description": "Espace de suivi pour le JJB pensé pour centraliser la progression.",
-        "problem": "Suivre une activité sportive sans prise de tête.",
-        "result": "Vue claire des progrès, utilisation facile au quotidien.",
+        "description": "Application de suivi de progression sportive (Jiu-Jitsu Brésilien) avec tableau de bord et historique des séances.",
+        "problem": "Suivre sa progression sur le long terme sans outil adapté ni surcharge d'informations.",
+        "result": "Tableau de bord lisible, saisie rapide, navigation intuitive au quotidien.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://effetmer-bjj.netlify.app",
         "image": "/portfolio/src/assets/images/effetmer.webp"
       },
       {
         "name": "CardTrackr",
-        "description": "Outil de suivi de collection de cartes avec interface fluide.",
-        "problem": "Consulter une collection sans se perdre dans les infos.",
-        "result": "Recherche rapide, tri logique, interface claire.",
+        "description": "Gestionnaire de collection de cartes à collectionner avec recherche, filtres et interface responsive.",
+        "problem": "Consulter et gérer une grande collection sans se perdre dans des listes interminables.",
+        "result": "Recherche instantanée, filtres par catégorie, affichage clair sur mobile et desktop.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/Cardtrackr",
         "image": "/portfolio/src/assets/images/cardtrackr.webp"

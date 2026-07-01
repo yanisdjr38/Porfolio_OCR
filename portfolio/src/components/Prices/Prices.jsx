@@ -25,15 +25,14 @@ const itemVariants = {
 function Prices() {
   return (
     <motion.section
-      id="tarifs"
       className="prices-section"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.h2 variants={itemVariants}>
-        Formats & délais <span className="span-title"></span>
+        Types de missions <span className="span-title"></span>
       </motion.h2>
 
       <motion.div className="prices-grid" variants={containerVariants}>

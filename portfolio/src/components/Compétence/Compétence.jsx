@@ -35,7 +35,6 @@ const itemVariants = {
 function Compétence() {
   return (
     <motion.section
-      id="services"
       className="competence-section"
       variants={containerVariants}
       initial="hidden"

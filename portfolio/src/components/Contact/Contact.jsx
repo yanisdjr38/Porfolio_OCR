@@ -34,15 +34,14 @@ const itemVariants = {
 function Contact() {
   return (
     <motion.section
-      id="contact"
       className="contact"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.h2 variants={itemVariants}>
-        Parlons de votre besoin <span className="span-title"></span>
+        Décrivez-moi votre projet <span className="span-title"></span>
       </motion.h2>
       <motion.div className="contact-wrapper" variants={itemVariants}>
         <FormContact />

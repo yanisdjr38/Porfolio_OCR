@@ -1,14 +1,26 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
-const EMAILJS_PUBLIC_KEY =
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "-AapzA3unXxaBBTHA";
-const EMAILJS_SERVICE_ID =
-  import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_sc45q1s";
-const EMAILJS_TEMPLATE_ID =
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_xa6mua2";
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const CAN_USE_EMAILJS =
+  Boolean(EMAILJS_PUBLIC_KEY) &&
+  Boolean(EMAILJS_SERVICE_ID) &&
+  Boolean(EMAILJS_TEMPLATE_ID);
 
-emailjs.init(EMAILJS_PUBLIC_KEY);
+if (CAN_USE_EMAILJS) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
+const buildMailtoLink = ({ name, email, message }) => {
+  const subject = encodeURIComponent(`Demande de brief - ${name}`);
+  const body = encodeURIComponent(
+    `Nom: ${name}\nEmail: ${email}\n\nBesoin:\n${message}`,
+  );
+
+  return `mailto:yanis.djouahra38@gmail.com?subject=${subject}&body=${body}`;
+};
 
 /**
  * Icône de contact SVG
@@ -46,7 +58,7 @@ function FormContact() {
   });
 
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null); // "loading", "success", "error", null
+  const [status, setStatus] = useState(null); // "loading", "success", "error", "fallback", null
 
   /**
    * Valide les données du formulaire
@@ -113,6 +125,12 @@ function FormContact() {
 
     setStatus("loading");
 
+    if (!CAN_USE_EMAILJS) {
+      window.location.href = buildMailtoLink(formData);
+      setStatus("fallback");
+      return;
+    }
+
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         name: formData.name,
@@ -129,9 +147,10 @@ function FormContact() {
       }, 5000);
     } catch (error) {
       console.error(error);
-      setStatus("error");
+      window.location.href = buildMailtoLink(formData);
+      setStatus("fallback");
 
-      // Masquer le message d'erreur après 5 secondes
+      // Masquer le message de fallback après 5 secondes
       setTimeout(() => {
         setStatus(null);
       }, 5000);
@@ -150,8 +169,8 @@ function FormContact() {
         </div>
 
         <p className="form-hint">
-          Decrivez votre besoin en quelques lignes. Plus c'est clair, plus je
-          peux vous aider vite. Budget estime ? Delai souhaite ? Dites-moi.
+          Décrivez votre besoin en quelques lignes. Plus c'est clair, plus je
+          peux vous aider vite. Budget estimé ? Délai souhaité ? Dites-moi.
         </p>
 
         {/* Corps du formulaire */}
@@ -167,6 +186,13 @@ function FormContact() {
           {status === "error" && (
             <div className="feedback-message error-message">
               ✗ Erreur lors de l'envoi. Réessaie ou écris-moi directement.
+            </div>
+          )}
+
+          {status === "fallback" && (
+            <div className="feedback-message success-message">
+              ✓ Votre messagerie s'est ouverte. Si rien ne se passe, écrivez-moi
+              directement à yanis.djouahra38@gmail.com.
             </div>
           )}
 

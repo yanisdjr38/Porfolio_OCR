@@ -32,7 +32,7 @@ function Footer() {
           </li>
         </ul>
       </nav>
-      <p>&copy; 2026 Yanis Djouahra. Tous droits réservés.</p>
+      <p>&copy; 2026 Yanis Djouahra — Développeur web freelance.</p>
     </div>
   );
 }

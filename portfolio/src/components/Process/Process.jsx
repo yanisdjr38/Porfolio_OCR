@@ -25,15 +25,14 @@ const itemVariants = {
 function Process() {
   return (
     <motion.section
-      id="process"
       className="process-section"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.h2 variants={itemVariants}>
-        Mon processus <span className="span-title"></span>
+        Comment ça se passe <span className="span-title"></span>
       </motion.h2>
 
       <motion.div className="process-grid" variants={containerVariants}>

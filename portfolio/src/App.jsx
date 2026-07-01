@@ -20,7 +20,7 @@ function App() {
         <NavBar />
       </header>
       <main>
-        <section id="accueil">
+        <section id="home">
           <Banner />
         </section>
         <section id="services">

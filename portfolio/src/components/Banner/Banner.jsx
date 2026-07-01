@@ -23,7 +23,7 @@ const itemVariants = {
  */
 function Banner() {
   return (
-    <section id="home" className="banner">
+    <section className="banner">
       <motion.h1
         className="banner-title"
         variants={itemVariants}
@@ -39,8 +39,7 @@ function Banner() {
         custom={2}
         className="banner-subtitle"
       >
-        Je conçois des sites qui transforment vos visiteurs en demandes de
-        devis.
+        Un site qui travaille pour vous, même quand vous dormez.
       </motion.h2>
       <ul className="social-icons">
         <motion.li
@@ -83,9 +82,10 @@ function Banner() {
           animate="visible"
           custom={4}
         >
-          TPE, PME, indépendants: vous avez besoin d'un site clair, rapide et
-          utile pour votre business. Je vous accompagne de l'idée à la mise en
-          ligne avec un plan simple, un budget transparent, et un suivi concret.
+          TPE, PME, indépendant : votre site doit convaincre vos visiteurs de
+          vous contacter avant qu'ils partent chez un concurrent. Je conçois des
+          sites vitrines, landing pages et interfaces React pensés pour ça, avec
+          un accompagnement clair de A à Z.
         </motion.p>
       </div>
       <motion.ul
@@ -95,9 +95,9 @@ function Banner() {
         animate="visible"
         custom={5}
       >
-        <li>Réponse sous 24h</li>
-        <li>Appel découverte offert (20 min)</li>
-        <li>Plan d'action clair en 48h</li>
+        <li>📞 Appel découverte gratuit (20 min)</li>
+        <li>⚡ Réponse sous 24h</li>
+        <li>📋 Devis clair sous 48h</li>
       </motion.ul>
       <motion.ul
         className="banner-trust"
@@ -107,8 +107,8 @@ function Banner() {
         custom={6}
       >
         <li>Révisions incluses</li>
-        <li>Budget transparent</li>
-        <li>Zéro surprise</li>
+        <li>Zéro jargon technique</li>
+        <li>Livraison dans les délais</li>
       </motion.ul>
       <motion.div
         className="banner-actions"
@@ -118,10 +118,10 @@ function Banner() {
         custom={7}
       >
         <a className="button-link banner-button" href="#contact">
-          Recevoir un plan d'action
+          Démarrer mon projet
         </a>
         <a className="button-link banner-button" href="#projects">
-          Voir des résultats concrets
+          Voir mes réalisations
         </a>
       </motion.div>
     </section>

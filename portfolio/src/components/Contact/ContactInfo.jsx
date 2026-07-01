@@ -23,19 +23,19 @@ function ContactInfo() {
   return (
     <motion.div className="contact-info" variants={itemVariants}>
       <div className="contact-info-header">
-        <h3 className="contact-info-title">Parlons de votre projet</h3>
+        <h3 className="contact-info-title">Première étape : me parler</h3>
       </div>
 
       <p className="contact-summary">
-        Decrivez votre besoin, vos delais et votre budget. Je vous reponds sous
-        24h avec un plan concret et les prochaines etapes. Aucun engagement
-        avant votre accord.
+        Dites-moi ce que vous cherchez à accomplir, votre délai idéal et votre
+        budget approximatif. Je vous réponds sous 24h avec une proposition
+        claire et sans engagement.
       </p>
 
       <ul className="contact-commitments">
-        <li>Réponse en 24h</li>
-        <li>Plan transparent</li>
-        <li>Pas d'engagement jusqu'à accord</li>
+        <li>✓ Réponse sous 24h</li>
+        <li>✓ Devis écrit et transparent</li>
+        <li>✓ Aucun engagement avant votre accord</li>
       </ul>
 
       {/* Email */}

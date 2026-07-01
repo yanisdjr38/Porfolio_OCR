@@ -7,19 +7,19 @@
   box-sizing: border-box;
   min-height: 100vh;
   margin-bottom: 2rem;
-  padding: 60px 24px 100px 24px;
+  padding: 60px 24px 60px 24px;
   justify-content: flex-start;
   position: relative;
 
   @include respond-to(tablet) {
     margin-bottom: 0;
-    padding: 80px 40px 120px 40px;
+    padding: 80px 40px 80px 40px;
     justify-content: flex-start;
   }
   @include respond-to(desktop) {
     margin-bottom: 0;
-    padding: 100px 60px 140px 60px;
-    justify-content: flex-start;
+    padding: 100px 60px 100px 60px;
+    justify-content: center;
   }
 
   .banner-title {
