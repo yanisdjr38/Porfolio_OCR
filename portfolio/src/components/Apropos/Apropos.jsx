@@ -1,6 +1,12 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
 import photoYD from "../../assets/images/photo-yd.png";
+import {
+  createStaggerContainer,
+  revealSide,
+  revealUp,
+  sectionViewport,
+} from "../../utils/motionVariants";
 import Education from "./Education";
 import Experience from "./Experience";
 import Softskill from "./Softskill";
@@ -9,25 +15,7 @@ import Softskill from "./Softskill";
  * Animation variants pour le container et les items
  * Staggered animation avec délai progressive pour un effet en cascade
  */
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+const containerVariants = createStaggerContainer(0.14, 0.06);
 
 /**
  * Composant Apropos - Section "À propos" du portfolio
@@ -40,28 +28,36 @@ function Apropos() {
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        whileInView="visible"
+        viewport={sectionViewport}
       >
-        <motion.h2 variants={itemVariants}>
+        <motion.h2 variants={revealUp} custom={0}>
           Pourquoi me choisir <span className="span-title"></span>
         </motion.h2>
 
         {/* Section description - Full width */}
         <article className="apropos-article apropos-article-description">
           <div className="apropos-description-layout">
-            <motion.img
-              src={photoYD}
-              alt="Yanis Djouahra, développeur web freelance"
-              className="apropos-photo"
-              variants={itemVariants}
-            />
+            <motion.div custom={-1} variants={revealSide}>
+              <motion.img
+                src={photoYD}
+                alt="Yanis Djouahra, développeur web freelance"
+                className="apropos-photo"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
             <div className="apropos-description-content">
-              <motion.h3 variants={itemVariants}>
+              <motion.h3 variants={revealUp} custom={1}>
                 Un dev qui parle business, pas jargon
               </motion.h3>
               <motion.div
-                variants={itemVariants}
+                variants={revealUp}
+                custom={2}
                 className="apropos-description"
               >
                 <p>
@@ -83,33 +79,36 @@ function Apropos() {
         {/* Section 4 colonnes: collaboration | repères | formation | centres d'intérêt */}
         <div className="apropos-three-columns">
           <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
+            <motion.h3 variants={revealUp} custom={3} className="column-title">
               Ce que vous pouvez attendre
             </motion.h3>
             <motion.div
-              variants={itemVariants}
+              variants={revealUp}
+              custom={4}
               className="column-content softskill-wrapper"
             >
               <Softskill />
             </motion.div>
           </article>
           <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
+            <motion.h3 variants={revealUp} custom={5} className="column-title">
               Disponibilité & fiabilité
             </motion.h3>
             <motion.div
-              variants={itemVariants}
+              variants={revealUp}
+              custom={6}
               className="column-content experience"
             >
               <Experience />
             </motion.div>
           </article>
           <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
+            <motion.h3 variants={revealUp} custom={7} className="column-title">
               Zone et missions
             </motion.h3>
             <motion.div
-              variants={itemVariants}
+              variants={revealUp}
+              custom={8}
               className="column-content education"
             >
               <Education />

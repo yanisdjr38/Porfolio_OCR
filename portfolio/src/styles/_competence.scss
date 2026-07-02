@@ -10,11 +10,53 @@
  * Affiche la grille de compétences avec Stack component
  */
 .competence-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
   padding: 30px 20px;
+
+  .competence-parallax {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 999px;
+    filter: blur(10px);
+    z-index: 0;
+  }
+
+  .competence-parallax--primary {
+    width: 320px;
+    height: 320px;
+    top: 8%;
+    right: -120px;
+    background: radial-gradient(
+      circle,
+      rgba($color-accent-cyan, 0.22) 0%,
+      rgba($color-accent-cyan, 0.05) 48%,
+      transparent 72%
+    );
+  }
+
+  .competence-parallax--secondary {
+    width: 260px;
+    height: 260px;
+    bottom: 6%;
+    left: -90px;
+    background: radial-gradient(
+      circle,
+      rgba($color-accent-pink, 0.15) 0%,
+      rgba($color-accent-pink, 0.05) 46%,
+      transparent 70%
+    );
+  }
+
+  > *:not(.competence-parallax) {
+    position: relative;
+    z-index: 1;
+  }
 
   h2 {
     // Inherits from global h2 styles

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { hoverLift, tapPress } from "../../utils/motionVariants";
 
 /**
  * Animation variants
@@ -41,39 +42,45 @@ function ContactInfo() {
       {/* Email */}
       <div className="contact-item">
         <div className="contact-label">Email</div>
-        <a
+        <motion.a
           href="mailto:yanis.djouahra38@gmail.com"
           className="contact-link email-link"
+          whileHover={{ y: -2 }}
+          whileTap={tapPress}
         >
           yanis.djouahra38@gmail.com
-        </a>
+        </motion.a>
       </div>
 
       {/* Réseaux sociaux */}
       <div className="contact-buttons">
-        <a
+        <motion.a
           href="https://github.com/yanisdjr38"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn github-btn"
           aria-label="GitHub"
           data-text="GitHub"
+          whileHover={hoverLift}
+          whileTap={tapPress}
         >
           <FontAwesomeIcon icon={["fab", "github"]} />
           <span>GitHub</span>
-        </a>
+        </motion.a>
 
-        <a
+        <motion.a
           href="https://www.linkedin.com/in/yanis-djouahra/"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn linkedin-btn"
           aria-label="LinkedIn"
           data-text="LinkedIn"
+          whileHover={hoverLift}
+          whileTap={tapPress}
         >
           <FontAwesomeIcon icon={["fab", "linkedin"]} />
           <span>LinkedIn</span>
-        </a>
+        </motion.a>
       </div>
     </motion.div>
   );

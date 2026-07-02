@@ -2,6 +2,9 @@
 @use "mixins" as *;
 
 .parcour {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -23,6 +26,45 @@
   /* Wrapper motion.div du Parcour */
   > div:last-of-type {
     width: 100%;
+  }
+
+  .parcour-parallax {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 999px;
+    z-index: 0;
+    filter: blur(12px);
+  }
+
+  .parcour-parallax--one {
+    width: 360px;
+    height: 360px;
+    top: 10%;
+    left: -150px;
+    background: radial-gradient(
+      circle,
+      rgba($color-accent-cyan, 0.2) 0%,
+      rgba($color-accent-cyan, 0.05) 52%,
+      transparent 74%
+    );
+  }
+
+  .parcour-parallax--two {
+    width: 300px;
+    height: 300px;
+    bottom: 6%;
+    right: -110px;
+    background: radial-gradient(
+      circle,
+      rgba($color-accent-pink, 0.16) 0%,
+      rgba($color-accent-pink, 0.05) 46%,
+      transparent 72%
+    );
+  }
+
+  > *:not(.parcour-parallax) {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -55,6 +97,22 @@
       flex: 1 1 0;
       height: 100%;
       min-width: 0;
+    }
+  }
+
+  .timeline-lane {
+    width: 100%;
+  }
+
+  .timeline-lane--left {
+    @include respond-to(desktop) {
+      padding-top: 0;
+    }
+  }
+
+  .timeline-lane--right {
+    @include respond-to(desktop) {
+      padding-top: 26px;
     }
   }
 }
@@ -209,6 +267,18 @@
         font-weight: 600;
       }
     }
+  }
+}
+
+.timeline-card--left {
+  @include respond-to(desktop) {
+    transform-origin: left center;
+  }
+}
+
+.timeline-card--right {
+  @include respond-to(desktop) {
+    transform-origin: right center;
   }
 }
 

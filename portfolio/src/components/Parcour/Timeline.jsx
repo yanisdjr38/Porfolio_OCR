@@ -1,3 +1,11 @@
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+import {
+  hoverLift,
+  sectionViewport,
+  tapPress,
+} from "../../utils/motionVariants";
+
 /**
  * Composant Timeline - Carte affichant une expérience ou une formation
  * Utilisé dans la section Parcours pour afficher l'historique professionnel
@@ -9,10 +17,18 @@
  * @param {string} props.lieu - Lieu de travail/étude
  * @param {Array<string>} props.stack - Technologies/compétences acquises
  * @param {string} props.link - Lien vers le certificat/diplôme
+ * @param {string} props.align - Alignement visuel de la carte (left|right)
  */
-function Timeline({ name, description, niveau, lieu, stack, link }) {
+function Timeline({ name, description, niveau, lieu, stack, link, align }) {
   return (
-    <div className="timeline-card">
+    <motion.article
+      className={`timeline-card ${align === "right" ? "timeline-card--right" : "timeline-card--left"}`}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={sectionViewport}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={hoverLift}
+    >
       {/* En-tête avec titre */}
       <div className="card-title">
         <h3 className="heading">{name}</h3>
@@ -41,20 +57,19 @@ function Timeline({ name, description, niveau, lieu, stack, link }) {
 
       {/* Pied: lien vers le certificat */}
       <div className="card-footer">
-        <button className="button-link" data-text="Voir le diplôme">
-          <span>
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-link"
-            >
-              Voir le diplôme
-            </a>
-          </span>
-        </button>
+        <motion.a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button-link card-link"
+          data-text="Voir le diplôme"
+          whileHover={{ scale: 1.03 }}
+          whileTap={tapPress}
+        >
+          <span>Voir le diplôme</span>
+        </motion.a>
       </div>
-    </div>
+    </motion.article>
   );
 }
 

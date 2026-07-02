@@ -1,30 +1,19 @@
 //eslint-disable-next-line
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import data from "../../../backend/data.json";
+import {
+  createStaggerContainer,
+  revealSide,
+  revealUp,
+  sectionViewport,
+} from "../../utils/motionVariants";
 import Timeline from "./Timeline";
 
 /**
  * Animation variants pour l'effet cascade
  */
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+const containerVariants = createStaggerContainer(0.14, 0.08);
 
 /**
  * Composant Parcour - Section expérience et formation
@@ -32,32 +21,55 @@ const itemVariants = {
  * @component
  */
 function Parcour() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const parallaxOneY = useTransform(scrollYProgress, [0, 1], [-70, 70]);
+  const parallaxTwoY = useTransform(scrollYProgress, [0, 1], [50, -60]);
+  const parallaxOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.45, 1],
+    [0.16, 0.3, 0.14],
+  );
+
   return (
     <motion.section
+      ref={sectionRef}
       id="experience"
       className="parcour"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={sectionViewport}
     >
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        viewport={{ once: true }}
-      >
+      <motion.div
+        className="parcour-parallax parcour-parallax--one"
+        style={{ y: parallaxOneY, opacity: parallaxOpacity }}
+        aria-hidden="true"
+      />
+      <motion.div
+        className="parcour-parallax parcour-parallax--two"
+        style={{ y: parallaxTwoY, opacity: parallaxOpacity }}
+        aria-hidden="true"
+      />
+
+      <motion.h2 variants={revealUp} custom={0}>
         Parcours <span className="span-title"></span>
       </motion.h2>
-      <motion.div
-        className="parcour-container"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-      >
+
+      <motion.div className="parcour-container" variants={containerVariants}>
         {data.stack.Parcours.map((item, index) => (
-          <motion.div key={index} variants={itemVariants}>
+          <motion.div
+            key={index}
+            className={`timeline-lane ${index % 2 === 0 ? "timeline-lane--left" : "timeline-lane--right"}`}
+            variants={revealSide}
+            custom={index % 2 === 0 ? -1 : 1}
+            whileInView="visible"
+            initial="hidden"
+            viewport={sectionViewport}
+          >
             <Timeline
               name={item.name}
               description={item.description}
@@ -65,6 +77,7 @@ function Parcour() {
               lieu={item.lieu}
               stack={item.stack}
               link={item.link}
+              align={index % 2 === 0 ? "left" : "right"}
             />
           </motion.div>
         ))}
