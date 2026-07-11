@@ -53,11 +53,10 @@ function Apropos() {
             Un profil hybride au service de la performance web
           </motion.h3>
           <motion.p variants={itemVariants} className="apropos-description">
-            Issu d'une formation en communication et en développement
-            commercial, j'ai acquis une compréhension profonde des besoins
-            utilisateur. J'applique cette vision stratégique au développement
-            React, en créant des interfaces intuitives et performantes centrées
-            sur l'expérience utilisateur.
+            Développeur web orienté expérience utilisateur, je conçois des
+            interfaces React claires, modernes et performantes. Mon objectif est
+            de transformer des besoins concrets en solutions digitales fiables,
+            maintenables et pensées pour l'impact.
           </motion.p>
         </article>
 

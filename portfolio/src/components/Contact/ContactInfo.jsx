@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import cvPdf from "../../assets/Djouahra_Yanis.pdf";
 
 /**
  * Animation variants
@@ -15,9 +14,9 @@ const itemVariants = {
 };
 
 /**
- * Composant ContactInfo - Infos de contact (email, réseaux sociaux, CV)
+ * Composant ContactInfo - Infos de contact (email, réseaux sociaux)
  * @component
- * @returns {JSX.Element} Section avec email, liens réseaux et CV
+ * @returns {JSX.Element} Section avec email et liens réseaux
  */
 function ContactInfo() {
   return (
@@ -37,7 +36,7 @@ function ContactInfo() {
         </a>
       </div>
 
-      {/* Réseaux sociaux et CV */}
+      {/* Réseaux sociaux */}
       <div className="contact-buttons">
         <a
           href="https://github.com/yanisdjr38"
@@ -61,18 +60,6 @@ function ContactInfo() {
         >
           <FontAwesomeIcon icon={["fab", "linkedin"]} />
           <span>LinkedIn</span>
-        </a>
-
-        <a
-          href={cvPdf}
-          download="/portfolio/src/assets/Djouahra_Yanis.pdf"
-          className="contact-btn cv-btn"
-          aria-label="Télécharger mon CV (PDF)"
-          type="application/pdf"
-          data-text="Mon CV"
-        >
-          <FontAwesomeIcon icon={["fas", "file-pdf"]} aria-hidden="true" />
-          <span>Mon CV</span>
         </a>
       </div>
     </motion.div>

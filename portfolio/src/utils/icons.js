@@ -18,7 +18,6 @@ import {
   faChevronLeft,
   faCode,
   faDatabase,
-  faFilePdf,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -43,5 +42,4 @@ library.add(
   faCode,
   faMagnifyingGlass,
   faChevronLeft,
-  faFilePdf,
 );
