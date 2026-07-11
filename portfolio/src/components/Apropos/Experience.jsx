@@ -1,3 +1,6 @@
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 /**
  * Composant Experience - Affiche disponibilité et fiabilité
  * @component
@@ -16,7 +19,9 @@ function Experience() {
   return (
     <ul className="experience-list">
       {availability.map((item, index) => (
-        <li key={index}>✓ {item}</li>
+        <li key={index}>
+          <FontAwesomeIcon icon={faCircleCheck} /> {item}
+        </li>
       ))}
     </ul>
   );

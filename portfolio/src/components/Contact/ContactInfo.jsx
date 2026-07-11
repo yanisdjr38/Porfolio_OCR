@@ -1,3 +1,4 @@
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -34,9 +35,16 @@ function ContactInfo() {
       </p>
 
       <ul className="contact-commitments">
-        <li>✓ Réponse sous 24h</li>
-        <li>✓ Devis écrit et transparent</li>
-        <li>✓ Aucun engagement avant votre accord</li>
+        <li>
+          <FontAwesomeIcon icon={faCircleCheck} /> Réponse sous 24h
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCircleCheck} /> Devis écrit et transparent
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCircleCheck} /> Aucun engagement avant votre
+          accord
+        </li>
       </ul>
 
       {/* Email */}

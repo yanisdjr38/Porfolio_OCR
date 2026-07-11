@@ -1,4 +1,9 @@
 import emailjs from "@emailjs/browser";
+import {
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -178,21 +183,24 @@ function FormContact() {
           {/* Message de succès */}
           {status === "success" && (
             <div className="feedback-message success-message">
-              ✓ Message envoyé avec succès ! Je reviens vers vous rapidement.
+              <FontAwesomeIcon icon={faCircleCheck} /> Message envoyé avec
+              succès ! Je reviens vers vous rapidement.
             </div>
           )}
 
           {/* Message d'erreur d'envoi */}
           {status === "error" && (
             <div className="feedback-message error-message">
-              ✗ Erreur lors de l'envoi. Réessaie ou écris-moi directement.
+              <FontAwesomeIcon icon={faCircleXmark} /> Erreur lors de l'envoi.
+              Réessaie ou écris-moi directement.
             </div>
           )}
 
           {status === "fallback" && (
             <div className="feedback-message success-message">
-              ✓ Votre messagerie s'est ouverte. Si rien ne se passe, écrivez-moi
-              directement à yanis.djouahra38@gmail.com.
+              <FontAwesomeIcon icon={faCircleCheck} /> Votre messagerie s'est
+              ouverte. Si rien ne se passe, écrivez-moi directement à
+              yanis.djouahra38@gmail.com.
             </div>
           )}
 

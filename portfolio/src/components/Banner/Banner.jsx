@@ -1,4 +1,9 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faBolt,
+  faClipboardList,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -77,9 +82,15 @@ function Banner() {
         </motion.p>
       </div>
       <motion.ul className="banner-proof" variants={revealUp} custom={5}>
-        <li>📞 Appel découverte gratuit (20 min)</li>
-        <li>⚡ Réponse sous 24h</li>
-        <li>📋 Devis clair sous 48h</li>
+        <li>
+          <FontAwesomeIcon icon={faPhone} /> Appel découverte gratuit (20 min)
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faBolt} /> Réponse sous 24h
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faClipboardList} /> Devis clair sous 48h
+        </li>
       </motion.ul>
       <motion.ul className="banner-trust" variants={revealUp} custom={6}>
         <li>Révisions incluses</li>
