@@ -1,5 +1,6 @@
 //eslint-disable-next-line
 import { motion } from "framer-motion";
+import AutresFormations from "./AutresFormations";
 import Education from "./Education";
 import Experience from "./Experience";
 import Hobbies from "./Hobbies";
@@ -93,6 +94,18 @@ function Apropos() {
               className="column-content education"
             >
               <Education />
+            </motion.div>
+          </article>
+
+          <article className="apropos-column">
+            <motion.h3 variants={itemVariants} className="column-title">
+              Autres formations
+            </motion.h3>
+            <motion.div
+              variants={itemVariants}
+              className="column-content education"
+            >
+              <AutresFormations />
             </motion.div>
           </article>
 

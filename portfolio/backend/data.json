@@ -132,36 +132,58 @@
         ],
         "link": "https://openclassrooms.com/fr/paths/899-developpeur-web"
       }
+    ],
+    "AutresFormations": [
+      {
+        "name": "Responsable de Développement Commercial France et Internationale - 2024",
+        "description": "Diplôme axé sur les stratégies de développement commercial et les techniques de vente.",
+        "niveau": "Bac +3",
+        "lieu": "ECEMA",
+        "image": "",
+        "stack": [
+          "Gestion de projet",
+          "Techniques de vente",
+          "Stratégies de développement commercial",
+          "Management"
+        ],
+        "link": "https://www.ecema.fr/formations/bachelor-3/bachelor-3-responsable-developpement-affaires/"
+      },
+      {
+        "name": "BTS Communication - 2023",
+        "description": "Diplôme axé sur les stratégies de communication et les médias.",
+        "niveau": "Bac +2",
+        "lieu": "Lycée Ella Fitzgerald",
+        "image": "",
+        "stack": [
+          "Stratégies de communication",
+          "Médias et publicité",
+          "Gestion de projet"
+        ],
+        "link": "https://ella-fitzgerald.ent.auvergnerhonealpes.fr/formations-et-dispositifs/superieures/"
+      }
     ]
   },
   "experiences": [
-    {
-      "role": "Monteur PC",
-      "company": "LDLC",
-      "location": "Saint-Quentin-Fallavier",
-      "year": "2025",
-      "type": "Intérim"
-    },
     {
       "role": "Vendeur polyvalent",
       "company": "New Balance",
       "location": "Villefontaine",
       "year": "2023-2024",
-      "type": "CDI"
+      "type": "Alternance"
     },
     {
       "role": "Chargé de Communication",
       "company": "ABD Club de Basket",
       "location": null,
       "year": "2022",
-      "type": "Mission bénévole"
+      "type": "Stage"
     },
     {
       "role": "Commercial",
       "company": "ABD Club de Basket",
       "location": null,
       "year": "2022",
-      "type": "Mission bénévole"
+      "type": "Stage"
     }
   ],
   "hobbies": [
