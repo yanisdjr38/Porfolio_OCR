@@ -49,27 +49,29 @@
   li {
     @include neon-card($color-accent-cyan);
     background-color: $color-bg-main;
-    padding: 25px 20px;
-    min-height: 100px;
+    padding: 22px 18px;
+    min-height: 92px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: $color-text-main;
-    font-size: 1rem;
+    font-size: 0.98rem;
     text-align: center;
     line-height: 1.5;
     font-weight: 500;
+    border-width: 1px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 
     @include respond-to(tablet) {
-      padding: 30px 24px;
-      font-size: 1.05rem;
-      min-height: 120px;
+      padding: 24px 22px;
+      font-size: 1rem;
+      min-height: 104px;
     }
 
     @include respond-to(desktop) {
-      padding: 35px 28px;
-      font-size: 1.1rem;
-      min-height: 130px;
+      padding: 28px 24px;
+      font-size: 1.04rem;
+      min-height: 110px;
     }
   }
 }

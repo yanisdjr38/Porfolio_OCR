@@ -9,20 +9,12 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: 0.65rem;
   list-style: none;
   width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  @include respond-to(tablet) {
-    gap: 12px;
-  }
-
-  @include respond-to(desktop) {
-    gap: 14px;
-  }
 
   /**
    * Élément individuel - Soft Skill
@@ -30,32 +22,7 @@
    */
   .softskill-item {
     list-style: none;
-    @include neon-card($color-accent-cyan);
-
-    // Dimensions et espacement
     width: 100%;
-    height: 80px;
-    padding: 20px;
     box-sizing: border-box;
-
-    // Typographie
-    font-size: $font-size-s;
-    color: $color-text-main;
-    font-family: $font-main;
-    background-color: $color-bg-main;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @include respond-to(tablet) {
-      font-size: 0.8rem;
-      height: 85px;
-    }
-
-    @include respond-to(desktop) {
-      font-size: 0.85rem;
-      height: 90px;
-    }
   }
 }

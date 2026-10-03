@@ -10,23 +10,26 @@ $color-text-main: #e0e0e0; // Texte clair haute lisibilité
 $color-text-muted: #a0a0a0; // Texte secondaire / placeholders
 $color-bg-cyan: #00ffff; // Accent cyan pour éléments interactifs
 $color-bg-pink: #ff00ff; // Accent rose pour éléments interactifs
-$color-bg-blue: #005e5e; // Accent bleu pour éléments interactifs
 $color-text-cyan: #00ffff; // Bordures et séparateurs
 $color-text-pink: #ff00ff; // Accentuation et éléments interactifs
-$color-text-blue: #005e5e; // Titres et éléments importants
 
 // Accents Néons (10%)
 $color-accent-cyan: #00ffff; // Cyber Cyan (Action, liens)
-$color-accent-blue: #005e5e; // Bleu électrique (Hover, titres secondaires)
-$color-accent-pink: #ff00ff; // Hot Pink (Titres, focus)
+$color-accent-blue: #005e5e; // Bleu électrique (overlays, dégradés)
+$color-accent-pink: #ff00ff; // Hot Pink (accents ponctuels)
 $color-accent-gray: #888888; // Gray Glow (Texte secondaire, hover)
+
+// Couleurs de statut (formulaire, feedback)
+$color-status-success: #35e08a;
+$color-status-error: #ff5577;
 
 // 2. TYPOGRAPHIE - Mobile First Responsive
 // -------------------------------------------------------------------
 $font-main:
-  "Orbitron", "Michroma", sans-serif; // Futuriste et rétro [Synthwave vibes]
+  "Inter", "Segoe UI", "Helvetica Neue", sans-serif; // Sobre et lisible
 $font-code: "IBM Plex Mono", "JetBrains Mono", monospace; // Tech-oriented
-$font-secondary: "Jost", "Poppins", sans-serif; // Moderne et lisible
+$font-secondary:
+  "Inter", "Segoe UI", "Helvetica Neue", sans-serif; // Moderne et lisible
 
 // TAILLES MOBILE (Base)
 // -------------------------------------------

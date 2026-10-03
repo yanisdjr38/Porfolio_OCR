@@ -1,19 +1,24 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faBolt,
+  faClipboardList,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import {
+  createStaggerContainer,
+  hoverLift,
+  revealUp,
+  tapPress,
+} from "../../utils/motionVariants";
 
 /**
  * Animation variant pour les éléments du bannière
  * Utilise un paramètre custom pour un délai progressif
  */
-const itemVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: (custom = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: custom * 0.1 },
-  }),
-};
+const containerVariants = createStaggerContainer(0.1, 0.04);
 
 /**
  * Composant Banner - Section d'entrée du portfolio
@@ -21,40 +26,26 @@ const itemVariants = {
  * @component
  */
 function Banner() {
-  const handleScrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="home" className="banner">
-      <span className="span-title-style">SYSTEME_INITALIZED</span>
-      <motion.h1
-        className="banner-title"
-        variants={itemVariants}
-        initial="hidden"
-        animate="visible"
-      >
+    <motion.section
+      className="banner"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h1 className="banner-title" variants={revealUp} custom={0}>
         Yanis <span className="banner-title-span">Djouahra</span>
       </motion.h1>
-      <motion.h2
-        variants={itemVariants}
-        initial="hidden"
-        animate="visible"
-        custom={2}
-        className="banner-subtitle"
-      >
-        Développeur Web Full Stack
+      <motion.h2 variants={revealUp} custom={1} className="banner-subtitle">
+        Un site qui travaille pour vous, même quand vous dormez.
       </motion.h2>
       <ul className="social-icons">
         <motion.li
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          custom={3}
+          variants={revealUp}
+          custom={2}
           className="icon-items"
+          whileHover={{ scale: 1.12, y: -4 }}
+          whileTap={tapPress}
         >
           <a
             href="https://github.com/yanisdjr38"
@@ -66,11 +57,11 @@ function Banner() {
           </a>
         </motion.li>
         <motion.li
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          custom={4}
+          variants={revealUp}
+          custom={3}
           className="icon-items"
+          whileHover={{ scale: 1.12, y: -4 }}
+          whileTap={tapPress}
         >
           <a
             href="https://www.linkedin.com/in/yanis-djouahra/"
@@ -83,28 +74,48 @@ function Banner() {
         </motion.li>
       </ul>
       <div className="banner-description">
-        <motion.p
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          custom={4}
-        >
-          De la stratégie commerciale au développement React : Créateur
-          d’applications déterminé et centré sur l’utilisateur
+        <motion.p variants={revealUp} custom={4}>
+          TPE, PME, indépendant : votre site doit convaincre vos visiteurs de
+          vous contacter avant qu'ils partent chez un concurrent. Je conçois des
+          sites vitrines, landing pages et interfaces React pensés pour ça, avec
+          un accompagnement clair de A à Z.
         </motion.p>
-      </div>{" "}
-      <motion.button
-        variants={itemVariants}
-        initial="hidden"
-        animate="visible"
-        custom={5}
-        className="button-link banner-button"
-        onClick={handleScrollToProjects}
-        data-text="Entrer dans le système >"
-      >
-        <span>Entrer dans le système {">"}_</span>
-      </motion.button>{" "}
-    </section>
+      </div>
+      <motion.ul className="banner-proof" variants={revealUp} custom={5}>
+        <li>
+          <FontAwesomeIcon icon={faPhone} /> Appel découverte gratuit (20 min)
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faBolt} /> Réponse sous 24h
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faClipboardList} /> Devis clair sous 48h
+        </li>
+      </motion.ul>
+      <motion.ul className="banner-trust" variants={revealUp} custom={6}>
+        <li>Révisions incluses</li>
+        <li>Zéro jargon technique</li>
+        <li>Livraison dans les délais</li>
+      </motion.ul>
+      <motion.div className="banner-actions" variants={revealUp} custom={7}>
+        <motion.a
+          className="button-link banner-button"
+          href="#contact"
+          whileHover={hoverLift}
+          whileTap={tapPress}
+        >
+          Démarrer mon projet
+        </motion.a>
+        <motion.a
+          className="button-link banner-button"
+          href="#projects"
+          whileHover={hoverLift}
+          whileTap={tapPress}
+        >
+          Voir mes réalisations
+        </motion.a>
+      </motion.div>
+    </motion.section>
   );
 }
 

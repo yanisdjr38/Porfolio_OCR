@@ -1,30 +1,18 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import {
+  createStaggerContainer,
+  revealSide,
+  revealUp,
+  sectionViewport,
+} from "../../utils/motionVariants";
 import ContactInfo from "./ContactInfo";
 import FormContact from "./FormContact";
 
 /**
  * Animation variants pour l'effet cascade
  */
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+const containerVariants = createStaggerContainer(0.14, 0.08);
 
 /**
  * Composant Contact - Section de contact
@@ -34,19 +22,22 @@ const itemVariants = {
 function Contact() {
   return (
     <motion.section
-      id="contact"
       className="contact"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={sectionViewport}
     >
-      <motion.h2 variants={itemVariants}>
-        Contact <span className="span-title"></span>
+      <motion.h2 variants={revealUp} custom={0}>
+        Décrivez-moi votre projet <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
-      <motion.div className="contact-wrapper" variants={itemVariants}>
-        <FormContact />
-        <ContactInfo />
+      <motion.div className="contact-wrapper" variants={containerVariants}>
+        <motion.div variants={revealSide} custom={-1}>
+          <FormContact />
+        </motion.div>
+        <motion.div variants={revealSide} custom={1}>
+          <ContactInfo />
+        </motion.div>
       </motion.div>
     </motion.section>
   );

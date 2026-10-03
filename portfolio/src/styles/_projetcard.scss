@@ -58,7 +58,7 @@
       background: linear-gradient(
         135deg,
         rgba($color-bg-main, 0.8),
-        rgba($color-bg-blue, 0.4)
+        rgba($color-accent-blue, 0.4)
       );
       display: flex;
       align-items: center;
@@ -125,6 +125,35 @@
    * Description générale de l'élément
    */
   .card-content {
+    .card-meta {
+      display: grid;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+
+      .card-meta-item {
+        padding: 0.85rem 0.95rem;
+        background: $color-bg-main;
+        border: 1px solid rgba($color-text-cyan, 0.12);
+        border-radius: 10px;
+
+        .card-meta-label {
+          display: inline-block;
+          font-family: $font-code;
+          font-size: $font-size-small;
+          color: $color-text-cyan;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          margin-bottom: 0.4rem;
+        }
+
+        p {
+          margin: 0;
+          color: $color-text-main;
+          line-height: 1.5;
+        }
+      }
+    }
+
     // Styles par défaut du paragraphe
     p {
       margin: 5px 0;
@@ -149,10 +178,12 @@
        * Badge coloré avec technologie
        */
       .stack-item {
-        background-color: $color-text-pink;
-        padding: 5px 10px;
+        background: rgba($color-accent-cyan, 0.08);
+        border: 1px solid rgba($color-accent-cyan, 0.25);
+        border-radius: 999px;
+        padding: 5px 12px;
         font-size: $font-size-link;
-        color: $color-bg-main;
+        color: $color-text-cyan;
       }
     }
   }
@@ -165,47 +196,36 @@
     margin-top: auto;
 
     .button-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      border: none;
-      background-color: $color-bg-cyan;
+      border: 1px solid $color-bg-cyan;
+      border-radius: 4px;
       padding: 10px 15px;
       cursor: pointer;
-      transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
       font-family: $font-code;
       font-size: $font-size-link;
-      color: $color-bg-main;
       font-weight: 600;
-      @include glitch-button(
-        $color-bg-cyan,
-        $color-bg-main,
-        $color-accent-pink
-      );
+      text-decoration: none;
+      @include accent-button($color-bg-cyan, $color-bg-main);
 
-      /**
-       * Hover effect: inversion des couleurs
-       */
-      &:hover {
-        background-color: $color-bg-main;
-        color: $color-bg-cyan;
-        border: 1px solid $color-bg-cyan;
-        box-shadow: 0 0 25px $color-bg-cyan;
-      }
-
-      // Lien à l'intérieur du bouton
+      // Texte du lien
       .card-link {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
         font-family: $font-code;
         font-size: $font-size-link;
         color: $color-bg-main;
         text-decoration: none;
         font-weight: 600;
       }
+    }
+
+    .card-link {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

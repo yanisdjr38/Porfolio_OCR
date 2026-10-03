@@ -1,34 +1,21 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import AutresFormations from "./AutresFormations";
+import photoYD from "../../assets/images/photo-yd.webp";
+import {
+  createStaggerContainer,
+  revealSide,
+  revealUp,
+  sectionViewport,
+} from "../../utils/motionVariants";
 import Education from "./Education";
 import Experience from "./Experience";
-import Hobbies from "./Hobbies";
 import Softskill from "./Softskill";
 
 /**
  * Animation variants pour le container et les items
  * Staggered animation avec délai progressive pour un effet en cascade
  */
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+const containerVariants = createStaggerContainer(0.14, 0.06);
 
 /**
  * Composant Apropos - Section "À propos" du portfolio
@@ -37,87 +24,94 @@ const itemVariants = {
  */
 function Apropos() {
   return (
-    <section id="about" className="apropos">
+    <section className="apropos">
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        whileInView="visible"
+        viewport={sectionViewport}
       >
-        <motion.h2 variants={itemVariants}>
-          À propos de moi <span className="span-title"></span>
+        <motion.h2 variants={revealUp} custom={0}>
+          Pourquoi me choisir <span className="span-title" aria-hidden="true"></span>
         </motion.h2>
 
         {/* Section description - Full width */}
         <article className="apropos-article apropos-article-description">
-          <motion.h3 variants={itemVariants}>
-            Un profil hybride au service de la performance web
-          </motion.h3>
-          <motion.p variants={itemVariants} className="apropos-description">
-            Développeur web orienté expérience utilisateur, je conçois des
-            interfaces React claires, modernes et performantes. Mon objectif est
-            de transformer des besoins concrets en solutions digitales fiables,
-            maintenables et pensées pour l'impact.
-          </motion.p>
+          <div className="apropos-description-layout">
+            <motion.div custom={-1} variants={revealSide}>
+              <motion.img
+                src={photoYD}
+                alt="Yanis Djouahra, développeur web freelance"
+                className="apropos-photo"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
+            <div className="apropos-description-content">
+              <motion.h3 variants={revealUp} custom={1}>
+                Un dev qui parle business, pas jargon
+              </motion.h3>
+              <motion.div
+                variants={revealUp}
+                custom={2}
+                className="apropos-description"
+              >
+                <p>
+                  Avant de coder, j'ai travaillé dans le commercial et la
+                  communication. Je comprends ce que vous voulez vraiment dire
+                  quand vous dites « je veux un beau site » : vous voulez un
+                  site qui fait rentrer des clients, pas un projet d'expo.
+                </p>
+                <div className="apropos-separator"></div>
+                <p className="apropos-description-highlight">
+                  Une méthode claire, des délais annoncés à l'avance, et un site
+                  pensé pour être utile à votre activité.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </article>
 
-        {/* Section 3 colonnes: Soft Skills | Expériences | Hobbies */}
+        {/* Section 4 colonnes: collaboration | repères | formation | centres d'intérêt */}
         <div className="apropos-three-columns">
           <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
-              Soft Skills
+            <motion.h3 variants={revealUp} custom={3} className="column-title">
+              Ce que vous pouvez attendre
             </motion.h3>
             <motion.div
-              variants={itemVariants}
+              variants={revealUp}
+              custom={4}
               className="column-content softskill-wrapper"
             >
               <Softskill />
             </motion.div>
           </article>
           <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
-              Expériences Professionnelles
+            <motion.h3 variants={revealUp} custom={5} className="column-title">
+              Parcours professionnel
             </motion.h3>
             <motion.div
-              variants={itemVariants}
+              variants={revealUp}
+              custom={6}
               className="column-content experience"
             >
               <Experience />
             </motion.div>
           </article>
           <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
-              Parcours Scolaire
+            <motion.h3 variants={revealUp} custom={7} className="column-title">
+              Zone et missions
             </motion.h3>
             <motion.div
-              variants={itemVariants}
+              variants={revealUp}
+              custom={8}
               className="column-content education"
             >
               <Education />
-            </motion.div>
-          </article>
-
-          <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
-              Autres formations
-            </motion.h3>
-            <motion.div
-              variants={itemVariants}
-              className="column-content education"
-            >
-              <AutresFormations />
-            </motion.div>
-          </article>
-
-          <article className="apropos-column">
-            <motion.h3 variants={itemVariants} className="column-title">
-              Hobbies
-            </motion.h3>
-            <motion.div
-              variants={itemVariants}
-              className="column-content hobbies"
-            >
-              <Hobbies />
             </motion.div>
           </article>
         </div>

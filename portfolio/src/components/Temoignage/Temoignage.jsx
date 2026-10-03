@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../../backend/data.json";
 import axelImg from "../../assets/images/testimonial-1.webp";
@@ -40,7 +41,6 @@ function Temoignage() {
 
   return (
     <motion.section
-      id="testimonials"
       className="temoignage-section"
       variants={containerVariants}
       initial="hidden"
@@ -48,7 +48,8 @@ function Temoignage() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.h2 variants={itemVariants}>
-        Témoignages <span className="span-title"></span>
+        Ce qu'on dit de mon travail{" "}
+        <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
 
       <motion.div
@@ -58,9 +59,9 @@ function Temoignage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {data.temoignages.map((temoignage, index) => (
+        {data.temoignages.map((temoignage) => (
           <TemoignageCard
-            key={index}
+            key={temoignage.nom}
             temoignage={temoignage}
             photoSrc={testimonialImages[temoignage.nom]}
           />

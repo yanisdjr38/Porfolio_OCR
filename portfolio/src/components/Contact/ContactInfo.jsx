@@ -1,5 +1,9 @@
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { CONTACT_EMAIL } from "../../utils/constants";
+import { hoverLift, tapPress } from "../../utils/motionVariants";
 
 /**
  * Animation variants
@@ -22,45 +26,70 @@ function ContactInfo() {
   return (
     <motion.div className="contact-info" variants={itemVariants}>
       <div className="contact-info-header">
-        <h3 className="contact-info-title">Autres moyens de contact</h3>
+        <h3 className="contact-info-title">Première étape : me parler</h3>
       </div>
+
+      <p className="contact-summary">
+        Dites-moi ce que vous cherchez à accomplir, votre délai idéal et votre
+        budget approximatif. Je vous réponds sous 24h avec une proposition
+        claire et sans engagement.
+      </p>
+
+      <ul className="contact-commitments">
+        <li>
+          <FontAwesomeIcon icon={faCircleCheck} /> Réponse sous 24h
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCircleCheck} /> Devis écrit et transparent
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCircleCheck} /> Aucun engagement avant votre
+          accord
+        </li>
+      </ul>
 
       {/* Email */}
       <div className="contact-item">
         <div className="contact-label">Email</div>
-        <a
-          href="mailto:yanis.djouahra38@gmail.com"
+        <motion.a
+          href={`mailto:${CONTACT_EMAIL}`}
           className="contact-link email-link"
+          whileHover={{ y: -2 }}
+          whileTap={tapPress}
         >
-          yanis.djouahra38@gmail.com
-        </a>
+          {CONTACT_EMAIL}
+        </motion.a>
       </div>
 
       {/* Réseaux sociaux */}
       <div className="contact-buttons">
-        <a
+        <motion.a
           href="https://github.com/yanisdjr38"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn github-btn"
           aria-label="GitHub"
           data-text="GitHub"
+          whileHover={hoverLift}
+          whileTap={tapPress}
         >
           <FontAwesomeIcon icon={["fab", "github"]} />
           <span>GitHub</span>
-        </a>
+        </motion.a>
 
-        <a
+        <motion.a
           href="https://www.linkedin.com/in/yanis-djouahra/"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn linkedin-btn"
           aria-label="LinkedIn"
           data-text="LinkedIn"
+          whileHover={hoverLift}
+          whileTap={tapPress}
         >
           <FontAwesomeIcon icon={["fab", "linkedin"]} />
           <span>LinkedIn</span>
-        </a>
+        </motion.a>
       </div>
     </motion.div>
   );

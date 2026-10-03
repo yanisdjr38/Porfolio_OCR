@@ -1,6 +1,32 @@
 import emailjs from "@emailjs/browser";
+import {
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-emailjs.init("-AapzA3unXxaBBTHA");
+import { CONTACT_EMAIL } from "../../utils/constants";
+
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const CAN_USE_EMAILJS =
+  Boolean(EMAILJS_PUBLIC_KEY) &&
+  Boolean(EMAILJS_SERVICE_ID) &&
+  Boolean(EMAILJS_TEMPLATE_ID);
+
+if (CAN_USE_EMAILJS) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
+const buildMailtoLink = ({ name, email, message }) => {
+  const subject = encodeURIComponent(`Demande de brief - ${name}`);
+  const body = encodeURIComponent(
+    `Nom: ${name}\nEmail: ${email}\n\nBesoin:\n${message}`,
+  );
+
+  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+};
 
 /**
  * Icône de contact SVG
@@ -38,7 +64,7 @@ function FormContact() {
   });
 
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null); // "loading", "success", "error", null
+  const [status, setStatus] = useState(null); // "loading", "success", "error", "fallback", null
 
   /**
    * Valide les données du formulaire
@@ -105,8 +131,14 @@ function FormContact() {
 
     setStatus("loading");
 
+    if (!CAN_USE_EMAILJS) {
+      window.location.href = buildMailtoLink(formData);
+      setStatus("fallback");
+      return;
+    }
+
     try {
-      await emailjs.send("service_sc45q1s", "template_xa6mua2", {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         name: formData.name,
         email: formData.email,
         message: formData.message,
@@ -121,9 +153,10 @@ function FormContact() {
       }, 5000);
     } catch (error) {
       console.error(error);
-      setStatus("error");
+      window.location.href = buildMailtoLink(formData);
+      setStatus("fallback");
 
-      // Masquer le message d'erreur après 5 secondes
+      // Masquer le message de fallback après 5 secondes
       setTimeout(() => {
         setStatus(null);
       }, 5000);
@@ -131,31 +164,47 @@ function FormContact() {
   };
 
   return (
-    <div className="glitch-form-wrapper">
-      <form className="glitch-card" onSubmit={handleSubmit}>
+    <div className="contact-form-wrapper">
+      <form className="contact-card" onSubmit={handleSubmit}>
         {/* En-tête du formulaire */}
         <div className="card-header">
           <div className="card-title">
             <ContactIcon />
-            <span>FORMULAIRE_DE_CONTACT</span>
+            <span>DEMANDE_DE_BRIEF</span>
           </div>
         </div>
 
+        <p className="form-hint">
+          Décrivez votre besoin en quelques lignes. Plus c'est clair, plus je
+          peux vous aider vite. Budget estimé ? Délai souhaité ? Dites-moi.
+        </p>
+
         {/* Corps du formulaire */}
         <div className="card-body">
-          {/* Message de succès */}
-          {status === "success" && (
-            <div className="feedback-message success-message">
-              ✓ Message envoyé avec succès ! Je te répondrai bientôt.
-            </div>
-          )}
+          {/* Messages de feedback (annoncés aux lecteurs d'écran) */}
+          <div role="status" aria-live="polite">
+            {status === "success" && (
+              <div className="feedback-message success-message">
+                <FontAwesomeIcon icon={faCircleCheck} /> Message envoyé avec
+                succès ! Je reviens vers vous rapidement.
+              </div>
+            )}
 
-          {/* Message d'erreur d'envoi */}
-          {status === "error" && (
-            <div className="feedback-message error-message">
-              ✗ Erreur lors de l'envoi. Réessaie s'il te plaît.
-            </div>
-          )}
+            {status === "error" && (
+              <div className="feedback-message error-message">
+                <FontAwesomeIcon icon={faCircleXmark} /> Erreur lors de
+                l'envoi. Réessaie ou écris-moi directement.
+              </div>
+            )}
+
+            {status === "fallback" && (
+              <div className="feedback-message success-message">
+                <FontAwesomeIcon icon={faCircleCheck} /> Votre messagerie
+                s'est ouverte. Si rien ne se passe, écrivez-moi directement à{" "}
+                {CONTACT_EMAIL}.
+              </div>
+            )}
+          </div>
 
           {/* Champ Nom */}
           <div className="form-group">
@@ -165,11 +214,10 @@ function FormContact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Entrer votre nom"
-              aria-label="Nom complet"
+              placeholder="Votre nom ou société"
               className={errors.name ? "input-error" : ""}
             />
-            <label htmlFor="name" className="form-label" data-text="NOM">
+            <label htmlFor="name" className="form-label">
               NOM
             </label>
             {errors.name && <span className="error-text">{errors.name}</span>}
@@ -183,11 +231,10 @@ function FormContact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Entrer votre email"
-              aria-label="Adresse email"
+              placeholder="Votre adresse email"
               className={errors.email ? "input-error" : ""}
             />
-            <label htmlFor="email" className="form-label" data-text="EMAIL">
+            <label htmlFor="email" className="form-label">
               EMAIL
             </label>
             {errors.email && <span className="error-text">{errors.email}</span>}
@@ -200,12 +247,11 @@ function FormContact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Écrivez votre message"
+              placeholder="Décrivez votre besoin, votre délai ou votre idée"
               rows="4"
-              aria-label="Message"
               className={errors.message ? "input-error" : ""}
             />
-            <label htmlFor="message" className="form-label" data-text="MESSAGE">
+            <label htmlFor="message" className="form-label">
               MESSAGE
             </label>
             {errors.message && (
@@ -217,12 +263,9 @@ function FormContact() {
           <button
             type="submit"
             className="submit-btn"
-            data-text={status === "loading" ? "ENVOI..." : "ENVOYER"}
             disabled={status === "loading"}
           >
-            <span className="btn-text">
-              {status === "loading" ? "ENVOI..." : "ENVOYER"}
-            </span>
+            {status === "loading" ? "ENVOI..." : "ENVOYER LA DEMANDE"}
           </button>
         </div>
       </form>

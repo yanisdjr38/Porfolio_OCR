@@ -1,34 +1,22 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../../backend/data.json";
 import cardtrackrImg from "../../assets/images/cardtrackr.webp";
 import effetmerImg from "../../assets/images/effetmer.webp";
 import kasaImg from "../../assets/images/kasa.webp";
 import monVieuxGrimoireImg from "../../assets/images/mon-vieux-grimoire.webp";
+import {
+  createStaggerContainer,
+  hoverLift,
+  revealUp,
+  sectionViewport,
+} from "../../utils/motionVariants";
 import ProjetCard from "./ProjetCard";
 
 /**
  * Animation variants pour l'effet en cascade des projets
  */
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+const containerVariants = createStaggerContainer(0.14, 0.06);
 
 /**
  * Composant Projet - Section galerie de projets
@@ -45,16 +33,29 @@ function Projet() {
   };
 
   return (
-    <section id="projects" className="projet">
+    <section className="projet">
       {/* Titre de la section avec décoration */}
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        variants={revealUp}
+        initial="hidden"
+        whileInView="visible"
+        custom={0}
+        viewport={sectionViewport}
       >
-        Mes projets <span className="span-title"></span>
+        Mes réalisations <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
+
+      <motion.p
+        className="projet-intro"
+        variants={revealUp}
+        initial="hidden"
+        whileInView="visible"
+        custom={1}
+        viewport={sectionViewport}
+      >
+        Des projets réels, avec un vrai besoin à satisfaire. Pas des démos : des
+        interfaces pensées pour être utilisées.
+      </motion.p>
 
       {/* Grille des projets avec animation en cascade */}
       <motion.div
@@ -62,19 +63,23 @@ function Projet() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={sectionViewport}
       >
         {/* Parcourt les projets depuis la source de données */}
         {data.stack.Projets.map((project, index) => (
           <motion.div
             key={index}
-            variants={itemVariants}
+            variants={revealUp}
+            custom={index + 2}
             className="projet-item"
+            whileHover={hoverLift}
           >
             {/* Composant carte du projet */}
             <ProjetCard
               title={project.name}
               description={project.description}
+              problem={project.problem}
+              result={project.result}
               image={projectImages[project.name]}
               stack={project.stack}
               link={project.link}

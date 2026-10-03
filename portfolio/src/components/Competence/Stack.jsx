@@ -3,31 +3,39 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import data from "../../../backend/data.json";
+import {
+  createStaggerContainer,
+  revealUp,
+  sectionViewport,
+  tapPress,
+} from "../../utils/motionVariants";
 
 /**
  * Animation variants pour l'apparition progressive des cartes de compétences
  */
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+const containerVariants = createStaggerContainer(0.08, 0.02);
+
+const ICON_PREFIX_MAP = {
+  "fa-brands": "fab",
+  "fa-solid": "fas",
+  "fa-regular": "far",
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.4 },
-  },
-};
+/**
+ * Convertit une classe FontAwesome ("fa-brands fa-html5") en tuple
+ * compatible avec le prop `icon` de react-fontawesome (["fab", "html5"]).
+ */
+function parseIconClass(iconClass) {
+  if (!iconClass) return null;
+  const [stylePart, namePart] = iconClass.split(" ");
+  const prefix = ICON_PREFIX_MAP[stylePart];
+  const name = namePart?.replace(/^fa-/, "");
+  return prefix && name ? [prefix, name] : null;
+}
 
 /**
  * Composant Stack - Affiche les compétences techniques avec filtrage par catégorie
@@ -100,7 +108,7 @@ function Stack() {
   return (
     <div className="stack">
       {/* Titre de la section */}
-      <h3>Stack</h3>
+      <h3>Stack technique</h3>
 
       {/* Sélecteur de catégorie */}
       <div className="filter-dropdown-container">
@@ -121,13 +129,15 @@ function Stack() {
       {/* Carrousel des compétences */}
       <div className="carousel-wrapper">
         {/* Bouton navigation gauche */}
-        <button
+        <motion.button
           className="carousel-nav carousel-nav-left"
           onClick={() => handleNavigation("left")}
           aria-label="Précédent"
+          whileTap={tapPress}
+          whileHover={{ scale: 1.05 }}
         >
           <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
-        </button>
+        </motion.button>
 
         {/* Carrousel avec animation */}
         <motion.div
@@ -136,17 +146,24 @@ function Stack() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          viewport={sectionViewport}
           key={activeCategory}
         >
-          {filteredSkills.map((skill) => (
+          {filteredSkills.map((skill, index) => (
             <motion.div
               key={skill.name}
               className="stack-card"
-              variants={itemVariants}
+              variants={revealUp}
+              custom={index}
+              whileHover={{ y: -6, scale: 1.02 }}
+              whileTap={tapPress}
             >
               {/* Icône ou initiale */}
-              {skill.icon ? (
-                <FontAwesomeIcon icon={skill.icon} aria-hidden="true" />
+              {parseIconClass(skill.icon) ? (
+                <FontAwesomeIcon
+                  icon={parseIconClass(skill.icon)}
+                  aria-hidden="true"
+                />
               ) : (
                 <span className="icon-fallback" aria-label={skill.name}>
                   {skill.name[0]}
@@ -159,13 +176,15 @@ function Stack() {
         </motion.div>
 
         {/* Bouton navigation droite */}
-        <button
+        <motion.button
           className="carousel-nav carousel-nav-right"
           onClick={() => handleNavigation("right")}
           aria-label="Suivant"
+          whileTap={tapPress}
+          whileHover={{ scale: 1.05 }}
         >
           <FontAwesomeIcon icon={faChevronRight} aria-hidden="true" />
-        </button>
+        </motion.button>
       </div>
     </div>
   );

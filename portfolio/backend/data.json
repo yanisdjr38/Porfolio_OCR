@@ -1,10 +1,110 @@
 {
+  "zone": [
+    "Disponible en France",
+    "Sur place ou hybride",
+    "Travail à distance possible",
+    "Flexibilité selon le projet"
+  ],
   "softskills": [
-    "Curiosité et apprentissage continu",
-    "Communication et écoute active",
-    "Esprit d'équipe et collaboration",
-    "Esprit d'initiative et créativité",
-    "Adaptabilité et flexibilité"
+    "Réponse dans l'heure, même le soir",
+    "Je refuse les projets qui ne tiennent pas la route",
+    "Code propre, maintenable, réutilisable",
+    "Ajustements post-livraison inclus",
+    "Pas de jargon, que du concret"
+  ],
+  "audience": [
+    "Indépendants",
+    "TPE / PME",
+    "Projets web",
+    "Clients WordPress",
+    "Clients React"
+  ],
+  "services": [
+    {
+      "title": "Corriger un bug / dysfonctionnement",
+      "description": "Votre site fonctionne mal ou pas du tout? On trouve le souci et ça repart. Vous recevez un diagnostic en 2h, et c'est généralement réglé le jour même.",
+      "idealFor": "Urgent, site cassé, besoin de reprendre le contrôle rapidement"
+    },
+    {
+      "title": "Modifier / améliorer votre WordPress",
+      "description": "Ajouter une page, changer un formulaire, modifier un plugin. On le fait sans casser ce qui fonctionne. C'est sécurisé et c'est testé avant la mise en ligne.",
+      "idealFor": "Site WordPress existant, modifications ponctuelles sans risque"
+    },
+    {
+      "title": "Créer votre site vitrine",
+      "description": "Un site pour montrer qui vous êtes et ce que vous vendez. Mobile-friendly, rapide, avec un formulaire de contact qui fonctionne. Prêt à accueillir vos clients.",
+      "idealFor": "PME, artisans, indépendants sans présence web ou besoin de refonte"
+    },
+    {
+      "title": "Intégrer une maquette en site fonctionnel",
+      "description": "Vous avez un design (Figma, sketch)? Je le transforme en vrai site. Chaque pixel se met en place, tout fonctionne, c'est responsive et optimisé.",
+      "idealFor": "Vous avez le design, besoin d'un développeur pour la technique"
+    },
+    {
+      "title": "Ajouter une fonctionnalité / application",
+      "description": "Un système de réservation? Un espace client? Un formulaire complexe? Je construis une interface qui marche comme prévu, testée et fiable.",
+      "idealFor": "Besoin d'une vraie feature interactive, pas juste du statique"
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "On cadre votre projet",
+      "description": "Vous m'expliquez votre activité, votre besoin et ce que vous voulez atteindre. On fixe les délais et le budget. Vous repartez avec un résumé écrit de ce qu'on va faire : zéro ambiguïté, zéro surprise."
+    },
+    {
+      "step": "02",
+      "title": "Je construis, vous suivez",
+      "description": "Vous recevez un lien pour voir l'avancement en direct. Vous testez, vous commentez, on ajuste. Le résultat final, vous l'avez déjà vu avant même la mise en ligne."
+    },
+    {
+      "step": "03",
+      "title": "Livraison et suivi inclus",
+      "description": "On valide ensemble. Je corrige ce qui ne vous convient pas — c'est inclus. Quand vous êtes satisfait, ça passe en production. Et si quelque chose cloche dans les deux semaines, je suis là."
+    }
+  ],
+  "pricing": [
+    {
+      "label": "Dépannage rapide",
+      "detail": "Bug, ajustement, petite correction urgente",
+      "time": "Livré en 2h à 1 jour"
+    },
+    {
+      "label": "Mission courte",
+      "detail": "Modification, intégration de maquette, amélioration",
+      "time": "Livré en 3 à 10 jours"
+    },
+    {
+      "label": "Projet complet",
+      "detail": "Site vitrine, landing page ou application simple",
+      "time": "Livré en 2 à 4 semaines"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Combien de temps pour avoir une réponse ?",
+      "a": "Je réponds dans l'heure en semaine. Si vous préférez un échange rapide, proposez un créneau : je fais un appel découverte gratuit de 20 minutes pour comprendre votre besoin avant de vous envoyer quoi que ce soit."
+    },
+    {
+      "q": "Est-ce qu'il y aura des frais cachés ?",
+      "a": "Non. Le devis est écrit, détaillé et fixe. Si une difficulté imprévue change le scope, je vous préviens avant d'agir, jamais après. Vous décidez."
+    },
+    {
+      "q": "Que se passe-t-il après la livraison ?",
+      "a": "Pendant deux semaines, les ajustements sont inclus sans condition. Si quelque chose ne vous convient pas, je corrige. Après, je reste disponible pour des mises à jour ponctuelles ou un suivi régulier — à vous de choisir."
+    },
+    {
+      "q": "Vous comprendrez vraiment ce que je veux ?",
+      "a": "Très probablement oui. Avant de coder, j'ai travaillé dans le commercial et la communication. Je ne traduis pas votre besoin en fonctionnalités techniques : je cherche d'abord à comprendre ce que vous voulez accomplir pour votre activité."
+    },
+    {
+      "q": "Est-ce que je serai dépendant de vous après ?",
+      "a": "Non. Vous avez tous les accès, le code est organisé pour que vous ou un autre développeur puissiez reprendre facilement. Si c'est WordPress, vous gérez seul au quotidien. Aucune dépendance forcée."
+    },
+    {
+      "q": "Vous faites de la maintenance après livraison ?",
+      "a": "Oui, si vous en avez besoin. Je propose un suivi régulier ou des interventions ponctuelles. Vous choisissez le niveau d'accompagnement selon votre situation."
+    }
   ],
   "stack": {
     "item": [
@@ -87,28 +187,36 @@
     "Projets": [
       {
         "name": "Kasa",
-        "description": "Application de location d'appartements.",
+        "description": "Interface de réservation d'appartements construite avec React et React Router, responsive et accessible sur tous les écrans.",
+        "problem": "Rendre la navigation dans une offre de location aussi simple que possible pour un utilisateur mobile.",
+        "result": "Navigation fluide, fiches lisibles, rendu mobile-first irréprochable.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://kasa-yd.netlify.app",
         "image": "/portfolio/src/assets/images/kasa.webp"
       },
       {
         "name": "Mon Vieux Grimoire",
-        "description": "Application de gestion de livres.",
+        "description": "Application full-stack de gestion de bibliothèque avec authentification, API Express/MongoDB et interface React.",
+        "problem": "Gérer une collection de livres et leurs notes de lecture sans outil dédié.",
+        "result": "CRUD complet, authentification sécurisée, données persistées en base.",
         "stack": ["React", "MongoDB", "Express"],
         "link": "https://mon-vieux-grimoire-yd.netlify.app",
         "image": "/portfolio/src/assets/images/mon-vieux-grimoire.webp"
       },
       {
         "name": "Effetmer",
-        "description": "Application de suivi de progression pour le JJB",
+        "description": "Application de suivi de progression sportive (Jiu-Jitsu Brésilien) avec tableau de bord et historique des séances.",
+        "problem": "Suivre sa progression sur le long terme sans outil adapté ni surcharge d'informations.",
+        "result": "Tableau de bord lisible, saisie rapide, navigation intuitive au quotidien.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://effetmer-bjj.netlify.app",
         "image": "/portfolio/src/assets/images/effetmer.webp"
       },
       {
         "name": "CardTrackr",
-        "description": "Application de suivi de collection de cartes à jouer",
+        "description": "Gestionnaire de collection de cartes à collectionner avec recherche, filtres et interface responsive.",
+        "problem": "Consulter et gérer une grande collection sans se perdre dans des listes interminables.",
+        "result": "Recherche instantanée, filtres par catégorie, affichage clair sur mobile et desktop.",
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/Cardtrackr",
         "image": "/portfolio/src/assets/images/cardtrackr.webp"
@@ -117,7 +225,7 @@
     "Parcours": [
       {
         "name": "Développeur Web et Web Mobile - 2026",
-        "description": "Formation intensive axée sur les compétences de développement web et mobile.",
+        "description": "Formation orientée réalisation de projets concrets en développement web.",
         "niveau": "Bac +2",
         "lieu": "OpenClassrooms, En ligne",
         "image": "",
@@ -136,7 +244,7 @@
     "AutresFormations": [
       {
         "name": "Responsable de Développement Commercial France et Internationale - 2024",
-        "description": "Diplôme axé sur les stratégies de développement commercial et les techniques de vente.",
+        "description": "Formation centrée sur le développement commercial, la gestion de projet et la relation client.",
         "niveau": "Bac +3",
         "lieu": "ECEMA",
         "image": "",
@@ -150,7 +258,7 @@
       },
       {
         "name": "BTS Communication - 2023",
-        "description": "Diplôme axé sur les stratégies de communication et les médias.",
+        "description": "Base solide en communication, contenu et organisation de projet.",
         "niveau": "Bac +2",
         "lieu": "Lycée Ella Fitzgerald",
         "image": "",
@@ -186,30 +294,24 @@
       "type": "Stage"
     }
   ],
-  "hobbies": [
-    "JJB",
-    "Renforcement musculaire",
-    "Course à pied",
-    "Cinéma",
-    "Technologie"
-  ],
   "capacites": [
-    "Développer une app React performante",
-    "Créer une API REST sécurisée",
-    "Intégrer un design Figma pixel-perfect",
-    "Optimiser le SEO technique"
+    "Corrections de bugs sur un site existant",
+    "Modifications de sites WordPress",
+    "Intégration HTML/CSS à partir d'une maquette",
+    "Développement de fonctionnalités React",
+    "Création de sites vitrines"
   ],
   "resultats": [
     {
-      "title": "Application avec authentification complète",
+      "title": "Livrables propres et maintenables",
       "icon": "faLock"
     },
     {
-      "title": "Score Lighthouse optimisé",
+      "title": "Délais clairs et communication simple",
       "icon": "faBolt"
     },
     {
-      "title": "Responsive 100% mobile",
+      "title": "Design adapté à votre client final",
       "icon": "faMobile"
     }
   ],
@@ -219,7 +321,7 @@
       "role": "Manager",
       "alt": "Photo de Axel Gor",
       "entreprise": "New Balance",
-      "temoignage": "Yanis est arrivé en tant que jeune « adolescent » dans ce milieu. Je l'ai vu grandir pour avoir partagé presque 2 ans et demi avec lui, et j'ai déjà remarqué un bon profil managérial. C'est une personne appréciée et appréciable, qui met souvent son cœur à l'ouvrage et ne rechigne jamais sur la tâche.\n\nCe qui est agréable, c'est qu'il est sans cesse dans la proposition pour faciliter et développer l'intra-service, et également humain. S'il continue à se structurer dans le cœur et dans la tête, je pense qu'il peut réaliser de belles choses au cours de sa carrière professionnelle.",
+      "temoignage": "Yanis est sérieux, fiable et propose des solutions utiles. Il travaille proprement, communique clairement et s’adapte vite aux besoins.",
       "photo": "/portfolio/src/assets/images/testimonial-1.jpg"
     },
     {
@@ -227,7 +329,7 @@
       "role": "Mentor et formateur",
       "alt": "Photo de Sébastien Gallet",
       "entreprise": "Openclassrooms",
-      "temoignage": "J’ai eu le plaisir d’accompagner Yanis dans le cadre de sa formation de développeur web chez OpenClassrooms.\nSérieux, motivé et à l’écoute, il a su progresser rapidement tout au long de son parcours. Yanis fait preuve d’une bonne capacité d’adaptation, d’autonomie et d’un vrai intérêt pour le développement web.\nJe le recommande avec confiance pour ses futurs projets professionnels.",
+      "temoignage": "Sérieux, motivé et à l’écoute, Yanis progresse vite et garde une bonne capacité d’adaptation. Je le recommande pour des collaborations professionnelles.",
       "photo": "/portfolio/src/assets/images/testimonial-2.webp"
     }
   ]
