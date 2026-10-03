@@ -15,6 +15,11 @@ import Timeline from "./Timeline";
  */
 const containerVariants = createStaggerContainer(0.14, 0.08);
 
+const formations = [
+  ...data.stack.Parcours,
+  ...(data.stack.AutresFormations || []),
+];
+
 /**
  * Composant Parcour - Section expérience et formation
  * Affiche une timeline des expériences professionnelles et diplômes
@@ -59,7 +64,7 @@ function Parcour() {
       </motion.h2>
 
       <motion.div className="parcour-container" variants={containerVariants}>
-        {data.stack.Parcours.map((item, index) => (
+        {formations.map((item, index) => (
           <motion.div
             key={item.name}
             className={`timeline-lane ${index % 2 === 0 ? "timeline-lane--left" : "timeline-lane--right"}`}

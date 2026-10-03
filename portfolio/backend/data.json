@@ -239,7 +239,9 @@
           "MongoDB"
         ],
         "link": "https://openclassrooms.com/fr/paths/899-developpeur-web"
-      },
+      }
+    ],
+    "AutresFormations": [
       {
         "name": "Responsable de Développement Commercial France et Internationale - 2024",
         "description": "Formation centrée sur le développement commercial, la gestion de projet et la relation client.",
@@ -271,14 +273,7 @@
   },
   "experiences": [
     {
-      "role": "Monteur PC",
-      "company": "LDLC",
-      "location": "Saint-Quentin-Fallavier",
-      "year": "2025",
-      "type": "Intérim"
-    },
-    {
-      "role": "Assistant Manager",
+      "role": "Vendeur polyvalent",
       "company": "New Balance",
       "location": "Villefontaine",
       "year": "2023-2024",
