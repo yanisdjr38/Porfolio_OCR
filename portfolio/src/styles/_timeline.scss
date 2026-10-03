@@ -103,18 +103,6 @@
   .timeline-lane {
     width: 100%;
   }
-
-  .timeline-lane--left {
-    @include respond-to(desktop) {
-      padding-top: 0;
-    }
-  }
-
-  .timeline-lane--right {
-    @include respond-to(desktop) {
-      padding-top: 26px;
-    }
-  }
 }
 
 .timeline-item {

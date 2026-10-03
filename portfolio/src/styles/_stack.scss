@@ -186,14 +186,6 @@
       }
 
       /**
-       * Labels génériques
-       */
-      span {
-        font-size: 0.75rem;
-        font-weight: 600;
-      }
-
-      /**
        * Hover effect: zoom sur l'icône
        */
       &:hover svg {
@@ -216,10 +208,16 @@
 
       /**
        * Nom de la compétence
+       * Tronqué avec ellipsis plutôt que de déborder de la carte
        */
       .skill-name {
-        font-size: 0.9rem;
+        max-width: 100%;
+        font-size: 0.65rem;
         font-weight: 600;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       /**
@@ -234,8 +232,8 @@
           font-size: 1.7rem;
         }
 
-        span {
-          font-size: 0.8rem;
+        .skill-name {
+          font-size: 0.72rem;
         }
 
         .icon-fallback {
@@ -257,8 +255,8 @@
           font-size: 2.2rem;
         }
 
-        span {
-          font-size: 0.9rem;
+        .skill-name {
+          font-size: 0.8rem;
         }
 
         .icon-fallback {
