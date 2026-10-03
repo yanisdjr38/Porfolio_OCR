@@ -19,6 +19,24 @@ import {
  */
 const containerVariants = createStaggerContainer(0.08, 0.02);
 
+const ICON_PREFIX_MAP = {
+  "fa-brands": "fab",
+  "fa-solid": "fas",
+  "fa-regular": "far",
+};
+
+/**
+ * Convertit une classe FontAwesome ("fa-brands fa-html5") en tuple
+ * compatible avec le prop `icon` de react-fontawesome (["fab", "html5"]).
+ */
+function parseIconClass(iconClass) {
+  if (!iconClass) return null;
+  const [stylePart, namePart] = iconClass.split(" ");
+  const prefix = ICON_PREFIX_MAP[stylePart];
+  const name = namePart?.replace(/^fa-/, "");
+  return prefix && name ? [prefix, name] : null;
+}
+
 /**
  * Composant Stack - Affiche les compétences techniques avec filtrage par catégorie
  * @component
@@ -141,8 +159,11 @@ function Stack() {
               whileTap={tapPress}
             >
               {/* Icône ou initiale */}
-              {skill.icon ? (
-                <FontAwesomeIcon icon={skill.icon} aria-hidden="true" />
+              {parseIconClass(skill.icon) ? (
+                <FontAwesomeIcon
+                  icon={parseIconClass(skill.icon)}
+                  aria-hidden="true"
+                />
               ) : (
                 <span className="icon-fallback" aria-label={skill.name}>
                   {skill.name[0]}

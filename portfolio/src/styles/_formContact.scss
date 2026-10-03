@@ -3,45 +3,25 @@
 
 /* .span-title is globally styled in _index.scss */
 
-/* --- Root Variables for the component --- */
-.glitch-form-wrapper {
-  --bg-color: #050505;
-  --primary-color: #00ffff;
-  --secondary-color: #ff00ff;
-  --text-color: #e0e0e0;
-  --font-family:
-    "Space Mono", "Audiowide", monospace, "Jost", "Poppins", sans-serif;
-  --glitch-anim-duration: 0.5s;
-
+.contact-form-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-family);
-  background-color: #050505;
+  font-family: $font-secondary;
   flex-direction: column;
   gap: 2rem;
   padding: 0;
   box-sizing: border-box;
-
-  @include respond-to(tablet) {
-    padding: 0;
-  }
-
-  @include respond-to(desktop) {
-    padding: 0;
-  }
 }
 
 /* --- Card Structure --- */
-.glitch-card {
-  background-color: var(--bg-color);
+.contact-card {
+  background-color: $color-bg-main;
   width: 100%;
-  max-width: none;
-  border: 1px solid rgba(0, 242, 234, 0.2);
-  box-shadow:
-    0 0 20px rgba(0, 242, 234, 0.1),
-    inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba($color-accent-cyan, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   margin: 0 auto;
   box-sizing: border-box;
@@ -53,11 +33,11 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0.5em 1em;
-  border-bottom: 1px solid rgba(0, 242, 234, 0.2);
+  border-bottom: 1px solid rgba($color-accent-cyan, 0.2);
 }
 
 .card-title {
-  color: var(--primary-color);
+  color: $color-accent-cyan;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -70,16 +50,7 @@
 .card-title svg {
   width: 1.2em;
   height: 1.2em;
-  stroke: var(--primary-color);
-}
-
-.card-dots span {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #333;
-  margin-left: 5px;
+  stroke: $color-accent-cyan;
 }
 
 .card-body {
@@ -113,7 +84,7 @@
   top: -1em;
   left: 0;
   font-size: $font-size-body;
-  color: var(--primary-color);
+  color: $color-accent-cyan;
   opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -125,217 +96,37 @@
   }
 }
 
-.form-group input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid rgba(0, 242, 234, 0.3);
-  padding: 0.5em 0 0.75em 0;
-  font-size: 1rem;
-  color: var(--text-color);
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-  border-color: var(--primary-color);
-}
-
-.form-group input:focus + .form-label,
-.form-group input:not(:placeholder-shown) + .form-label {
-  top: -1.2em;
-  font-size: 0.8rem;
-  opacity: 1;
-}
-
-.form-group input:focus + .form-label::before,
-.form-group input:focus + .form-label::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-color);
-}
-
-.form-group input:focus + .form-label::before {
-  color: var(--secondary-color);
-  animation: glitch-anim var(--glitch-anim-duration)
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.form-group input:focus + .form-label::after {
-  color: var(--primary-color);
-  animation: glitch-anim var(--glitch-anim-duration)
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
-}
-
-@keyframes glitch-anim {
-  0% {
-    transform: translate(0);
-    clip-path: inset(0 0 0 0);
-  }
-  20% {
-    transform: translate(-5px, 3px);
-    clip-path: inset(50% 0 20% 0);
-  }
-  40% {
-    transform: translate(3px, -2px);
-    clip-path: inset(20% 0 60% 0);
-  }
-  60% {
-    transform: translate(-4px, 2px);
-    clip-path: inset(80% 0 5% 0);
-  }
-  80% {
-    transform: translate(4px, -3px);
-    clip-path: inset(30% 0 45% 0);
-  }
-  100% {
-    transform: translate(0);
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-/* --- Button Styling --- */
-.submit-btn {
-  width: 100%;
-  padding: 0.8em;
-  margin-top: 1rem;
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s;
-  overflow: hidden;
-}
-
-.submit-btn:hover,
-.submit-btn:focus {
-  background-color: var(--primary-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 25px var(--primary-color);
-  outline: none;
-}
-
-.submit-btn:active {
-  transform: scale(0.97);
-}
-
-/* --- Glitch Effect for Button --- */
-.submit-btn .btn-text {
-  position: relative;
-  z-index: 1;
-  transition: opacity 0.2s ease;
-}
-
-.submit-btn:hover .btn-text {
-  opacity: 0;
-}
-
-.submit-btn::before,
-.submit-btn::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  background-color: var(--primary-color);
-  transition: opacity 0.2s ease;
-}
-
-.submit-btn:hover::before,
-.submit-btn:focus::before {
-  opacity: 1;
-  color: var(--secondary-color);
-  animation: glitch-anim var(--glitch-anim-duration)
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.submit-btn:hover::after,
-.submit-btn:focus::after {
-  opacity: 1;
-  color: var(--bg-color);
-  animation: glitch-anim var(--glitch-anim-duration)
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .form-group input:focus + .form-label::before,
-  .form-group input:focus + .form-label::after,
-  .submit-btn:hover::before,
-  .submit-btn:focus::before,
-  .submit-btn:hover::after,
-  .submit-btn:focus::after {
-    animation: none;
-    opacity: 0;
-  }
-
-  .submit-btn:hover .btn-text {
-    opacity: 1;
-  }
-}
-
-/* --- Textarea Styling --- */
+.form-group input,
 .form-group textarea {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 2px solid rgba(0, 242, 234, 0.3);
+  border-bottom: 2px solid rgba($color-accent-cyan, 0.3);
   padding: 0.5em 0 0.75em 0;
   font-size: 1rem;
-  color: var(--text-color);
+  color: $color-text-main;
   font-family: inherit;
   outline: none;
   transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
   resize: none;
 }
 
+.form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--primary-color);
+  border-color: $color-accent-cyan;
 }
 
+.form-group input:focus + .form-label,
+.form-group input:not(:placeholder-shown) + .form-label,
 .form-group textarea:focus ~ .form-label,
 .form-group textarea:not(:placeholder-shown) ~ .form-label {
   top: -1.2em;
   font-size: 0.8rem;
   opacity: 1;
-}
-
-.form-group textarea:focus ~ .form-label::before,
-.form-group textarea:focus ~ .form-label::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-color);
-}
-
-.form-group textarea:focus ~ .form-label::before {
-  color: var(--secondary-color);
-  animation: glitch-anim var(--glitch-anim-duration)
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.form-group textarea:focus ~ .form-label::after {
-  color: var(--primary-color);
-  animation: glitch-anim var(--glitch-anim-duration)
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+  color: $color-accent-cyan;
 }
 
 /* --- Disabled State --- */
@@ -345,73 +136,55 @@
   cursor: not-allowed;
 }
 
-/* --- Form Message --- */
-.form-message {
-  padding: 0.75rem 1rem;
-  margin-bottom: 1.5rem;
+/* --- Button Styling --- */
+.submit-btn {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 1rem;
+  border: 2px solid $color-accent-cyan;
   border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  animation: slideDown 0.3s ease;
-}
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  @include accent-button($color-accent-cyan, $color-bg-main);
 
-.form-message.success {
-  background-color: rgba(0, 200, 100, 0.15);
-  border: 1px solid rgba(0, 200, 100, 0.3);
-  color: #00c864;
-}
-
-.form-message.error {
-  background-color: rgba(255, 50, 50, 0.15);
-  border: 1px solid rgba(255, 50, 50, 0.3);
-  color: #ff3232;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+  &:active {
+    transform: scale(0.97);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  &.loading {
+    cursor: not-allowed;
+    animation: pulse 1.5s ease-in-out infinite;
   }
-}
 
-/* --- Loading State --- */
-.submit-btn.loading {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-  cursor: not-allowed;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-.submit-btn.loading .btn-text {
-  opacity: 1;
-}
-
-.submit-btn.loading:hover {
-  background-color: transparent;
-  color: var(--primary-color);
-  box-shadow: 0 0 15px rgba(0, 242, 234, 0.5);
+  &:disabled {
+    cursor: not-allowed;
+    background-color: transparent;
+    border-color: rgba($color-accent-cyan, 0.3);
+    color: rgba($color-accent-cyan, 0.3);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
 }
 
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 15px rgba(0, 242, 234, 0.3);
+    box-shadow: 0 0 15px rgba($color-accent-cyan, 0.3);
   }
   50% {
-    box-shadow: 0 0 25px rgba(0, 242, 234, 0.7);
+    box-shadow: 0 0 25px rgba($color-accent-cyan, 0.6);
   }
 }
 
 /* --- Validation d'erreurs --- */
 .input-error {
-  border-bottom-color: #ff4466 !important;
+  border-bottom-color: $color-status-error !important;
 
   &:focus {
-    border-bottom-color: #ff4466 !important;
+    border-bottom-color: $color-status-error !important;
   }
 }
 
@@ -421,16 +194,16 @@
 .error-text {
   display: block;
   font-size: 0.75rem;
-  color: #ff4466;
+  color: $color-status-error;
   margin-top: 0.5em;
-  font-family: var(--font-family);
+  font-family: $font-secondary;
   animation: slideDown 0.3s ease-out;
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-6px);
   }
   to {
     opacity: 1;
@@ -459,30 +232,22 @@
 }
 
 .success-message {
-  background-color: rgba(102, 255, 153, 0.1);
-  color: #66ff99;
-  border-left-color: #66ff99;
-  box-shadow: 0 0 15px rgba(102, 255, 153, 0.2);
+  background-color: rgba($color-status-success, 0.12);
+  color: $color-status-success;
+  border-left-color: $color-status-success;
 }
 
 .error-message {
-  background-color: rgba(255, 68, 102, 0.1);
-  color: #ff4466;
-  border-left-color: #ff4466;
-  box-shadow: 0 0 15px rgba(255, 68, 102, 0.2);
+  background-color: rgba($color-status-error, 0.12);
+  color: $color-status-error;
+  border-left-color: $color-status-error;
 }
 
-/**
- * Bouton désactivé pendant l'envoi
- */
-.submit-btn:disabled {
-  cursor: not-allowed;
-  border-color: rgba(0, 255, 255, 0.3);
-  color: rgba(0, 255, 255, 0.3);
-  animation: pulse 1.5s ease-in-out infinite;
-
-  &:hover {
-    background-color: transparent;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+@media (prefers-reduced-motion: reduce) {
+  .submit-btn.loading,
+  .submit-btn:disabled,
+  .error-text,
+  .feedback-message {
+    animation: none;
   }
 }

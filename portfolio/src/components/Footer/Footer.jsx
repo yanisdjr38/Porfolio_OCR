@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from "../../utils/constants";
+
 function Footer() {
   return (
     <div className="footer">
@@ -22,13 +24,7 @@ function Footer() {
             </a>
           </li>
           <li>
-            <a
-              href="mailto:yanis.djouahra38@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mail
-            </a>
+            <a href={`mailto:${CONTACT_EMAIL}`}>Mail</a>
           </li>
         </ul>
       </nav>

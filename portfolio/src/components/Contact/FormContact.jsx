@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { CONTACT_EMAIL } from "../../utils/constants";
 
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -24,7 +25,7 @@ const buildMailtoLink = ({ name, email, message }) => {
     `Nom: ${name}\nEmail: ${email}\n\nBesoin:\n${message}`,
   );
 
-  return `mailto:yanis.djouahra38@gmail.com?subject=${subject}&body=${body}`;
+  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 };
 
 /**
@@ -163,8 +164,8 @@ function FormContact() {
   };
 
   return (
-    <div className="glitch-form-wrapper">
-      <form className="glitch-card" onSubmit={handleSubmit}>
+    <div className="contact-form-wrapper">
+      <form className="contact-card" onSubmit={handleSubmit}>
         {/* En-tête du formulaire */}
         <div className="card-header">
           <div className="card-title">
@@ -180,29 +181,30 @@ function FormContact() {
 
         {/* Corps du formulaire */}
         <div className="card-body">
-          {/* Message de succès */}
-          {status === "success" && (
-            <div className="feedback-message success-message">
-              <FontAwesomeIcon icon={faCircleCheck} /> Message envoyé avec
-              succès ! Je reviens vers vous rapidement.
-            </div>
-          )}
+          {/* Messages de feedback (annoncés aux lecteurs d'écran) */}
+          <div role="status" aria-live="polite">
+            {status === "success" && (
+              <div className="feedback-message success-message">
+                <FontAwesomeIcon icon={faCircleCheck} /> Message envoyé avec
+                succès ! Je reviens vers vous rapidement.
+              </div>
+            )}
 
-          {/* Message d'erreur d'envoi */}
-          {status === "error" && (
-            <div className="feedback-message error-message">
-              <FontAwesomeIcon icon={faCircleXmark} /> Erreur lors de l'envoi.
-              Réessaie ou écris-moi directement.
-            </div>
-          )}
+            {status === "error" && (
+              <div className="feedback-message error-message">
+                <FontAwesomeIcon icon={faCircleXmark} /> Erreur lors de
+                l'envoi. Réessaie ou écris-moi directement.
+              </div>
+            )}
 
-          {status === "fallback" && (
-            <div className="feedback-message success-message">
-              <FontAwesomeIcon icon={faCircleCheck} /> Votre messagerie s'est
-              ouverte. Si rien ne se passe, écrivez-moi directement à
-              yanis.djouahra38@gmail.com.
-            </div>
-          )}
+            {status === "fallback" && (
+              <div className="feedback-message success-message">
+                <FontAwesomeIcon icon={faCircleCheck} /> Votre messagerie
+                s'est ouverte. Si rien ne se passe, écrivez-moi directement à{" "}
+                {CONTACT_EMAIL}.
+              </div>
+            )}
+          </div>
 
           {/* Champ Nom */}
           <div className="form-group">
@@ -213,10 +215,9 @@ function FormContact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Votre nom ou société"
-              aria-label="Nom complet"
               className={errors.name ? "input-error" : ""}
             />
-            <label htmlFor="name" className="form-label" data-text="NOM">
+            <label htmlFor="name" className="form-label">
               NOM
             </label>
             {errors.name && <span className="error-text">{errors.name}</span>}
@@ -231,10 +232,9 @@ function FormContact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Votre adresse email"
-              aria-label="Adresse email"
               className={errors.email ? "input-error" : ""}
             />
-            <label htmlFor="email" className="form-label" data-text="EMAIL">
+            <label htmlFor="email" className="form-label">
               EMAIL
             </label>
             {errors.email && <span className="error-text">{errors.email}</span>}
@@ -249,10 +249,9 @@ function FormContact() {
               onChange={handleChange}
               placeholder="Décrivez votre besoin, votre délai ou votre idée"
               rows="4"
-              aria-label="Message"
               className={errors.message ? "input-error" : ""}
             />
-            <label htmlFor="message" className="form-label" data-text="MESSAGE">
+            <label htmlFor="message" className="form-label">
               MESSAGE
             </label>
             {errors.message && (
@@ -264,12 +263,9 @@ function FormContact() {
           <button
             type="submit"
             className="submit-btn"
-            data-text={status === "loading" ? "ENVOI..." : "ENVOYER LA DEMANDE"}
             disabled={status === "loading"}
           >
-            <span className="btn-text">
-              {status === "loading" ? "ENVOI..." : "ENVOYER LA DEMANDE"}
-            </span>
+            {status === "loading" ? "ENVOI..." : "ENVOYER LA DEMANDE"}
           </button>
         </div>
       </form>

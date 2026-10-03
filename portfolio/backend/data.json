@@ -1,4 +1,10 @@
 {
+  "zone": [
+    "Disponible en France",
+    "Sur place ou hybride",
+    "Travail à distance possible",
+    "Flexibilité selon le projet"
+  ],
   "softskills": [
     "Réponse dans l'heure, même le soir",
     "Je refuse les projets qui ne tiennent pas la route",
@@ -292,13 +298,6 @@
       "year": "2022",
       "type": "Stage"
     }
-  ],
-  "hobbies": [
-    "JJB",
-    "Renforcement musculaire",
-    "Course à pied",
-    "Cinéma",
-    "Technologie"
   ],
   "capacites": [
     "Corrections de bugs sur un site existant",

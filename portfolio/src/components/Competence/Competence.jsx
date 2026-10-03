@@ -1,4 +1,4 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import {
@@ -17,11 +17,11 @@ import Stack from "./Stack";
 const containerVariants = createStaggerContainer(0.16, 0.06);
 
 /**
- * Composant Compétence - Section des compétences techniques
+ * Composant Competence - Section des compétences techniques
  * Layout: colonne sur mobile/tablette, deux colonnes sur desktop
  * @component
  */
-function Compétence() {
+function Competence() {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -56,7 +56,7 @@ function Compétence() {
       />
 
       <motion.h2 variants={revealUp} custom={0}>
-        Services <span className="span-title"></span>
+        Compétences & outils <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
 
       {/* Layout two-column desktop */}
@@ -86,4 +86,4 @@ function Compétence() {
   );
 }
 
-export default Compétence;
+export default Competence;

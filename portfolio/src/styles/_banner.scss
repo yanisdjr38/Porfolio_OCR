@@ -52,28 +52,6 @@
     }
   }
 
-  .span-title-style {
-    color: $color-text-pink;
-    font-family: $font-code;
-    font-style: normal;
-    font-weight: 100;
-    font-size: $font-size-xxs;
-    padding: 0.2rem 0.5rem;
-    margin-right: 10px;
-    text-shadow: none;
-
-    @include respond-to(tablet) {
-      font-size: $font-size-small-tablet;
-      padding: 0.3rem 0.6rem;
-      margin-right: 15px;
-    }
-    @include respond-to(desktop) {
-      font-size: $font-size-small-desktop;
-      padding: 0.4rem 0.8rem;
-      margin-right: 20px;
-    }
-  }
-
   .banner-subtitle {
     display: flex;
     align-items: flex-start;
@@ -259,22 +237,14 @@
   }
 
   .button-link {
-    border: none;
-    background-color: $color-bg-cyan;
+    border: 2px solid $color-bg-cyan;
+    border-radius: 4px;
     padding: 10px 15px;
     cursor: pointer;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
     font-family: $font-code;
     font-size: $font-size-link;
-    color: $color-bg-main;
     font-weight: 600;
-    @include glitch-button($color-bg-cyan, $color-bg-main, $color-accent-pink);
-
-    &:hover {
-      box-shadow: 0 0 25px $color-bg-cyan;
-    }
+    @include accent-button($color-bg-cyan, $color-bg-main);
 
     &.banner-button {
       padding: 12px 20px;

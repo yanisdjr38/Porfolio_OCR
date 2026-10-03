@@ -1,6 +1,6 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import photoYD from "../../assets/images/photo-yd.png";
+import photoYD from "../../assets/images/photo-yd.webp";
 import {
   createStaggerContainer,
   revealSide,
@@ -32,7 +32,7 @@ function Apropos() {
         viewport={sectionViewport}
       >
         <motion.h2 variants={revealUp} custom={0}>
-          Pourquoi me choisir <span className="span-title"></span>
+          Pourquoi me choisir <span className="span-title" aria-hidden="true"></span>
         </motion.h2>
 
         {/* Section description - Full width */}
@@ -92,7 +92,7 @@ function Apropos() {
           </article>
           <article className="apropos-column">
             <motion.h3 variants={revealUp} custom={5} className="column-title">
-              Disponibilité & fiabilité
+              Parcours professionnel
             </motion.h3>
             <motion.div
               variants={revealUp}

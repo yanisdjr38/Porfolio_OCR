@@ -212,21 +212,14 @@
         padding: 0.75rem 1.25rem;
         font-family: $font-main;
         font-size: $font-size-body;
-        color: $color-bg-main;
-        background-color: $color-bg-cyan;
-        border: none;
+        border: 1px solid $color-bg-cyan;
         border-radius: 3px;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         cursor: pointer;
-        transition: $transition-smooth;
         font-weight: 600;
-        @include glitch-button(
-          $color-bg-cyan,
-          $color-bg-main,
-          $color-accent-pink
-        );
+        @include accent-button($color-bg-cyan, $color-bg-main);
 
         /* Icône FontAwesome */
         svg {
@@ -245,13 +238,6 @@
         @include respond-to(desktop) {
           width: 100%;
           padding: 1rem 1.25rem;
-        }
-
-        &:hover {
-          background-color: $color-bg-main;
-          color: $color-bg-cyan;
-          border: 1px solid $color-bg-cyan;
-          box-shadow: 0 0 25px $color-bg-cyan;
         }
       }
     }

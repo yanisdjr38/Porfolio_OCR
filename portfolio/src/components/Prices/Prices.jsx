@@ -1,4 +1,4 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../../backend/data.json";
 import {
@@ -21,7 +21,7 @@ function Prices() {
       viewport={sectionViewport}
     >
       <motion.h2 variants={revealUp} custom={0}>
-        Types de missions <span className="span-title"></span>
+        Types de missions <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
 
       <motion.div className="prices-grid" variants={containerVariants}>

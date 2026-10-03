@@ -46,14 +46,7 @@
    * Design avec icône prominente + texte
    */
   li {
-    position: relative;
-    background: linear-gradient(
-      135deg,
-      rgba(0, 255, 255, 0.04) 0%,
-      rgba(5, 5, 5, 1) 100%
-    );
-    border: 1px solid rgba($color-accent-cyan, 0.35);
-    border-radius: 14px;
+    @include neon-card($color-accent-cyan);
     padding: 30px 22px;
     min-height: 180px;
     display: flex;
@@ -62,8 +55,6 @@
     justify-content: center;
     text-align: center;
     gap: 18px;
-    transition: all 0.28s ease;
-    overflow: hidden;
 
     @include respond-to(tablet) {
       padding: 34px 24px;
@@ -76,31 +67,9 @@
     }
 
     /**
-     * Pseudo-élément background animé
-     * Crée un effet de "liquid" au hover
-     */
-    &::before {
-      content: "";
-      position: absolute;
-      top: -100%;
-      left: -100%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(
-        circle,
-        rgba(0, 255, 255, 0.08) 0%,
-        transparent 70%
-      );
-      transition: all 0.45s ease;
-      z-index: 0;
-    }
-
-    /**
      * Conteneur des icônes
      */
     .resultat-icon {
-      position: relative;
-      z-index: 1;
       font-size: 2.8rem;
       color: $color-accent-cyan;
       display: flex;
@@ -108,14 +77,10 @@
       justify-content: center;
       width: 80px;
       height: 80px;
-      background: linear-gradient(
-        135deg,
-        rgba(0, 255, 255, 0.1),
-        rgba(255, 0, 255, 0.04)
-      );
-      border: 1px solid rgba($color-accent-cyan, 0.4);
+      background: rgba($color-accent-cyan, 0.08);
+      border: 1px solid rgba($color-accent-cyan, 0.3);
       border-radius: 14px;
-      transition: all 0.4s ease;
+      transition: transform 0.3s ease;
 
       @include respond-to(tablet) {
         font-size: 3rem;
@@ -134,13 +99,10 @@
      * Texte du résultat
      */
     .resultat-title {
-      position: relative;
-      z-index: 1;
       color: $color-text-main;
       font-size: 1rem;
       line-height: 1.6;
       font-weight: 600;
-      transition: color 0.4s ease;
 
       @include respond-to(tablet) {
         font-size: 1.1rem;
@@ -155,35 +117,8 @@
       }
     }
 
-    /**
-     * Hover effect: animation graphique prononcée
-     */
-    &:hover {
-      transform: translateY(-6px);
-      border-color: $color-accent-pink;
-      box-shadow:
-        0 12px 30px rgba(255, 0, 255, 0.18),
-        inset 0 0 18px rgba(255, 0, 255, 0.08);
-
-      &::before {
-        top: -50%;
-        left: -50%;
-      }
-
-      .resultat-icon {
-        color: $color-accent-pink;
-        border-color: $color-accent-pink;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 0, 255, 0.14),
-          rgba(0, 255, 255, 0.04)
-        );
-        transform: scale(1.05);
-      }
-
-      .resultat-title {
-        color: $color-accent-pink;
-      }
+    &:hover .resultat-icon {
+      transform: scale(1.05);
     }
   }
 }

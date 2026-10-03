@@ -1,4 +1,4 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../../backend/data.json";
 import cardtrackrImg from "../../assets/images/cardtrackr.webp";
@@ -42,7 +42,7 @@ function Projet() {
         custom={0}
         viewport={sectionViewport}
       >
-        Mes réalisations <span className="span-title"></span>
+        Mes réalisations <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
 
       <motion.p

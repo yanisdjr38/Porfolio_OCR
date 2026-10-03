@@ -1,26 +1,19 @@
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import data from "../../../backend/data.json";
 
 /**
- * Composant Experience - Affiche disponibilité et fiabilité
+ * Composant Experience - Affiche le parcours professionnel
  * @component
- * @returns {JSX.Element} Contenu de disponibilité et fiabilité
+ * @returns {JSX.Element} Liste des expériences professionnelles
  */
 function Experience() {
-  const availability = [
-    "Réponse sous 24h",
-    "Disponible rapidement",
-    "Livraison à temps",
-    "Suivi transparent",
-    "Révisions incluses",
-    "Pas de surprise",
-  ];
+  const experiences = data.experiences || [];
 
   return (
     <ul className="experience-list">
-      {availability.map((item, index) => (
-        <li key={index}>
-          <FontAwesomeIcon icon={faCircleCheck} /> {item}
+      {experiences.map((exp) => (
+        <li key={`${exp.role}-${exp.company}`}>
+          <strong>{exp.role}</strong> — {exp.company}
+          {exp.location ? `, ${exp.location}` : ""} ({exp.year})
         </li>
       ))}
     </ul>

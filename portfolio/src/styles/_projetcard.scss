@@ -58,7 +58,7 @@
       background: linear-gradient(
         135deg,
         rgba($color-bg-main, 0.8),
-        rgba($color-bg-blue, 0.4)
+        rgba($color-accent-blue, 0.4)
       );
       display: flex;
       align-items: center;
@@ -178,10 +178,12 @@
        * Badge coloré avec technologie
        */
       .stack-item {
-        background-color: $color-text-pink;
-        padding: 5px 10px;
+        background: rgba($color-accent-cyan, 0.08);
+        border: 1px solid rgba($color-accent-cyan, 0.25);
+        border-radius: 999px;
+        padding: 5px 12px;
         font-size: $font-size-link;
-        color: $color-bg-main;
+        color: $color-text-cyan;
       }
     }
   }
@@ -198,33 +200,15 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      border: none;
-      background-color: $color-bg-cyan;
+      border: 1px solid $color-bg-cyan;
+      border-radius: 4px;
       padding: 10px 15px;
       cursor: pointer;
-      transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
       font-family: $font-code;
       font-size: $font-size-link;
-      color: $color-bg-main;
       font-weight: 600;
       text-decoration: none;
-      @include glitch-button(
-        $color-bg-cyan,
-        $color-bg-main,
-        $color-accent-pink
-      );
-
-      /**
-       * Hover effect: inversion des couleurs
-       */
-      &:hover {
-        background-color: $color-bg-main;
-        color: $color-bg-cyan;
-        border: 1px solid $color-bg-cyan;
-        box-shadow: 0 0 25px $color-bg-cyan;
-      }
+      @include accent-button($color-bg-cyan, $color-bg-main);
 
       // Texte du lien
       .card-link {

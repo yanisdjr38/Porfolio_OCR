@@ -58,14 +58,6 @@
     z-index: 1;
   }
 
-  h2 {
-    // Inherits from global h2 styles
-  }
-
-  h2 .span-title {
-    background-color: $color-accent-cyan !important;
-  }
-
   @include respond-to(tablet) {
     min-height: 100vh;
     padding: 40px;
@@ -162,24 +154,5 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     margin-top: 0;
-  }
-}
-
-/**
- * Élément individuel de compétence
- * Card réutilisable avec hover effect
- */
-.competence-item {
-  padding: 15px;
-  background-color: $color-bg-secondary;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-
-  /**
-   * Hover effect: translate vers le haut + box-shadow
-   */
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
   }
 }

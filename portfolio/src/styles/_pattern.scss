@@ -1,0 +1,22 @@
+@use "./variables" as *;
+
+.pattern {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background-color: $color-bg-main;
+  background-image:
+    radial-gradient(
+      circle at top,
+      rgba($color-accent-cyan, 0.06),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba($color-accent-pink, 0.04),
+      transparent 30%
+    );
+}

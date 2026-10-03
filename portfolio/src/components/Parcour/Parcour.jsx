@@ -1,4 +1,4 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import data from "../../../backend/data.json";
@@ -37,7 +37,6 @@ function Parcour() {
   return (
     <motion.section
       ref={sectionRef}
-      id="experience"
       className="parcour"
       variants={containerVariants}
       initial="hidden"
@@ -56,13 +55,13 @@ function Parcour() {
       />
 
       <motion.h2 variants={revealUp} custom={0}>
-        Parcours <span className="span-title"></span>
+        Parcours <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
 
       <motion.div className="parcour-container" variants={containerVariants}>
         {data.stack.Parcours.map((item, index) => (
           <motion.div
-            key={index}
+            key={item.name}
             className={`timeline-lane ${index % 2 === 0 ? "timeline-lane--left" : "timeline-lane--right"}`}
             variants={revealSide}
             custom={index % 2 === 0 ? -1 : 1}

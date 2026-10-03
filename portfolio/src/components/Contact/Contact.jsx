@@ -1,4 +1,4 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {
   createStaggerContainer,
@@ -29,7 +29,7 @@ function Contact() {
       viewport={sectionViewport}
     >
       <motion.h2 variants={revealUp} custom={0}>
-        Décrivez-moi votre projet <span className="span-title"></span>
+        Décrivez-moi votre projet <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
       <motion.div className="contact-wrapper" variants={containerVariants}>
         <motion.div variants={revealSide} custom={-1}>

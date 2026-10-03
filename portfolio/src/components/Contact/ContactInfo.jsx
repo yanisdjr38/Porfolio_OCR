@@ -2,6 +2,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { CONTACT_EMAIL } from "../../utils/constants";
 import { hoverLift, tapPress } from "../../utils/motionVariants";
 
 /**
@@ -51,12 +52,12 @@ function ContactInfo() {
       <div className="contact-item">
         <div className="contact-label">Email</div>
         <motion.a
-          href="mailto:yanis.djouahra38@gmail.com"
+          href={`mailto:${CONTACT_EMAIL}`}
           className="contact-link email-link"
           whileHover={{ y: -2 }}
           whileTap={tapPress}
         >
-          yanis.djouahra38@gmail.com
+          {CONTACT_EMAIL}
         </motion.a>
       </div>
 

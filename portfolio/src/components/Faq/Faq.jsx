@@ -1,4 +1,4 @@
-//eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../../backend/data.json";
 import {
@@ -20,7 +20,7 @@ function Faq() {
       viewport={sectionViewport}
     >
       <motion.h2 variants={revealUp} custom={0}>
-        Ce que vous vous demandez sûrement <span className="span-title"></span>
+        Ce que vous vous demandez sûrement <span className="span-title" aria-hidden="true"></span>
       </motion.h2>
 
       <motion.div className="faq-list" variants={containerVariants}>
