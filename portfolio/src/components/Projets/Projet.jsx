@@ -1,10 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import data from "../../../backend/data.json";
+import bookieImg from "../../assets/images/bookie.webp";
 import cardtrackrImg from "../../assets/images/cardtrackr.webp";
 import effetmerImg from "../../assets/images/effetmer.webp";
 import kasaImg from "../../assets/images/kasa.webp";
 import monVieuxGrimoireImg from "../../assets/images/mon-vieux-grimoire.webp";
+import sophiebluelImg from "../../assets/images/sophiebluel.webp";
 import {
   createStaggerContainer,
   hoverLift,
@@ -30,6 +32,8 @@ function Projet() {
     "Mon Vieux Grimoire": monVieuxGrimoireImg,
     Effetmer: effetmerImg,
     CardTrackr: cardtrackrImg,
+    "Sophie Bluel": sophiebluelImg,
+    Bookie: bookieImg,
   };
 
   return (
@@ -68,7 +72,7 @@ function Projet() {
         {/* Parcourt les projets depuis la source de données */}
         {data.stack.Projets.map((project, index) => (
           <motion.div
-            key={index}
+            key={project.name}
             variants={revealUp}
             custom={index + 2}
             className="projet-item"

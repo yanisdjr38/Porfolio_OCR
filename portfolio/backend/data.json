@@ -220,6 +220,24 @@
         "stack": ["React", "Sass", "React Router"],
         "link": "https://github.com/yanisdjr38/Cardtrackr",
         "image": "/portfolio/src/assets/images/cardtrackr.webp"
+      },
+      {
+        "name": "Sophie Bluel",
+        "description": "Portfolio d'architecte d'intérieur avec galerie photo dynamique et espace d'administration, développé en JavaScript natif consommant une API REST.",
+        "problem": "Rendre une galerie entièrement modifiable (ajout, suppression, filtrage par catégorie) sans framework, avec authentification pour l'espace admin.",
+        "result": "Galerie filtrable fonctionnelle, connexion/déconnexion opérationnelle, ajout et suppression de photos en mode édition.",
+        "stack": ["JavaScript", "HTML", "CSS"],
+        "link": "https://ocsophiebluel.netlify.app",
+        "image": "/portfolio/src/assets/images/sophiebluel.webp"
+      },
+      {
+        "name": "Bookie",
+        "description": "Intégration d'une maquette de plateforme de réservation d'hébergements et d'activités, en HTML et CSS pur.",
+        "problem": "Reproduire fidèlement une maquette Figma et la rendre responsive, sans framework CSS ni JavaScript.",
+        "result": "Rendu fidèle à la maquette sur mobile, tablette et desktop, mise en page fluide à chaque point de rupture.",
+        "stack": ["HTML", "CSS"],
+        "link": "https://ocbookie.netlify.app",
+        "image": "/portfolio/src/assets/images/bookie.webp"
       }
     ],
     "Parcours": [
